@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+//
+// Floats
+//
+
+@mixin floats($suf: "") {
+  .#{$tpl}#{$suf}clearfix { @include clearfix; }
+  .#{$tpl}#{$suf}float--left { float: left; }
+  .#{$tpl}#{$suf}float--right { float: right; }
+}
+
+@include floats;
+@include mq-wide { @include floats("wide-"); }
+@include mq-narrow { @include floats("narrow-"); }
+
+@include mq-min("xs") { @include floats("min-xs-"); }
+@include mq-min("sm") { @include floats("min-sm-"); }
+@include mq-min("lg") { @include floats("min-lg-"); }
+
+@include mq-max("xs") { @include floats("max-xs-"); }
+@include mq-max("sm") { @include floats("max-sm-"); }
+@include mq-max("lg") { @include floats("max-lg-"); }
+
+@include mq("xs") { @include floats("xs-"); }
+@include mq("sm") { @include floats("sm-"); }
+@include mq("md") { @include floats("md-"); }
+@include mq("lg") { @include floats("lg-"); }

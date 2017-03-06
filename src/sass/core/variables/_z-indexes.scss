@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+//
+// Z Indexes
+//
+$z-index-toast: 10000 !default;
+$z-index-modal: 9000 !default;
+$z-index-overlay: 8000 !default;
+$z-index-page-menu: 7000 !default;
+$z-index-dropdown: 6000 !default;
+$z-index-dialog: 5000 !default;
+$z-index-popup: 4000 !default;
+$z-index-default: 1 !default;
+$z-index-deepdive: -99999 !default;
+
+// * Alias Map
+$z-indexes: (
+  toast   : $z-index-toast,
+  modal   : $z-index-modal,
+  overlay : $z-index-overlay,
+  dropdown: $z-index-dropdown,
+  dialog  : $z-index-dialog,
+  popup   : $z-index-popup,
+  default : $z-index-default,
+  deepdive: $z-index-deepdive,
+);

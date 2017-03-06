@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+//
+// Shadows
+//
+$shadow-action-overflow-footer: 0 -2px 4px #F4F6F9 !default;
+$shadow-overlay               : 0 -2px 4px rgba(0,0,0,.07) !default;
+$shadow-drag                  : 0px 2px 4px 0px rgba(0,0,0,.40) !default;
+$shadow-drop-down             : 0px 2px 3px 0px rgba(0,0,0,.16) !default;
+$shadow-card                  : 0px 1px 3px 0px rgba(0,0,0,.16) !default;
+$shadow-header                : 0 2px 4px rgba(0,0,0,.07) !default;
+$shadow-button                : 0px 1px 1px 0px rgba(0,0,0,.05) !default;
+$shadow-button-focus          : 0 0 3px #0070D2 !default;
+$shadow-button-focus-inverse  : 0 0 3px #E0E5EE !default;
+$shadow-inline-edit           : 0 2px 4px 4px rgba(0,0,0,.16) !default;
+$shadow-focus-inset           : 0 0 2px 2px inset #1589EE !default;
+$shadow-docked                : 0 -2px 2px 0 rgba(0,0,0,.16) !default;
+$shadow-image                 : 0 1px 1px rgba(0,0,0,.16) !default;
+
+// * Alias Map
+$shadows: (
+  action-overflow-footer: $shadow-action-overflow-footer,
+  overlay               : $shadow-overlay,
+  drag                  : $shadow-drag,
+  drop-down             : $shadow-drop-down,
+  card                  : $shadow-card,
+  header                : $shadow-header,
+  button                : $shadow-button,
+  button-focus          : $shadow-button-focus,
+  button-focus-inverse  : $shadow-button-focus-inverse,
+  inline-edit           : $shadow-inline-edit,
+  focus-inset           : $shadow-focus-inset,
+  docked                : $shadow-docked,
+  image                 : $shadow-image,
+);

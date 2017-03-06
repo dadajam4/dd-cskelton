@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Messages | Components | DD CSkelton</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="/dest/css/dd.css">
+  <script src="/assets/js/jquery-3.1.1.min.js"></script>
+  <script src="/assets/js/demo.js"></script>
+</head>
+
+<body>
+  <div class="dd-page dd-page--limit-size_hoge">
+    <div class="dd-page-container">
+      <div class="dd-page-banner">
+        <a href="/" class="dd-page-banner__link">
+          <!--
+          <tpl-span class="strong text--lg">DD CSkelton</tpl-span>
+-->
+          <span class="dd-text--lg">
+            <span class="dd-logo-dd">
+              <span>D</span>
+              <span>D</span>
+            </span>
+            CSkelton
+          </span>
+        </a>
+        <a href="javascript:void(0);" class="dd-page-menu__trigger">
+          <span>menu</span>
+        </a>
+      </div>
+      <header class="dd-page-header">
+        <h1 class="dd-page-title">
+          Messages
+        </h1>
+        <div class="dd-page-lead">
+          <div class="dd-page-lead__container">
+            &#x30DC;&#x30BF;&#x30F3;&#x8981;&#x7D20;&#x3067;&#x3059;&#x3002;
+          </div>
+        </div>
+      </header>
+      <div class="dd-page-content">
+        <section class="dd-container dd-p-t--lg">
+          <nav role="navigation" aria-label="Breadcrumbs">
+            <ol class="dd-breadcrumb">
+              <li>
+                <a href="/">
+                  <span class="dd-fa dd-fa-home"></span>
+                  Home</a>
+              </li>
+              <li>
+                Components </li>
+              <li>
+                Messages </li>
+            </ol>
+          </nav>
+        </section>
+        <!-- Base -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Base
+            </span>
+          </h2>
+          <div class="dd-message">
+            <div class="dd-message__header">
+              Changes in Service
+            </div>
+            <p>
+              We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.
+            </p>
+          </div>
+        </section>
+        <!-- Color -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Color
+            </span>
+          </h2>
+          <div class="dd-message dd-theme">
+            <div class="dd-message__header">
+              base
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--neutral">
+            <div class="dd-message__header">
+              neutral
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--primary">
+            <div class="dd-message__header">
+              primary
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--shade">
+            <div class="dd-message__header">
+              shade
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--inverse">
+            <div class="dd-message__header">
+              inverse
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--info">
+            <div class="dd-message__header">
+              info
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--success">
+            <div class="dd-message__header">
+              success
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--warning">
+            <div class="dd-message__header">
+              warning
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+          <div class="dd-message dd-theme--danger">
+            <div class="dd-message__header">
+              danger
+            </div>
+            <p>
+              body
+            </p>
+          </div>
+        </section>
+        <!-- With Icon -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              With Icon
+            </span>
+          </h2>
+          <div class="dd-message dd-message--icon">
+            <span class="dd-fa dd-fa-user dd-message__icon"></span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                Have you heard about our mailing list?
+              </div>
+              <p>
+                Get the best news in your e-mail every day.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--icon">
+            <span class="dd-spinner dd-message__icon">
+              Loading
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                Just one second
+              </div>
+              <p>
+                We&apos;re fetching that content for you.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Dismissable -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Dismissable
+            </span>
+          </h2>
+          <div class="dd-message">
+            <button class="dd-message__close" type="button">
+            </button>
+            <div class="dd-message__header">
+              Welcome back!
+            </div>
+            <p>
+              This is a special notification which you can dismiss if you&apos;re bored with it.
+            </p>
+          </div>
+        </section>
+        <!-- Floating -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Floating
+            </span>
+          </h2>
+          <div class="dd-message dd-message--floating">
+            Way to go!
+          </div>
+        </section>
+        <!-- Compact -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Compact
+            </span>
+          </h2>
+          <div class="dd-message dd-message--compact">
+            Get all the best inventions in your e-mail every day. Sign up now!
+          </div>
+        </section>
+        <!-- Sizing -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Sizing
+            </span>
+          </h2>
+          <div class="dd-message dd-message--sm dd-message--icon">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-fa dd-fa-user dd-message__icon"></span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [sm]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--icon">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-fa dd-fa-user dd-message__icon"></span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [md]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--lg dd-message--icon">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-fa dd-fa-user dd-message__icon"></span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [lg]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- With State Icon -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              With State Icon
+            </span>
+          </h2>
+          <div class="dd-message dd-message--icon dd-theme--info">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [info]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--icon dd-theme--success">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [success]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--icon dd-theme--warning">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [warning]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <div class="dd-message dd-message--icon dd-theme--danger">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [danger]
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Alerts -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Alerts
+            </span>
+          </h2>
+          <h3>Top</h3>
+          <button class="dd-btn dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-0">
+            base
+          </button>
+          <div class="dd-message dd-message--alert dd-theme" id="demo-alert-0">
+            This is base alert.
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--alert dd-theme--neutral" id="demo-alert-1">
+            This is neutral alert.
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-2">
+            info
+          </button>
+          <div class="dd-message dd-message--alert dd-theme--info" id="demo-alert-2">
+            This is info alert.
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-3">
+            success
+          </button>
+          <div class="dd-message dd-message--alert dd-theme--success" id="demo-alert-3">
+            This is success alert.
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--alert dd-theme--warning" id="demo-alert-4">
+            This is warning alert.
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--alert dd-theme--danger" id="demo-alert-5">
+            This is danger alert.
+          </div>
+          <h3>Bottom</h3>
+          <button class="dd-btn dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-0">
+            base
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme" id="demo-alert-bottom-0">
+            This is base alert.
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme--neutral" id="demo-alert-bottom-1">
+            This is neutral alert.
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-2">
+            info
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme--info" id="demo-alert-bottom-2">
+            This is info alert.
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-3">
+            success
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme--success" id="demo-alert-bottom-3">
+            This is success alert.
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme--warning" id="demo-alert-bottom-4">
+            This is warning alert.
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-alert" type="button" data-demo-alert-target="#demo-alert-bottom-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--alert dd-message--alert-bottom dd-theme--danger" id="demo-alert-bottom-5">
+            This is danger alert.
+          </div>
+        </section>
+        <!-- Toasts -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Toasts
+            </span>
+          </h2>
+          <h3>top-left</h3>
+          <button class="dd-btn dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-0">
+            base
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme" id="demo-toast-top-left-0">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [base] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--neutral" id="demo-toast-top-left-1">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [neutral] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-2">
+            info
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--info" id="demo-toast-top-left-2">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [info] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-3">
+            success
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--success" id="demo-toast-top-left-3">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [success] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--warning" id="demo-toast-top-left-4">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [warning] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-toast" type="button" data-demo-toast-position="top-left" data-demo-toast-target="#demo-toast-top-left-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--danger" id="demo-toast-top-left-5">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [danger] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <h3>top-right</h3>
+          <button class="dd-btn dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-0">
+            base
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme" id="demo-toast-top-right-0">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [base] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--neutral" id="demo-toast-top-right-1">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [neutral] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-2">
+            info
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--info" id="demo-toast-top-right-2">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [info] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-3">
+            success
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--success" id="demo-toast-top-right-3">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [success] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--warning" id="demo-toast-top-right-4">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [warning] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-toast" type="button" data-demo-toast-position="top-right" data-demo-toast-target="#demo-toast-top-right-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--danger" id="demo-toast-top-right-5">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [danger] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <h3>bottom-left</h3>
+          <button class="dd-btn dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-0">
+            base
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme" id="demo-toast-bottom-left-0">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [base] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--neutral" id="demo-toast-bottom-left-1">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [neutral] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-2">
+            info
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--info" id="demo-toast-bottom-left-2">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [info] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-3">
+            success
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--success" id="demo-toast-bottom-left-3">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [success] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--warning" id="demo-toast-bottom-left-4">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [warning] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-toast" type="button" data-demo-toast-position="bottom-left" data-demo-toast-target="#demo-toast-bottom-left-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--danger" id="demo-toast-bottom-left-5">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [danger] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <h3>bottom-right</h3>
+          <button class="dd-btn dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-0">
+            base
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme" id="demo-toast-bottom-right-0">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [base] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--neutral dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-1">
+            neutral
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--neutral" id="demo-toast-bottom-right-1">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [neutral] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--info dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-2">
+            info
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--info" id="demo-toast-bottom-right-2">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [info] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--success dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-3">
+            success
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--success" id="demo-toast-bottom-right-3">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [success] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--warning dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-4">
+            warning
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--warning" id="demo-toast-bottom-right-4">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [warning] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+          <button class="dd-btn dd-btn--danger dd-demo-toast" type="button" data-demo-toast-position="bottom-right" data-demo-toast-target="#demo-toast-bottom-right-5">
+            danger
+          </button>
+          <div class="dd-message dd-message--toast dd-message--sm dd-message--icon dd-theme--danger" id="demo-toast-bottom-right-5">
+            <button class="dd-message__close" type="button">
+            </button>
+            <span class="dd-message__state-icon">
+            </span>
+            <div class="dd-message__content">
+              <div class="dd-message__header">
+                This is [danger] toast.
+              </div>
+              <p>
+                This is body.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="dd-page-menu">
+        <div class="dd-page-menu__inner">
+          <nav class="dd-page-navi">
+            <a href="/" class="dd-page-navi__item">
+              Top
+            </a>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-is-active dd-has-child">
+              Components
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/components/accordions/" class="dd-page-navi__child">
+                Accordions
+              </a>
+              <a href="/components/badges/" class="dd-page-navi__child">
+                Badges
+              </a>
+              <a href="/components/boxes/" class="dd-page-navi__child">
+                Boxes
+              </a>
+              <a href="/components/breadcrumbs/" class="dd-page-navi__child">
+                Breadcrumbs
+              </a>
+              <a href="/components/buttons/" class="dd-page-navi__child">
+                Buttons
+              </a>
+              <a href="/components/cards/" class="dd-page-navi__child">
+                Cards
+              </a>
+              <a href="/components/data-tables/" class="dd-page-navi__child">
+                Data Tables
+              </a>
+              <a href="/components/flags/" class="dd-page-navi__child">
+                Flags
+              </a>
+              <a href="/components/forms/" class="dd-page-navi__child">
+                Forms
+              </a>
+              <a href="/components/icons/" class="dd-page-navi__child">
+                Icons
+              </a>
+              <a href="/components/images/" class="dd-page-navi__child">
+                Images
+              </a>
+              <a href="/components/lists/" class="dd-page-navi__child">
+                Lists
+              </a>
+              <a href="/components/media-objects/" class="dd-page-navi__child">
+                Media Objects
+              </a>
+              <a href="/components/menus/" class="dd-page-navi__child">
+                Menus
+              </a>
+              <a href="/components/messages/" class="dd-page-navi__child dd-is-active">
+                Messages
+              </a>
+              <a href="/components/modal/" class="dd-page-navi__child">
+                Modal
+              </a>
+              <a href="/components/navigation/" class="dd-page-navi__child">
+                Navigation
+              </a>
+              <a href="/components/popovers/" class="dd-page-navi__child">
+                Popovers
+              </a>
+              <a href="/components/progress/" class="dd-page-navi__child">
+                Progress
+              </a>
+              <a href="/components/spinners/" class="dd-page-navi__child">
+                Spinners
+              </a>
+              <a href="/components/tabs/" class="dd-page-navi__child">
+                Tabs
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Layouts
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/layouts/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/layouts/borders/" class="dd-page-navi__child">
+                Borders
+              </a>
+              <a href="/layouts/floats/" class="dd-page-navi__child">
+                Floats
+              </a>
+              <a href="/layouts/grid/" class="dd-page-navi__child">
+                Grid
+              </a>
+              <a href="/layouts/position/" class="dd-page-navi__child">
+                Position
+              </a>
+              <a href="/layouts/scrollable/" class="dd-page-navi__child">
+                Scrollable
+              </a>
+              <a href="/layouts/sizing/" class="dd-page-navi__child">
+                Sizing
+              </a>
+              <a href="/layouts/spacing/" class="dd-page-navi__child">
+                Spacing
+              </a>
+              <a href="/layouts/themes/" class="dd-page-navi__child">
+                Themes
+              </a>
+              <a href="/layouts/visibility/" class="dd-page-navi__child">
+                Visibility
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Typographies
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/typographies/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/typographies/basic/" class="dd-page-navi__child">
+                Basic
+              </a>
+              <a href="/typographies/heading/" class="dd-page-navi__child">
+                Heading
+              </a>
+              <a href="/typographies/truncation/" class="dd-page-navi__child">
+                Truncation
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+      <footer class="dd-page-footer dd-theme-inverse">
+        <div class="dd-page-footer__inner">
+          &#xA9; Copyright 2017 dadajam All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

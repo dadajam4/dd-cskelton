@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Component | Button</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/dest/css/acs.css">
+
+<script src="/assets/js/jquery-3.1.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+</head>
+<body>
+  <div class="acs-site acs-site--limit-size_hoge">
+    <div class="acs-site__container">
+      <div class="acs-site-banner">
+        <a class="acs-site-banner__link" href="/">
+          <span class="acs-site-banner__logo-icon icon-logo-ac-mono">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          <span class="acs-logo-text acs-logo-inverse">ADVANCE CODE</span>
+        </a>
+        <a class="acs-site__btn-menu" href="javascript:void(0);"><span>menu</span></a>
+      </div>
+
+      <header class="acs-site__header">
+        <h1 class="acs-site__title">
+<!--
+          <span class="icon-logo-ac">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          &nbsp;
+-->
+          Component | Button        </h1>
+        <div class="acs-site__lead">
+          <div class="acs-site__lead-container">
+            ボタン要素です。
+          </div>
+        </div>
+      </header>
+
+      <div class="acs-site-content">
+        
+
+<!-- Types -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Types : 種類</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <a class="acs-btn" href="javascript:void(0);">default ボタン</a>
+  <button class="acs-btn" type="button">default ボタン</button>
+  <input class="acs-btn" type="button" value="default ボタン">
+  <input class="acs-btn" type="submit" value="default ボタン">
+  <input class="acs-btn" type="reset" value="default ボタン">
+  <a class="acs-btn acs-btn-primary" href="javascript:void(0);">primary ボタン</a>
+  <button class="acs-btn acs-btn-primary" type="button">primary ボタン</button>
+  <input class="acs-btn acs-btn-primary" type="button" value="primary ボタン">
+  <input class="acs-btn acs-btn-primary" type="submit" value="primary ボタン">
+  <input class="acs-btn acs-btn-primary" type="reset" value="primary ボタン">
+  <a class="acs-btn acs-btn-danger" href="javascript:void(0);">danger ボタン</a>
+  <button class="acs-btn acs-btn-danger" type="button">danger ボタン</button>
+  <input class="acs-btn acs-btn-danger" type="button" value="danger ボタン">
+  <input class="acs-btn acs-btn-danger" type="submit" value="danger ボタン">
+  <input class="acs-btn acs-btn-danger" type="reset" value="danger ボタン">
+</section>
+
+<!-- Sizes -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Sizes : サイズ</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <a class="acs-btn acs-btn--icon" href="javascript:void(0);">icon : アイコン</a>
+  <a class="acs-btn acs-btn--sm" href="javascript:void(0);">sm : 小</a>
+  <a class="acs-btn" href="javascript:void(0);">(default) : 中</a>
+  <a class="acs-btn acs-btn--lg" href="javascript:void(0);">lg : 大</a>
+</section>
+
+<!-- Icon -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Icon : アイコン</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <a class="acs-btn acs-btn--icon" href="javascript:void(0);"><span class="icon-search"></span></a>
+  <a class="acs-btn acs-btn--icon acs-btn-primary" href="javascript:void(0);"><span class="icon-file"></span></a>
+  <a class="acs-btn acs-btn--icon acs-btn-danger" href="javascript:void(0);"><span class="icon-bookmark"></span></a>
+</section>
+
+<!-- States -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">States : 状態</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <dl>
+    <dt>無効状態</dt>
+      <a class="acs-btn disabled" href="javascript:void(0);">default ボタン</a>
+      <button class="acs-btn" type="button" disabled>default ボタン</button>
+      <input class="acs-btn" type="button" value="default ボタン" disabled>
+      <input class="acs-btn" type="submit" value="default ボタン" disabled>
+      <input class="acs-btn" type="reset" value="default ボタン" disabled>
+      <a class="acs-btn acs-btn-primary disabled" href="javascript:void(0);">primary ボタン</a>
+      <button class="acs-btn acs-btn-primary" type="button" disabled>primary ボタン</button>
+      <input class="acs-btn acs-btn-primary" type="button" value="primary ボタン" disabled>
+      <input class="acs-btn acs-btn-primary" type="submit" value="primary ボタン" disabled>
+      <input class="acs-btn acs-btn-primary" type="reset" value="primary ボタン" disabled>
+      <a class="acs-btn acs-btn-danger disabled" href="javascript:void(0);">danger ボタン</a>
+      <button class="acs-btn acs-btn-danger" type="button" disabled>danger ボタン</button>
+      <input class="acs-btn acs-btn-danger" type="button" value="danger ボタン" disabled>
+      <input class="acs-btn acs-btn-danger" type="submit" value="danger ボタン" disabled>
+      <input class="acs-btn acs-btn-danger" type="reset" value="danger ボタン" disabled>
+    <dd>
+    </dd>
+  </dl>
+</section>
+
+<!-- Group -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Group : グループ</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-btn-group">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+  <div class="acs-btn-group acs-btn-group-primary">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+  <div class="acs-btn-group acs-btn-group-danger">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+  <div class="acs-btn-group disabled">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+</section>
+
+
+<!-- Group Sizes -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Group Sizes : グループサイズ</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-btn-group acs-btn-group--sm">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+
+  <div class="acs-btn-group">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+
+  <div class="acs-btn-group acs-btn-group--lg">
+    <a class="acs-btn" href="javascript:void(0);">項目1</a>
+    <a class="acs-btn" href="javascript:void(0);">項目2</a>
+    <a class="acs-btn" href="javascript:void(0);">項目3</a>
+  </div>
+</section>
+      </div>
+
+      <nav class="acs-site-navigation acs-theme-inverse">
+  <div class="acs-site-navigation__inner">
+    <p>text</p>
+    <ul class="acs-site-menu">
+      <li class="acs-site-menu__item">
+        <a href="/">Top</a>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Layout</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/layout/themes/">Themes</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/grid/">Grid</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/sizing/">Sizing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/spacing/">Spacing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/floats/">Floats</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/visibility/">Visibility</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Element</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/element/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/element/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item is-active has-child">
+        <a href="javascript:void(0);">Component</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/component/form/">Form</a></li>
+          <li class="acs-site-sub-menu__item is-active"><a href="/component/button/">Button</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/component/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/component/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Typography</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/typography/basic/">Basic</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/heading/">Heading</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/truncation/">Truncation</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Spacing</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/spacing/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/spacing/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/spacing/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Sizing</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/sizing/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/sizing/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/sizing/hoge/">リンク</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      <footer class="acs-site-footer acs-theme-inverse">
+        <div class="acs-site-footer__inner">
+          &copy; Copyright 2017 Advance Code. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

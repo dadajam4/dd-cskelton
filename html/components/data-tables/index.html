@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Components | Data Tables</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/dest/css/acs.css">
+
+<script src="/assets/js/jquery-3.1.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+</head>
+<body>
+  <div class="acs-site acs-site--limit-size_hoge">
+    <div class="acs-site__container">
+      <div class="acs-site-banner">
+        <a class="acs-site-banner__link" href="/">
+          <span class="acs-site-banner__logo-icon icon-logo-ac-mono">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          <span class="acs-logo-text acs-logo-inverse">ADVANCE CODE</span>
+        </a>
+        <a class="acs-site__btn-menu" href="javascript:void(0);"><span>menu</span></a>
+      </div>
+
+      <header class="acs-site__header">
+        <h1 class="acs-site__title">
+<!--
+          <span class="icon-logo-ac">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          &nbsp;
+-->
+          Components | Data Tables        </h1>
+        <div class="acs-site__lead">
+          <div class="acs-site__lead-container">
+            ボタン要素です。
+          </div>
+        </div>
+      </header>
+
+      <div class="acs-site-content">
+        
+<!-- Base -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Base</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-scrollable">
+    <table id="demo-table-1" class="acs-table acs-table--bordered acs-table--cell-buffer">
+      <thead>
+        <tr class="acs-text-title--caps">
+          <th scope="col">
+            <div class="acs-truncate" title="Opportunity Name">Opportunity Name</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Account Name">Account Name</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Close Date">Close Date</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Stage">Stage</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Confidence">Confidence</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Amount">Amount</div>
+          </th>
+          <th scope="col">
+            <div class="acs-truncate" title="Contact">Contact</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" data-label="Opportunity Name">
+            <div class="acs-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+          </th>
+          <td data-label="Account Name">
+            <div class="acs-truncate" title="Cloudhub">Cloudhub</div>
+          </td>
+          <td data-label="Close Date">
+            <div class="acs-truncate" title="4/14/2015">4/14/2015</div>
+          </td>
+          <td data-label="Prospecting">
+            <div class="acs-truncate" title="Prospecting">Prospecting</div>
+          </td>
+          <td data-label="Confidence">
+            <div class="acs-truncate" title="20%">20%</div>
+          </td>
+          <td data-label="Amount">
+            <div class="acs-truncate" title="$25k">$25k</div>
+          </td>
+          <td data-label="Contact">
+            <div class="acs-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" data-label="Opportunity Name">
+            <div class="acs-truncate" title="Cloudhub + Anypoint Connectors"><a href="javascript:void(0);">Cloudhub + Anypoint Connectors</a></div>
+          </th>
+          <td data-label="Account Name">
+            <div class="acs-truncate" title="Cloudhub">Cloudhub</div>
+          </td>
+          <td data-label="Close Date">
+            <div class="acs-truncate" title="4/14/2015">4/14/2015</div>
+          </td>
+          <td data-label="Prospecting">
+            <div class="acs-truncate" title="Prospecting">Prospecting</div>
+          </td>
+          <td data-label="Confidence">
+            <div class="acs-truncate" title="20%">20%</div>
+          </td>
+          <td data-label="Amount">
+            <div class="acs-truncate" title="$25k">$25k</div>
+          </td>
+          <td data-label="Contact">
+            <div class="acs-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="acs-box acs-m-t--md acs-scrollable">
+    <div class="acs-form-element">
+      <div class="acs-form-element__label">Setting</div>
+      <div class="acs-form-element__control">
+        <div class="acs-choice--group">
+          <label class="acs-choice--toggle acs-m-r--md">
+            <span class="acs-form-element__label">striped</span>
+            <input class="demo-toggle-class" data-target="#demo-table-1" value="acs-table--striped" name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="acs-choice--faux_container" aria-live="assertive">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-choice--on">Enabled</span>
+              <span class="acs-choice--off">Disabled</span>
+            </span>
+          </label>
+          <label class="acs-choice--toggle acs-m-r--md">
+            <span class="acs-form-element__label">no row hover</span>
+            <input class="demo-toggle-class" data-target="#demo-table-1" value="acs-no-row-hover" name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="acs-choice--faux_container" aria-live="assertive">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-choice--on">Enabled</span>
+              <span class="acs-choice--off">Disabled</span>
+            </span>
+          </label>
+          <label class="acs-choice--toggle acs-m-r--md">
+            <span class="acs-form-element__label">vertical border</span>
+            <input class="demo-toggle-class" data-target="#demo-table-1" value="acs-table--col-bordered" name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="acs-choice--faux_container" aria-live="assertive">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-choice--on">Enabled</span>
+              <span class="acs-choice--off">Disabled</span>
+            </span>
+          </label>
+          <label class="acs-choice--toggle acs-m-r--md">
+            <span class="acs-form-element__label">fixed layout</span>
+            <input class="demo-toggle-class" data-target="#demo-table-1" value="acs-table--fixed-layout" name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="acs-choice--faux_container" aria-live="assertive">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-choice--on">Enabled</span>
+              <span class="acs-choice--off">Disabled</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advanced -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Advanced</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-scrollable--x">
+    <table id="demo-table-2" class="acs-table acs-table--bordered acs-table--fixed-layout" role="grid">
+      <thead>
+        <tr class="acs-text-title--caps">
+          <th class="acs-cell-shrink" scope="col">
+            <label class="acs-choice">
+              <input type="checkbox" name="demo-select-all">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-assistive-text">Select All</span>
+            </label>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Opportunity Name">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Opportunity Name">Opportunity Name</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-203" class="acs-assistive-text">Opportunity Name column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-203">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Account Name">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Account Name">Account Name</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-204" class="acs-assistive-text">Account Name column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-204">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Close Date">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Close Date">Close Date</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-205" class="acs-assistive-text">Close Date column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-205">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Stage">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Stage">Stage</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-206" class="acs-assistive-text">Stage column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-206">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Confidence">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Confidence">Confidence</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-207" class="acs-assistive-text">Confidence column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-207">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Amount">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Amount">Amount</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-208" class="acs-assistive-text">Amount column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-208">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-is-sortable acs-is-resizable" scope="col" aria-label="Contact">
+            <a href="javascript:void(0);" class="acs-th__action acs-text-link--reset">
+              <span class="acs-assistive-text">Sort </span>
+              <span class="acs-truncate" title="Contact">Contact</span>
+              <span class="icon-arrow-down acs-is-sortable__icon"></span>
+              <span class="acs-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+            </a>
+            <div class="acs-resizable">
+              <label for="cell-resize-handle-209" class="acs-assistive-text">Contact column width</label>
+              <input class="acs-resizable__input acs-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-209">
+              <span class="acs-resizable__handle">
+                <span class="acs-resizable__divider"></span>
+              </span>
+            </div>
+          </th>
+          <th class="acs-cell-shrink" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="acs-hint-parent">
+          <td role="gridcell" class="acs-cell-shrink" data-label="Select row Cloudhub">
+            <label class="acs-choice">
+              <input type="checkbox" name="demo-select">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-assistive-text">Select row Cloudhub</span>
+            </label>
+          </td>
+          <th scope="row" data-label="Opportunity Name">
+            <div class="acs-truncate" title="Cloudhub">Cloudhub</div>
+          </th>
+          <td role="gridcell" data-label="Account Name">
+            <div class="acs-truncate" title="Cloudhub">Cloudhub</div>
+          </td>
+          <td role="gridcell" data-label="Close Date">
+            <div class="acs-truncate" title="4/14/2015">4/14/2015</div>
+          </td>
+          <td role="gridcell" data-label="Prospecting">
+            <div class="acs-truncate" title="Prospecting">Prospecting</div>
+          </td>
+          <td role="gridcell" data-label="Confidence">
+            <div class="acs-truncate" title="20%">20%</div>
+          </td>
+          <td role="gridcell" data-label="Amount">
+            <div class="acs-truncate" title="$25k">$25k</div>
+          </td>
+          <td role="gridcell" data-label="Contact">
+            <div class="acs-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+          </td>
+          <td role="gridcell" class="acs-cell-shrink" data-label="Actions">
+            <button class="acs-icon"><span class="icon-caret-down"></span></button>
+          </td>
+        </tr>
+        <tr class="acs-hint-parent">
+          <td role="gridcell" class="acs-cell-shrink" data-label="Select row Cloudhub + Anypoint Connectors">
+            <label class="acs-choice">
+              <input type="checkbox" name="demo-select">
+              <span class="acs-choice--faux"></span>
+              <span class="acs-assistive-text">Select row Cloudhub + Anypoint Connectors</span>
+            </label>
+          </td>
+          <th scope="row" data-label="Opportunity Name">
+            <div class="acs-truncate" title="Cloudhub + Anypoint Connectors">Cloudhub + Anypoint Connectors</div>
+          </th>
+          <td role="gridcell" data-label="Account Name">
+            <div class="acs-truncate" title="Cloudhub">Cloudhub</div>
+          </td>
+          <td role="gridcell" data-label="Close Date">
+            <div class="acs-truncate" title="4/14/2015">4/14/2015</div>
+          </td>
+          <td role="gridcell" data-label="Prospecting">
+            <div class="acs-truncate" title="Prospecting">Prospecting</div>
+          </td>
+          <td role="gridcell" data-label="Confidence">
+            <div class="acs-truncate" title="20%">20%</div>
+          </td>
+          <td role="gridcell" data-label="Amount">
+            <div class="acs-truncate" title="$25k">$25k</div>
+          </td>
+          <td role="gridcell" data-label="Contact">
+            <div class="acs-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+          </td>
+          <td role="gridcell" class="acs-cell-shrink" data-label="Actions">
+            <button class="acs-icon"><span class="icon-caret-down"></span></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="acs-box acs-m-t--md acs-scrollable">
+    <fieldset class="acs-form-element">
+      <legend class="acs-form-element__label">Responsive Setting</legend>
+      <div class="acs-form-element__control">
+        <div class="acs-choice--btn-group acs-btn-group">
+          <label class="acs-choice-btn acs-btn">
+            <input class="demo-change-class" data-target="#demo-table-2" value="" type="radio" name="demo-table-2" checked>
+            <span class="acs-choice__label">default</span>
+          </label>
+          <label class="acs-choice-btn acs-btn">
+            <input class="demo-change-class" data-target="#demo-table-2" value="acs-table--stacked-horizontal" type="radio" name="demo-table-2">
+            <span class="acs-choice__label">Stacked With Horizontal Cells</span>
+          </label>
+          <label class="acs-choice-btn acs-btn">
+            <input class="demo-change-class" data-target="#demo-table-2" value="acs-table--stacked" type="radio" name="demo-table-2">
+            <span class="acs-choice__label">Stacked</span>
+          </label>
+          <label class="acs-choice-btn acs-btn">
+            <input class="demo-change-class" data-target="#demo-table-2" value="acs-sp-table--stacked-horizontal" type="radio" name="demo-table-2">
+            <span class="acs-choice__label">Stacked With Horizontal Cells (SP)</span>
+          </label>
+          <label class="acs-choice-btn acs-btn">
+            <input class="demo-change-class" data-target="#demo-table-2" value="acs-sp-table--stacked" type="radio" name="demo-table-2">
+            <span class="acs-choice__label">Stacked (SP)</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</section>      </div>
+
+      <nav class="acs-site-navigation">
+  <div class="acs-site-navigation__inner">
+    <p>text</p>
+    <ul class="acs-site-menu">
+      <li class="acs-site-menu__item">
+        <a href="/">Top</a>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Layouts</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/layouts/themes/">Themes</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/grid/">Grid</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/sizing/">Sizing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/spacing/">Spacing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/floats/">Floats</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/position/">Position</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/scrollable/">Scrollable</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/visibility/">Visibility</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Elements</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/elements/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/elements/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item is-active has-child">
+        <a href="javascript:void(0);">Components</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/components/forms/">Forms</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/icons/">Icons</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/buttons/">Buttons</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/badges/">Badges</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/breadcrumbs/">Breadcrumbs</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/cards/">Cards</a></li>
+          <li class="acs-site-sub-menu__item is-active"><a href="/components/data-tables/">DataTables</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/images/">Images</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/lists/">Lists</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/media-objects/">Media Objects</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Typographies</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/typographies/basic/">Basic</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/heading/">Heading</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/truncation/">Truncation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      <footer class="acs-site-footer acs-theme-inverse">
+        <div class="acs-site-footer__inner">
+          &copy; Copyright 2017 Advance Code. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

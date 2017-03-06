@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+//
+// Icons
+//
+
+$my-classname: '#{$tpl}modal';
+
+.#{$tpl}modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: transform $duration-quickly linear,
+                opacity $duration-quickly linear;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: ($z-index-modal + 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: ($size-field-height-lg + $spacing-md) $spacing-xl;
+  overflow: auto;
+
+  &__container {
+    position: relative;
+    transform: translate(0, 0);
+    transition: transform $duration-quickly linear,
+                  opacity $duration-quickly linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    border-radius: $border-radius-md;
+    background-clip: border-box;
+
+    @include mq-min(md) {
+      width: 50%;
+      max-width: 40rem; // TODO: Tokenize
+      min-width: 20rem; // TODO: Tokenize
+    }
+  }
+
+  &__header,
+  &__content {
+    background: $color-brand-base;
+    // background: $color-background-alt;
+  }
+
+  &__header,
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &__header {
+    position: relative;
+    border: {
+      top: {
+        right-radius: $border-radius-md;
+        left-radius: $border-radius-md;
+      }
+      bottom: $border-width-thick solid $color-divider;
+    }
+    padding: $spacing-md;
+    text-align: center;
+
+    + .#{$tpl}modal__menu {
+      border-top: {
+        left-radius: 0;
+        right-radius: 0;
+      }
+    }
+
+    @extend .#{$tpl}text-heading--md;
+    @include sel-h {
+      @extend .#{$tpl}text-heading--md;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__header--empty {
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  &__header--empty + .#{$tpl}modal__content {
+      border: {
+      top: {
+        right-radius: $border-radius-md;
+        left-radius: $border-radius-md;
+      }
+    }
+  }
+
+  &__content {
+    overflow: hidden {
+      y: auto;
+    }
+
+    &:last-child {
+      border-bottom: {
+        right-radius: $border-radius-md;
+        left-radius: $border-radius-md;
+      }
+      box-shadow: $shadow-drop-down;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    background-color: $color-brand-base;
+
+    @include mq-max(md) {
+
+      .#{$tpl}btn {
+        width: 100%;
+        margin: $spacing-xxxs 0;
+      }
+    }
+  }
+
+  &__footer {
+    border: {
+      top: $border-width-thick solid $color-divider;
+      bottom: {
+        right-radius: $border-radius-md;
+        left-radius: $border-radius-md;
+      }
+    }
+    padding: $spacing-sm $spacing-md;
+    // background-color: $color-brand-base;
+    background-color: $color-container-neutral-bg;
+    text-align: right;
+    box-shadow: $shadow-drop-down;
+
+    &--directional .#{$tpl}btn:first-child {
+      float: left;
+    }
+
+    .#{$tpl}btn + .#{$tpl}btn {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  &__close {
+    $my-size: $size-field-height-md;
+    $my-inner-size: $size-field-height-md * .75;
+    @include square($my-size);
+    appearance: none;
+    white-space: nowrap;
+    text-indent: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: ($my-size * -1.25);
+    right: -$my-size / 2;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+    @include effect-fade;
+    @include user-drag(none);
+    @include remove-tap-highlight;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: $my-inner-size;
+      height: 1px;
+      background-color: $color-brand-base;
+      top: $my-size / 2;
+      left: $my-size / 2 - $my-inner-size / 2;
+      transform-origin: 50% 50%;
+    }
+
+    &:before { transform: rotate(45deg); }
+    &:after { transform: rotate(-45deg); }
+  }
+}
+
+@mixin backdrop {
+  transition-duration: $duration-slowly;
+  @include square(100%);
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  // background: $color-background-temp-modal-tint;
+  z-index: $z-index-modal;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $duration-slowly linear;
+  }
+}
+
+.#{$tpl}modal--large .#{$tpl}modal__container {
+
+  @include mq-min(md) {
+    width: 90%;
+    max-width: none;
+    min-width: 40rem; // TODO: Tokenize
+  }
+}
+
+.#{$tpl}backdrop {
+  @include backdrop;
+}
+
+
+
+.#{$tpl}fade-in-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity $duration-quickly linear;
+
+  .#{$tpl}modal__container-reset {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+}
+
+.#{$tpl}slide-up-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+  transition: opacity $duration-quickly linear,
+              transform $duration-promptly linear;
+
+  .#{$tpl}modal__container-reset {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, $spacing-md);
+    transition: opacity $duration-promptly linear,
+                transform $duration-promptly linear;
+  }
+}
+
+.#{$tpl}slide-up-saving {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -$spacing-md);
+}
+
+
+.#{$tpl}slide-down-cancel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, $spacing-md);
+}
+
+.#{$tpl}is-modal-open {
+  overflow: hidden;
+}

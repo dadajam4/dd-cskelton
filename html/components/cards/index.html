@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Components | Cards</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/dest/css/acs.css">
+
+<script src="/assets/js/jquery-3.1.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+</head>
+<body>
+  <div class="acs-site acs-site--limit-size_hoge">
+    <div class="acs-site__container">
+      <div class="acs-site-banner">
+        <a class="acs-site-banner__link" href="/">
+          <span class="acs-site-banner__logo-icon icon-logo-ac-mono">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          <span class="acs-logo-text acs-logo-inverse">ADVANCE CODE</span>
+        </a>
+        <a class="acs-site__btn-menu" href="javascript:void(0);"><span>menu</span></a>
+      </div>
+
+      <header class="acs-site__header">
+        <h1 class="acs-site__title">
+<!--
+          <span class="icon-logo-ac">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          &nbsp;
+-->
+          Components | Cards        </h1>
+        <div class="acs-site__lead">
+          <div class="acs-site__lead-container">
+            ボタン要素です。
+          </div>
+        </div>
+      </header>
+
+      <div class="acs-site-content">
+        
+
+<!-- Base -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Base</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <article class="acs-card">
+    <div class="acs-card__header acs-grid acs-grid--align-spread">
+      <header class="acs-media acs-media--center acs-has-flexi-truncate">
+        <div class="acs-media__figure">
+          <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="acs-media__body acs-truncate">
+          <h2>
+            <a href="javascript:void(0);" class="acs-text-link--reset">
+              Card Header
+            </a>
+          </h2>
+        </div>
+      </header>
+      <div class="acs-no-flex">
+        <button class="acs-btn acs-btn--sm">New</button>
+      </div>
+    </div>
+    <div class="acs-card__body">
+      <div class="acs-card__body--inner">
+        Card Body (custom goes in here)
+      </div>
+    </div>
+    <div class="acs-card__footer">Card Footer</div>
+  </article>
+</section>
+
+<!-- Base Narrow -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Base Narrow</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <article class="acs-card acs-theme--shade acs-card--narrow">
+    <div class="acs-card__header acs-grid acs-grid--align-spread">
+      <header class="acs-media acs-media--center acs-has-flexi-truncate">
+        <div class="acs-media__figure">
+          <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="acs-media__body acs-truncate">
+          <h2>
+            <a href="javascript:void(0);" class="acs-text-link--reset">
+              Card Header
+            </a>
+          </h2>
+        </div>
+      </header>
+      <div class="acs-no-flex">
+        <a class="acs-btn acs-btn--icon" href="javascript:void(0);"><span class="icon-asterisk"></span></a>
+      </div>
+    </div>
+    <div class="acs-card__body">
+      <div class="acs-card__body--inner">
+        Card Body (custom goes in here)
+      </div>
+    </div>
+    <div class="acs-card__footer">Card Footer</div>
+  </article>
+</section>
+
+<!-- Related List With Tiles -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Related List With Tiles</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <article class="acs-card acs-theme--shade">
+    <div class="acs-card__header acs-grid acs-grid--align-spread">
+      <header class="acs-media acs-media--center acs-has-flexi-truncate">
+        <div class="acs-media__figure">
+          <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="acs-media__body acs-truncate">
+          <h4>
+            <a href="javascript:void(0);" class="acs-text-link--reset">
+              Contacts (3)
+            </a>
+          </h4>
+        </div>
+      </header>
+      <div class="acs-no-flex">
+        <button class="acs-btn acs-btn--sm">New</button>
+      </div>
+    </div>
+    <div class="acs-card__body">
+      <div class="acs-card__body--inner acs-grid acs-wrap acs-grid--pull-padded">
+
+        <div class="acs-card__tile acs-media acs-card__tile acs-p-h--sm acs-xs-size--1-1 acs-md-size--1-1 acs-size--1-2 acs-min-lg-size--1-3 acs-hint-parent">
+          <div class="acs-media__figure">
+            <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+          </div>
+          <div class="acs-media__body">
+            <div class="acs-grid acs-grid--align-spread acs-has-flexi-truncate">
+              <h4 class="acs-truncate acs-m-t--xs" title="Related Record Title 1"><a href="javascript:void(0);">Related Record Title 1</a></h4>
+              <div class="acs-shrink-none">
+                <a class="acs-btn acs-btn--icon acs-m-a--none" href="javascript:void(0);"><span class="icon-asterisk"><span class="acs-assistive-text">More options</span></span></a>
+              </div>
+            </div>
+            <div class="acs-fs--sm">
+              <dl class="acs-dl--inline">
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Type">Type:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="Visit">Visit</span>
+                </dd>
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Date">Date:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="acs-card__tile acs-media acs-card__tile acs-p-h--sm acs-xs-size--1-1 acs-md-size--1-1 acs-size--1-2 acs-min-lg-size--1-3 acs-hint-parent">
+          <div class="acs-media__figure">
+            <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+          </div>
+          <div class="acs-media__body">
+            <div class="acs-grid acs-grid--align-spread acs-has-flexi-truncate">
+              <h4 class="acs-truncate acs-m-t--xs" title="Related Record Title 1"><a href="javascript:void(0);">Related Record Title 1</a></h4>
+              <div class="acs-shrink-none">
+                <a class="acs-btn acs-btn--icon acs-m-a--none" href="javascript:void(0);"><span class="icon-asterisk"><span class="acs-assistive-text">More options</span></span></a>
+              </div>
+            </div>
+            <div class="acs-fs--sm">
+              <dl class="acs-dl--inline">
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Type">Type:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="Visit">Visit</span>
+                </dd>
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Date">Date:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="acs-card__tile acs-media acs-card__tile acs-p-h--sm acs-xs-size--1-1 acs-md-size--1-1 acs-size--1-2 acs-min-lg-size--1-3 acs-hint-parent">
+          <div class="acs-media__figure">
+            <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+          </div>
+          <div class="acs-media__body">
+            <div class="acs-grid acs-grid--align-spread acs-has-flexi-truncate">
+              <h4 class="acs-truncate acs-m-t--xs" title="Related Record Title 1"><a href="javascript:void(0);">Related Record Title 1</a></h4>
+              <div class="acs-shrink-none">
+                <a class="acs-btn acs-btn--icon acs-m-a--none" href="javascript:void(0);"><span class="icon-asterisk"><span class="acs-assistive-text">More options</span></span></a>
+              </div>
+            </div>
+            <div class="acs-fs--sm">
+              <dl class="acs-dl--inline">
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Type">Type:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="Visit">Visit</span>
+                </dd>
+                <dt class="acs-dl--label">
+                  <span class="acs-truncate" title="Date">Date:</span>
+                </dt>
+                <dd class="acs-dl--detail acs-tile__meta">
+                  <span class="acs-truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="acs-card__footer">
+      <a href="javascript:void(0);">View All <span class="acs-assistive-text">entity type</span></a>
+    </div>
+  </article>
+</section>
+
+<!-- Related List With Table -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section"><span class="acs-inner">Related List With Table</span></h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <article class="acs-card acs-theme--shade">
+    <div class="acs-card__header acs-grid acs-grid--align-spread">
+      <header class="acs-media acs-media--center acs-has-flexi-truncate">
+        <div class="acs-media__figure">
+          <span class="acs-icon acs-icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="acs-media__body acs-truncate">
+          <h4>
+            <a href="javascript:void(0);" class="acs-text-link--reset">
+              Contacts (3)
+            </a>
+          </h4>
+        </div>
+      </header>
+      <div class="acs-no-flex">
+        <button class="acs-btn acs-btn--sm">New</button>
+      </div>
+    </div>
+    <div class="acs-card__body acs-scrollable--x">
+      <table class="acs-table acs-table--bordered acs-no-row-hover acs-table--cell-buffer">
+        <thead>
+          <tr class="acs-text-title--caps">
+            <th scope="col">
+              <div class="acs-truncate" title="Name">Name</div>
+            </th>
+            <th scope="col">
+              <div class="acs-truncate" title="Company">Company</div>
+            </th>
+            <th scope="col">
+              <div class="acs-truncate" title="Title">Title</div>
+            </th>
+            <th scope="col">
+              <div class="acs-truncate" title="Email">Email</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="acs-hint-parent">
+            <th scope="row">
+              <div class="acs-truncate" title="Adam Choi"><a href="javascript:void(0);">Adam Choi</a></div>
+            </th>
+            <td>
+              <div class="acs-truncate" title="Company One">Company One</div>
+            </td>
+            <td>
+              <div class="acs-truncate" title="Director of Operations">Director of Operations</div>
+            </td>
+            <td>
+              <div class="acs-truncate" title="adam@company.com">adam@company.com</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="acs-card__footer">
+      <a href="javascript:void(0);">View All <span class="acs-assistive-text">entity type</span></a>
+    </div>
+  </article>
+</section>
+      </div>
+
+      <nav class="acs-site-navigation">
+  <div class="acs-site-navigation__inner">
+    <p>text</p>
+    <ul class="acs-site-menu">
+      <li class="acs-site-menu__item">
+        <a href="/">Top</a>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Layouts</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/layouts/themes/">Themes</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/grid/">Grid</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/sizing/">Sizing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/spacing/">Spacing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/floats/">Floats</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/position/">Position</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/scrollable/">Scrollable</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layouts/visibility/">Visibility</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Elements</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/elements/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/elements/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item is-active has-child">
+        <a href="javascript:void(0);">Components</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/components/forms/">Forms</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/icons/">Icons</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/buttons/">Buttons</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/badges/">Badges</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/breadcrumbs/">Breadcrumbs</a></li>
+          <li class="acs-site-sub-menu__item is-active"><a href="/components/cards/">Cards</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/data-tables/">DataTables</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/images/">Images</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/lists/">Lists</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/components/media-objects/">Media Objects</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Typographies</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/typographies/basic/">Basic</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/heading/">Heading</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typographies/truncation/">Truncation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      <footer class="acs-site-footer acs-theme-inverse">
+        <div class="acs-site-footer__inner">
+          &copy; Copyright 2017 Advance Code. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

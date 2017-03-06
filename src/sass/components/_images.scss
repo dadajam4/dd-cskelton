@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+//
+// Images
+//
+
+.#{$tpl}avatar {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: $border-radius-md;
+  background-clip: border-box;
+  line-height: $line-height-reset;
+
+  &:hover,
+  &:focus:hover {
+    // color: currentColor;
+  }
+
+  @each $size in xs, sm, md, lg, xl {
+    &--#{$size} {
+      @include square(get-size(field-height-#{$size}));
+    }
+  }
+
+  &--circle {
+    border-radius: $border-radius-circle;
+  }
+
+  &--empty {
+    border: $border-width-thin dashed $color-divider;
+  }
+}

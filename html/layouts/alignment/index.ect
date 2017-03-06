@@ -1,0 +1,15 @@
+<% block 'title': %>Layouts | Alignment<% end %>
+<% block 'site-lead': %>
+可視性ヘルパーは、領域の可視状態を変更します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Absolute Center -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Absolute Center</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>align--absolute-center <%- @tpl %>box" style="height: 150px;">This content will be positioned in the absolute center of its container</div>
+</section>

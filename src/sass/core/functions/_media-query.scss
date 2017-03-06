@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+//
+// MEDIA QUERY
+//
+
+@mixin mq($target) {
+
+  $i: 0;
+  $l: length($mq-widths);
+  $before: 0;
+  @each $key, $val in $mq-widths {
+    $i: $i + 1;
+    @if $target == $key {
+      @if $i == 1 {
+        @media only screen and (max-width: #{$val - 1}px) { @content; }
+      } @elseif $i == $l {
+        @media only screen and (min-width: #{$before}px) { @content; }
+      } @else {
+        @media only screen and (min-width: #{$before}px) and (max-width: #{$val - 1}px) { @content; }
+      }
+    }
+    $before: $val;
+  }
+}
+
+@mixin mq-max($target) {
+  $val: map-get($mq-widths, $target);
+  @media only screen and (max-width: #{$val - 1}px) { @content; }
+}
+
+@mixin mq-min($target) {
+  $val: map-get($mq-widths, $target);
+  @media only screen and (min-width: #{$val}px) { @content; }
+}
+
+// alias
+@mixin mq-narrow { @include mq-max(sm) { @content; } }
+@mixin mq-wide { @include mq-min(sm) { @content; } }

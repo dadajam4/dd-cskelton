@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+//
+// Badges
+//
+
+$my-classname: '#{$tpl}badge';
+$my-border-size: 1px;
+
+.#{$my-classname} {
+  display: inline-block;
+  appearance: none;
+  padding: 0 $size-pill-padding-horizontal;
+  border-radius: $border-radius-pill;
+  text-transform: uppercase;
+  letter-spacing: .0625em;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: solid $my-border-size;
+  outline: none;
+  transition: background-color .25s, border-color .25s;
+  background-clip: border-box;
+  @include remove-tap-highlight;
+
+  @include class-links() {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  // detail
+  &--detail {
+    margin-left: .5em;
+    opacity: .8;
+    vertical-align: top;
+  }
+
+  // icon
+  .#{$tpl}fa {
+    margin-right: .25em;
+  }
+
+  .#{$tpl}icon--close {
+    @extend .#{$tpl}fa;
+    @extend .#{$tpl}fa-times;
+    cursor: pointer;
+    opacity: .5;
+    margin-left: .25em;
+    margin-right: -.25em;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  // sizing
+  @include pill-height(md);
+  @each $size in $pill-height-list {
+    &--#{$size} {
+      @if $size == sm {
+        padding: 0 $size-pill-padding-horizontal * .75;
+      } @elseif $size == lg {
+        padding: 0 $size-pill-padding-horizontal * 1.25;
+      }
+
+      @include pill-height($size);
+    }
+  }
+
+  // themes
+  @include auto-parts-theme-classes($my-classname) {
+    color: get-color(parts-#{$_parts-theme-key}-text);
+    background-color: get-color(parts-#{$_parts-theme-key}-bg);
+    @if $_parts-theme-key == neutral {
+      border-color: get-color(parts-#{$_parts-theme-key}-divider);
+    } @else {
+      border-color: get-color(parts-#{$_parts-theme-key}-bg);
+    }
+
+    @at-root {
+      a#{&}:hover,
+      a#{&}:focus,
+      a#{&}:active,
+      button#{&}:hover,
+      button#{&}:focus,
+      button#{&}:active {
+        color: get-color(parts-#{$_parts-theme-key}-text-focus);
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-focus);
+        @if $_parts-theme-key == neutral {
+          border-color: get-color(parts-#{$_parts-theme-key}-divider-focus);
+        } @else {
+          border-color: get-color(parts-#{$_parts-theme-key}-bg-focus);
+        }
+      }
+
+      a#{&}:active,
+      button#{&}:active {
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+      }
+    }
+
+    &.#{$tpl}badge--outline {
+      @include parts-outline-colors($_parts-theme-key);
+
+      @at-root {
+        a#{&}:hover,
+        a#{&}:focus,
+        a#{&}:active,
+        button#{&}:hover,
+        button#{&}:focus,
+        button#{&}:active {
+          @include parts-outline-colors($_parts-theme-key, true);
+        }
+
+        a#{&}:active,
+        button#{&}:active {
+          background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+        }
+      }
+    }
+  }
+}

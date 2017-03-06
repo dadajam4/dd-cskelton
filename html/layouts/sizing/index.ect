@@ -1,0 +1,24 @@
+<% block 'title': %>Layouts | Sizing<% end %>
+<% block 'site-lead': %>
+サイズヘルパーは領域に一連のサイズを設定します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Widths -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Widths</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>wrap">
+    <div class="<%- @tpl %>size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>size--1-1</div>
+
+    <div class="<%- @tpl %>pc-size--4-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>pc-size--4-12 <%- @tpl %>sp-size--1-1</div>
+    <div class="<%- @tpl %>pc-size--8-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>pc-size--8-12 <%- @tpl %>sp-size--1-1</div>
+
+    <div class="<%- @tpl %>pc-size--6-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>pc-size--6-12 <%- @tpl %>sp-size--1-1</div>
+    <div class="<%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2</div>
+    <div class="<%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center"><%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2</div>
+  </div>
+</section>

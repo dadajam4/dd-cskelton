@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+//
+// Doc Frames
+//
+
+
+.#{$tpl}doc-frame {
+
+  &__container {
+    @include scrollable;
+  }
+}

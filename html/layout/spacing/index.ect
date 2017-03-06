@@ -1,0 +1,57 @@
+<% block 'title': %>Layout | Spacing<% end %>
+<% block 'site-lead': %>
+空間ヘルパーは領域に一連の空間を設定します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<%
+properties = [
+  {key: 'm', label: 'Margin'},
+  {key: 'p', label: 'Padding'},
+];
+
+directions = [
+  {key: 'top'       , label: 'Top'       },
+  {key: 'right'     , label: 'Right'     },
+  {key: 'bottom'    , label: 'Bottom'    },
+  {key: 'left'      , label: 'Left'      },
+  {key: 'vertical'  , label: 'Vertical'  },
+  {key: 'horizontal', label: 'Horizontal'},
+  {key: 'around'    , label: 'Around'    },
+];
+
+sizes = [
+  {key: 'none'},
+  {key: 'xxxs'},
+  {key: 'xxs' },
+  {key: 'xs'  },
+  {key: 'sm'  },
+  {key: 'md'  },
+  {key: 'lg'  },
+  {key: 'xl'  },
+  {key: 'xxl' },
+];
+%>
+
+<% for property in properties : %>
+
+  <!-- <%- property.label %> -->
+  <section class="<%- @tpl %>-section <%- @tpl %>-container">
+    <h2 class="<%- @tpl %>-h-section"><%- property.label %></h2>
+
+    <div class="<%- @tpl %>-box <%- @tpl %>-theme--shade" style="padding: 0; line-height: 1;">
+      <% for direction in directions : %>
+      <% for size in sizes : %>
+      <% className = @tpl + '-' + property.key + '-' + direction.key + '--' + size.key; %>
+
+      <% if property.key == 'm' : %>
+      <div style="padding: 0;">
+        <div class="<%- className %> <%- @tpl %>-theme--primary">.<%- className %></div>
+      </div>
+      <% else %>
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
+<% end %>

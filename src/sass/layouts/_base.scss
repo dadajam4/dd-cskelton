@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+//
+// Base Layouts
+//
+
+
+
+body {
+  background-color: $color-layout-foundation;
+
+  :not(input):not(textarea) {
+    &::selection {
+      background: $color-brand-inverse;
+      color: $color-typo-inverse;
+    }
+  }
+}
+
+
+
+//
+// container
+//
+.#{$tpl}container {
+  @include container();
+}
+
+
+
+//
+// section
+//
+.#{$tpl}section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-color: $color-layout-base;
+  // border-radius: 5px;
+
+  @each $key, $val in $container-margins {
+    @include mq($key) {
+      padding-top: $val * .5;
+      padding-bottom: $val * .5;
+    }
+  }
+}

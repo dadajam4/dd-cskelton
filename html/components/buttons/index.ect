@@ -1,0 +1,173 @@
+<% block 'title': %>Components | Buttons<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <a class="<%- @tpl %>btn" href="javascript:void(0);">a</a>
+  <button class="<%- @tpl %>btn" type="button">button</button>
+  <input class="<%- @tpl %>btn" type="button" value="input">
+  <input class="<%- @tpl %>btn" type="submit" value="submit">
+  <input class="<%- @tpl %>btn" type="reset" value="reset">
+</section>
+
+<!-- Types -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Types</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+<% for key in @siteConfig.themeKeys('parts') : %>
+  <a class="<%- @tpl %>btn<%- key.name %>" href="javascript:void(0);"><%- key.label %></a>
+<% end %>
+</section>
+
+<!-- Outline -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Outline</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+<% for key in @siteConfig.themeKeys('parts') : %>
+<% if key.label != 'base' : %>
+  <a class="<%- @tpl %>btn<%- key.name %> <%- @tpl %>btn--outline" href="javascript:void(0);"><%- key.label %></a>
+<% end %>
+<% end %>
+</section>
+
+<!-- Sizes -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Sizes</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <a class="<%- @tpl %>btn--neutral <%- @tpl %>btn--icon" href="javascript:void(0);">icon : アイコン</a>
+  <a class="<%- @tpl %>btn--neutral <%- @tpl %>btn--sm" href="javascript:void(0);">sm : 小</a>
+  <a class="<%- @tpl %>btn--neutral" href="javascript:void(0);">(default) : 中</a>
+  <a class="<%- @tpl %>btn--neutral <%- @tpl %>btn--lg" href="javascript:void(0);">lg : 大</a>
+</section>
+
+<!-- Icon -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Icon</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <% for key, index in @siteConfig.themeKeys('parts') : %>
+  <a class="<%- @tpl %>btn<%- key.name %> <%- @tpl %>btn--icon" href="javascript:void(0);"><%- @siteConfig.iconHtml(index) %></a>
+  <% end %>
+</section>
+
+<!-- States -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">States</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <dl>
+    <dt>無効状態</dt>
+<% for key in @siteConfig.themeKeys('parts') : %>
+      <a class="<%- @tpl %>btn<%- key.name %> is-disabled" href="javascript:void(0);"><%- key.label %></a>
+      <a class="<%- @tpl %>btn<%- key.name %> <%- @tpl %>btn--outline is-disabled" href="javascript:void(0);"><%- key.label %></a>
+<% end %>
+    <dd>
+    </dd>
+  </dl>
+</section>
+
+<!-- Group -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Group</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+<% for key in @siteConfig.themeKeys('parts') : %>
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group<%- key.name %>">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 3</a>
+    </div>
+  </div>
+<% end %>
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group is-disabled">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 3</a>
+    </div>
+  </div>
+</section>
+
+<!-- Group Outline -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Group Outline</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+<% for key in @siteConfig.themeKeys('parts') : %>
+<% if key.label != 'base' : %>
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group<%- key.name %> <%- @tpl %>btn-group--outline">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);"><%- key.label %> - 3</a>
+    </div>
+  </div>
+<% end %>
+<% end %>
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group is-disabled <%- @tpl %>btn-group--outline">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">disabled - 3</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Group Sizes -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Group Sizes</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group--neutral <%- @tpl %>btn-group--sm">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目3</a>
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group--neutral">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目3</a>
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>m-v--xs">
+    <div class="<%- @tpl %>btn-group--neutral <%- @tpl %>btn-group--lg">
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目1</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目2</a>
+      <a class="<%- @tpl %>btn" href="javascript:void(0);">項目3</a>
+    </div>
+  </div>
+</section>

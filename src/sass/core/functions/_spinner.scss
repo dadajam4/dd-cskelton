@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+//
+// Spinner
+//
+
+@mixin spinner-base($size: get-size(spinner-md), $duration: 1s, $base-color: rgba(0, 0, 0, 0.2), $active-color: #fff, $with-container: false) {
+  $border-size: $size * .075;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-top: $border-size solid $base-color;
+  border-right: $border-size solid $base-color;
+  border-bottom: $border-size solid $base-color;
+  border-left: $border-size solid $active-color;
+  transform: translateZ(0);
+  animation: #{$tpl}spinner $duration infinite cubic-bezier(0.64, 0.16, 0.35, 0.93);
+  width: $size;
+  height: $size;
+  line-height: $size;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .#{$tpl}spinner-container & {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$size * .5;
+    margin-left: -$size * .5;
+  }
+}
+
+$_spinner-size-value: null;
+@mixin spinner-size($size, $with-container: false) {
+  $value: get-size(spinner-#{$size});
+  $border-size: $value * .075;
+
+  width: $value;
+  height: $value;
+  line-height: $value;
+  border-width: $border-size;
+
+  @if $with-container {
+    .#{$tpl}spinner-container & {
+      margin-top: -$value * .5;
+      margin-left: -$value * .5;
+    }
+  }
+
+  $_spinner-size-value: $value !global;
+}
+
+@keyframes #{$tpl}spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

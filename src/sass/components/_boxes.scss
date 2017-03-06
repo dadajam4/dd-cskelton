@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+//
+// Boxes
+//
+
+.#{$tpl}box {
+  @include box($borders: around);
+
+  &--padded-none {
+    padding: $spacing-none;
+  }
+
+  &--padded-xs {
+    padding: $spacing-xs;
+  }
+
+  &--padded-sm {
+    padding: $spacing-sm;
+  }
+
+  &--padded-lg {
+    padding: $spacing-lg;
+  }
+}

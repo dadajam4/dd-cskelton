@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+//
+// Lists
+//
+$list-dotted-space: 1rem;
+$list-ordered-space: 2rem;
+$list-vertical-space: .75rem;
+$list-horizontal-space: $spacing-sm;
+
+.#{$tpl}list {}
+
+@mixin lists($suf: "") {
+
+  .#{$tpl}#{$suf}list {
+
+    // inline
+    &--inline {
+      display: inline-flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+
+    // dotted
+    &--dotted {
+      list-style: disc;
+
+      & > * {
+        margin-left: $list-dotted-space;
+      }
+    }
+
+    // ordered
+    @at-root ol,
+    &--ordered {
+      list-style: decimal;
+
+      & > * {
+        margin-left: $list-ordered-space;
+      }
+    }
+
+    // spacing
+    &--has-space {
+
+      &:not(.#{$tpl}#{$suf}list--inline) {
+        & > * {
+          padding-top: $list-vertical-space;
+          padding-bottom: $list-vertical-space;
+        }
+      }
+
+      &.#{$tpl}#{$suf}list--inline {
+        & > * {
+          margin-left: $list-horizontal-space;
+          margin-right: $list-horizontal-space;
+        }
+
+        &.#{$tpl}#{$suf}list--dotted {
+          & > * {
+            margin-left: $list-horizontal-space * .5 + $list-dotted-space;
+          }
+        }
+
+        &.#{$tpl}#{$suf}list--ordered {
+          & > * {
+            margin-left: $list-horizontal-space * .5 + $list-ordered-space;
+          }
+        }
+      }
+    }
+  }
+
+  // description
+  .#{$tpl}#{$suf}dl--inline {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 100%;
+
+    .#{$tpl}#{$suf}dl__label {
+      width: 30%;
+      padding-right: .5rem;
+      @include truncate;
+    }
+
+    .#{$tpl}#{$suf}dl__detail {
+      width: 70%;
+      @include truncate;
+    }
+  }
+}
+
+@include lists;
+@include mq-wide { @include lists("wide-"); }
+@include mq-narrow { @include lists("narrow-"); }

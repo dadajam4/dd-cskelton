@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+//
+// Messages
+//
+
+.#{$tpl}message {
+  @include box($borders: around, $padding: $spacing-sm $spacing-md);
+  position: relative;
+  display: block;
+
+  & + & {
+    margin-top: $spacing-md;
+  }
+
+  &__header {
+    @include text-heading--sm;
+    margin-bottom: $spacing-xxxs;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+  }
+
+  &--icon &__content {
+    flex: 1 1 auto;
+    vertical-align: middle;
+  }
+
+  &__icon {
+    margin-right: $spacing-md;
+  }
+
+  &__icon,
+  &__state-icon {
+    @include font-size(xxl);
+  }
+
+  &__close {
+    @extend .#{$tpl}fa;
+    @extend .#{$tpl}fa-close;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    @include user-drag(none);
+    user-select: none;
+    @include font-size(md);
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.7;
+    @include square($size-field-height-sm);
+    line-height: $size-field-height-sm;
+    vertical-align: bottom;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity $duration-promptly;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  // Sizing
+  &--sm {
+    @include font-size(sm);
+    padding: {
+      top: $spacing-xs;
+      bottom: $spacing-xs;
+    }
+  }
+
+  &--sm &__header {
+    @include text-heading--xs;
+  }
+
+  &--sm &__icon,
+  &--sm &__state-icon {
+    @include font-size(xl);
+  }
+
+  &--sm &__state-icon {
+    @include font-size(xl);
+  }
+
+  &--lg {
+    @include font-size(lg);
+    padding: {
+      top: $spacing-md;
+      bottom: $spacing-md;
+    }
+  }
+
+  &--lg &__header {
+    @include text-heading--md;
+  }
+
+  &--lg &__icon,
+  &--lg &__state-icon {
+    @include font-size(xxxl);
+  }
+
+  // States
+  &__state-icon {
+    @extend .#{$tpl}fa;
+
+    @at-root .#{$tpl}theme--info & {
+      @extend .#{$tpl}fa-info-circle;
+      margin-right: $spacing-md;
+    }
+
+    @at-root .#{$tpl}theme--success & {
+      @extend .#{$tpl}fa-check;
+      margin-right: $spacing-md;
+    }
+
+    @at-root .#{$tpl}theme--warning & {
+      @extend .#{$tpl}fa-exclamation-triangle;
+      margin-right: $spacing-md;
+    }
+
+    @at-root .#{$tpl}theme--danger & {
+      @extend .#{$tpl}fa-exclamation-circle;
+      margin-right: $spacing-md;
+    }
+  }
+
+  &--floating {
+    box-shadow: $shadow-drop-down;
+  }
+
+  &--compact {
+    display: inline-block;
+  }
+
+
+
+  //
+  // alert
+  //
+  &--alert {
+    position: fixed;
+    z-index: $z-index-toast;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    box-shadow: $shadow-drop-down;
+    text-align: center;
+    margin: 0!important;
+    min-height: $size-navbar-height;
+    opacity: 0;
+    pointer-events: none;
+
+    &-bottom {
+      top: auto;
+      bottom: 0;
+    }
+
+    &:not(.#{$tpl}is-show) {
+      display: none;
+      pointer-events: auto;
+    }
+  }
+
+
+
+  //
+  // toast
+  //
+  &--toast {
+    pointer-events: auto;
+    box-shadow: $shadow-drop-down;
+    width: $size-lg;
+    max-width: 100%;
+    opacity: 0;
+    pointer-events: none;
+
+    &:not(.#{$tpl}is-show) {
+      display: none;
+      pointer-events: auto;
+    }
+  }
+}
+
+$toast-container-margin: $spacing-md;
+.#{$tpl}toast-container {
+  position: fixed;
+  z-index: $z-index-toast;
+  pointer-events: none;
+  overflow: visible;
+  top: $toast-container-margin;
+  right: $toast-container-margin;
+  bottom: $toast-container-margin;
+  left: $toast-container-margin;
+  display: flex;
+
+  &--top-left {
+    flex-direction: column;
+  }
+
+  &--top-right {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &--bottom-left {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &--bottom-right {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}

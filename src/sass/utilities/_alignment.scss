@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+//
+// Alignment
+//
+
+@mixin alignment($suf: "") {
+  .#{$tpl}#{$suf}align--absolute-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
+
+@include alignment;
+@include mq-wide { @include alignment("wide-"); }
+@include mq-narrow { @include alignment("narrow-"); }
+
+@include mq-min("xs") { @include alignment("min-xs-"); }
+@include mq-min("sm") { @include alignment("min-sm-"); }
+@include mq-min("lg") { @include alignment("min-lg-"); }
+
+@include mq-max("xs") { @include alignment("max-xs-"); }
+@include mq-max("sm") { @include alignment("max-sm-"); }
+@include mq-max("lg") { @include alignment("max-lg-"); }
+
+@include mq("xs") { @include alignment("xs-"); }
+@include mq("sm") { @include alignment("sm-"); }
+@include mq("md") { @include alignment("md-"); }
+@include mq("lg") { @include alignment("lg-"); }

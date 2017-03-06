@@ -1,0 +1,17 @@
+<% block 'title': %>Components | Images<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Avatar -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Avatar</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <span class="<%- @tpl %>avatar <%- @tpl %>avatar--medium">
+    <img src="//placehold.it/48x48" alt="person name">
+  </span>
+</section>

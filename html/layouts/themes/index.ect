@@ -1,0 +1,246 @@
+<% block 'title': %>Layouts | Themes<% end %>
+<% block 'site-lead': %>
+テーマは、領域に一連のスタイルを適用します。これらは、背景、テキスト、およびボーダーの色の組み合わせを適用します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Color -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Color</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>box <%- @tpl %>m-b--md <%- @tpl %>scrollable">
+    <fieldset class="<%- @tpl %>form-element">
+      <legend class="<%- @tpl %>form-element__label">Theme Setting</legend>
+      <div class="<%- @tpl %>form-element__control">
+        <div class="<%- @tpl %>choice--btn-group <%- @tpl %>btn-group">
+<% for key, index in @siteConfig.themeKeys('container') : %>
+<% myClass = @tpl + 'theme' + key.name %>
+          <label class="<%- @tpl %>choice-btn <%- @tpl %>btn">
+            <input class="demo-change-class" data-target="#demo-box-1" value="<%- myClass %>" type="radio" name="demo-box-1"<% if index == 0 : %> checked<% end %>>
+            <span class="<%- @tpl %>choice__label"><%- key.label %></span>
+          </label>
+<% end %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div id="demo-box-1" class="<%- @tpl %>box <%- @tpl %>scrollable" style="height: 50vh;">
+    <section>
+      <h3>Typographies</h3>
+      <% for color in ['base', 'lead', 'muted', 'primary', 'success', 'info', 'warning', 'danger'] : %>
+      <p class="<%- @tpl %>cl--<%= color %>">カラー（<%= color %>）です。</p>
+      <% end %>
+      <p>ここに<a href="javascript:void(0);">リンクテキスト</a>が入ります。</p>
+
+      <p>ここに<small>サブテキスト（sub 0123456789）</small>が入ります。</p>
+      <p>ここに<strong>強調テキスト（strong 0123456789）</strong>が入ります。</p>
+      <p>ここに<mark>マーキングテキスト（strong 0123456789）</mark>が入ります。</p>
+      <p>ここに<del>打ち消しテキスト（del 0123456789）</del>が入ります。</p>
+      <p>ここに<ins>挿入テキスト（ins 0123456789）</ins>が入ります。</p>
+      <p>ここに<span class="<%- @tpl %>u">下線テキスト（underline 0123456789）</span>が入ります。</p>
+      <p>ここに<span class="<%- @tpl %>italic">斜体テキスト（italic 0123456789）</span>が入ります。</p>
+      <p>ここに<em>強勢テキスト（em 0123456789）</em>が入ります。</p>
+      <p>ここに<ruby><rb>漢字</rb><rp>（</rp><rt>ふりがな</rt><rp>）</rp></ruby>（ruby）が入ります。</p>
+    </section>
+
+    <section>
+      <h3>Buttons</h3>
+      <% for key in @siteConfig.themeKeys('parts') : %>
+      <a class="<%- @tpl %>btn<%- key.name %> <%- @tpl %>btn--sm" href="javascript:void(0);"><%- key.label %></a>
+      <% end %>
+    </section>
+
+    <section>
+      <h3>Forms</h3>
+
+      <div class="<%- @tpl %>form--horizontal">
+        <div class="<%- @tpl %>form-element">
+          <label class="<%- @tpl %>form-element__label" for="horizontal-text-1">Input Label</label>
+          <div class="<%- @tpl %>form-element__control">
+            <input id="horizontal-text-1" type="text" placeholder="text" value="">
+          </div>
+        </div>
+        <div class="<%- @tpl %>form-element">
+          <label class="<%- @tpl %>form-element__label" for="horizontal-textarea-1">Textarea Label</label>
+          <div class="<%- @tpl %>form-element__control">
+            <textarea name="horizontal-textarea-1" id="horizontal-textarea-1" placeholder="Textarea"></textarea>
+          </div>
+        </div>
+        <div class="<%- @tpl %>form-element">
+          <div class="<%- @tpl %>form-element__label">Radio Group Label</div>
+          <div class="<%- @tpl %>form-element__control">
+            <div class="<%- @tpl %>choice--group">
+              <span class="<%- @tpl %>choice">
+                <input type="radio" id="horizontal-radio-1-1" name="horizontal-radio-1">
+                <label class="<%- @tpl %>choice__label" for="horizontal-radio-1-1">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>form-element__label">Radio Label One</span>
+                </label>
+              </span>
+              <span class="<%- @tpl %>choice">
+                <input type="radio" id="horizontal-radio-1-2" name="horizontal-radio-1">
+                <label class="<%- @tpl %>choice__label" for="horizontal-radio-1-2">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>form-element__label">Radio Label One</span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="<%- @tpl %>form-element">
+          <div class="<%- @tpl %>form-element__label">Checkbox Group Label</div>
+          <div class="<%- @tpl %>form-element__control">
+            <div class="<%- @tpl %>choice--group">
+              <span class="<%- @tpl %>choice">
+                <input type="checkbox" id="horizontal-checkbox-1-1" name="horizontal-checkbox-1">
+                <label class="<%- @tpl %>choice__label" for="horizontal-checkbox-1-1">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>form-element__label">Checkbox Label One</span>
+                </label>
+              </span>
+              <span class="<%- @tpl %>choice">
+                <input type="checkbox" id="horizontal-checkbox-1-2" name="horizontal-checkbox-1">
+                <label class="<%- @tpl %>choice__label" for="horizontal-checkbox-1-2">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>form-element__label">Checkbox Label One</span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="<%- @tpl %>form-element">
+          <div class="<%- @tpl %>form-element__label">Toggle Label</div>
+          <div class="<%- @tpl %>form-element__control">
+            <div class="<%- @tpl %>choice--group">
+              <label class="<%- @tpl %>choice--toggle">
+                <span class="<%- @tpl %>form-element__label">With Label</span>
+                <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+                <span id="toggle-desc" class="<%- @tpl %>choice--faux_container" aria-live="assertive">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>choice--on">Enabled</span>
+                  <span class="<%- @tpl %>choice--off">Disabled</span>
+                </span>
+              </label>
+              <label class="<%- @tpl %>choice--toggle">
+                <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+                <span id="toggle-desc" class="<%- @tpl %>choice--faux_container" aria-live="assertive">
+                  <span class="<%- @tpl %>choice--faux"></span>
+                  <span class="<%- @tpl %>choice--on">Enabled</span>
+                  <span class="<%- @tpl %>choice--off">Disabled</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="<%- @tpl %>form-element">
+          <div class="<%- @tpl %>form-element__label" aria-hidden="true">&nbsp;</div>
+          <div class="<%- @tpl %>form-element__control">
+            <span class="<%- @tpl %>choice">
+              <input type="checkbox" id="horizontal-checkbox-2-1" name="horizontal-checkbox-2">
+              <label class="<%- @tpl %>choice__label" for="horizontal-checkbox-2-1">
+                <span class="<%- @tpl %>choice--faux"></span>
+                <span class="<%- @tpl %>form-element__label">利用規約に同意する</span>
+              </label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Lists</h3>
+      <ul class="<%- @tpl %>has-dividers--v <%- @tpl %>list--has-space">
+        <li class="<%- @tpl %>item">Vertical List</li>
+        <li class="<%- @tpl %>item">List Item</li>
+        <li class="<%- @tpl %>item">List Item</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Data Tables</h3>
+
+      <div class="<%- @tpl %>scrollable">
+        <table id="demo-table-1" class="<%- @tpl %>table <%- @tpl %>table--bordered <%- @tpl %>table--cell-buffer">
+          <thead>
+            <tr class="<%- @tpl %>text-title--caps">
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Opportunity Name">Opportunity Name</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Account Name">Account Name</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Close Date">Close Date</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Stage">Stage</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Confidence">Confidence</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Amount">Amount</div>
+              </th>
+              <th scope="col">
+                <div class="<%- @tpl %>truncate" title="Contact">Contact</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-label="Opportunity Name">
+                <div class="<%- @tpl %>truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+              </th>
+              <td data-label="Account Name">
+                <div class="<%- @tpl %>truncate" title="Cloudhub">Cloudhub</div>
+              </td>
+              <td data-label="Close Date">
+                <div class="<%- @tpl %>truncate" title="4/14/2015">4/14/2015</div>
+              </td>
+              <td data-label="Prospecting">
+                <div class="<%- @tpl %>truncate" title="Prospecting">Prospecting</div>
+              </td>
+              <td data-label="Confidence">
+                <div class="<%- @tpl %>truncate" title="20%">20%</div>
+              </td>
+              <td data-label="Amount">
+                <div class="<%- @tpl %>truncate" title="$25k">$25k</div>
+              </td>
+              <td data-label="Contact">
+                <div class="<%- @tpl %>truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" data-label="Opportunity Name">
+                <div class="<%- @tpl %>truncate" title="Cloudhub + Anypoint Connectors"><a href="javascript:void(0);">Cloudhub + Anypoint Connectors</a></div>
+              </th>
+              <td data-label="Account Name">
+                <div class="<%- @tpl %>truncate" title="Cloudhub">Cloudhub</div>
+              </td>
+              <td data-label="Close Date">
+                <div class="<%- @tpl %>truncate" title="4/14/2015">4/14/2015</div>
+              </td>
+              <td data-label="Prospecting">
+                <div class="<%- @tpl %>truncate" title="Prospecting">Prospecting</div>
+              </td>
+              <td data-label="Confidence">
+                <div class="<%- @tpl %>truncate" title="20%">20%</div>
+              </td>
+              <td data-label="Amount">
+                <div class="<%- @tpl %>truncate" title="$25k">$25k</div>
+              </td>
+              <td data-label="Contact">
+                <div class="<%- @tpl %>truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+</section>

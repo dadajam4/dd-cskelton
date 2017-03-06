@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+//
+// Text
+//
+
+@function get-font-size($key, $unit: null) {
+  $value: map-get($font-sizes, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}
+
+@mixin font-size($key, $unit: null) {
+  font-size: get-font-size($key, $unit);
+}
+
+@function get-line-height($key, $unit: null) {
+  $value: map-get($line-heights, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}
+
+@mixin line-height($key, $unit: null) {
+  line-height: get-line-height($key, $unit);
+}
+
+@mixin text-heading--lg() {
+  font-weight: $font-weight-light;
+  font-size: $fs-xxl;
+  line-height: $line-height-heading;
+}
+
+@mixin text-heading--md() {
+  font-weight: $font-weight-light;
+  font-size: $fs-xl;
+  line-height: $line-height-heading;
+}
+
+@mixin text-heading--sm() {
+  font-size: $fs-lg;
+  line-height: $line-height-heading;
+}
+
+@mixin text-heading--xs() {
+  font-size: $fs-md;
+}
+
+@mixin text-link--reset($cursor: pointer) {
+  @if $cursor != null {
+    cursor: $cursor;
+  }
+
+  line-height: inherit;
+  font-size: inherit;
+
+  &,
+  &:active,
+  &:focus,
+  &:hover {
+    color: inherit!important;
+    text-decoration: inherit;
+  }
+}

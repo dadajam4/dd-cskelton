@@ -1,0 +1,16 @@
+<tpl-div class="navbar<% if @theme : %> navbar--<%- @theme %><% end %><% if @fixed : %> navbar--fixed-<%- @fixed %><% end %>">
+  <tpl-div class="navbar__main<% if @position != 'left' : %> navbar__main--<%- @position %><% end %>">
+    <tpl-a class="navbar__item">
+      <tpl-plain-icon tpl-icon="cutlery"></tpl-plain-icon>
+      Menu
+    </tpl-a>
+    <tpl-a class="navbar__item">
+      <tpl-plain-icon tpl-icon="th-list"></tpl-plain-icon>
+      Special
+    </tpl-a>
+    <tpl-a class="navbar__item is-active">
+      <tpl-plain-icon tpl-icon="cog"></tpl-plain-icon>
+      Setting
+    </tpl-a>
+  </tpl-div>
+</tpl-div>

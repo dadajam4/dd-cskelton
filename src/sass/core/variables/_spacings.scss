@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+//
+// Spacings
+//
+
+$spacing-none: 0 !default;
+$spacing-xxxs: .125rem !default;
+$spacing-xxs : .25rem !default;
+$spacing-xs  : .5rem !default;
+$spacing-sm  : .75rem !default;
+$spacing-md  : 1rem !default;
+$spacing-lg  : 1.5rem !default;
+$spacing-xl  : 2rem !default;
+$spacing-xxl : 3rem !default;
+
+// * Alias Map
+$spacings: (
+  none: 0,
+  xxxs: $spacing-xxxs,
+  xxs : $spacing-xxs,
+  xs  : $spacing-xs,
+  sm  : $spacing-sm,
+  md  : $spacing-md,
+  lg  : $spacing-lg,
+  xl  : $spacing-xl,
+  xxl : $spacing-xxl,
+);

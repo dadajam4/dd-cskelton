@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+//
+// File Uploaders
+//
+
+.#{$tpl}form-uploader {
+  transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  background-color: $color-layout-base-shade;
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.#{$tpl}form-uploader__container {
+  width: 100%;
+  // overflow-x: auto;
+  // overflow-y: hidden;
+  @include scrollable--x;
+}
+
+.#{$tpl}form-uploader__input {
+  .#{$tpl}form-element__label {
+    cursor: pointer;
+    @include font-size(md);
+  }
+}
+
+.#{$tpl}form-uploader__image {
+  display: block;
+  @include font-size(xxxl);
+  margin-bottom: .5rem;
+}
+
+.#{$tpl}form-uploader__btn {
+  display: none;
+}
+
+.#{$tpl}form-uploader__file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.#{$tpl}form-uploader__file_list {
+  display: inline-table;
+  text-align: left;
+  @include font-size(sm);
+}
+
+.#{$tpl}form-uploader__file_info {
+  display: table-row;
+  color: $color-typo-disabled;
+
+  &.state-error {
+    color: $color-typo-danger;
+  }
+
+  &.state-uploaded {
+    color: $color-typo-base;
+  }
+}
+
+.#{$tpl}form-uploader__file_name,
+.#{$tpl}form-uploader__file_size,
+.#{$tpl}form-uploader__file_progress,
+.#{$tpl}form-uploader__file_state,
+.#{$tpl}form-uploader__file_actions {
+  display: table-cell;
+  vertical-align: middle;
+  // padding-left: .5rem;
+  // padding-right: .5rem;
+  padding: .5rem;
+}
+
+.#{$tpl}form-uploader__file_name {
+  text-align: right;
+  line-height: 1;
+  min-width: 10em;
+}
+
+.#{$tpl}form-uploader__file_size {
+  @include font-size(xs);
+}
+
+.#{$tpl}form-uploader__file_progress {
+  .#{$tpl}progress {
+    margin: 0;
+    width: 150px;
+  }
+}
+
+.#{$tpl}form-uploader__file_state {
+  @include font-size(xs);
+  white-space: nowrap;
+}
+
+.#{$tpl}form-uploader__file_actions {
+  white-space: nowrap;
+}
+
+.#{$tpl}form-uploader__dragndrop {
+  display: none;
+}
+
+// states
+.#{$tpl}form-uploader {
+
+  &.has-advanced-upload {
+    outline: 2px dashed rgba(0, 0, 0, 0.25);
+    outline-offset: -10px;
+
+    .#{$tpl}form-uploader__dragndrop {
+      display: inline-block;
+    }
+  }
+
+  &.is-dragover {
+    background-color: $color-layout-base;
+    outline-offset: -20px;
+  }
+}

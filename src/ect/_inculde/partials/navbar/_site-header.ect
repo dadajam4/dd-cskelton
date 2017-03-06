@@ -1,0 +1,65 @@
+<tpl-div class="navbar<% if @theme : %> navbar--<%- @theme %><% end %><% if @responsive : %> navbar--responsive<% end %><% if @fixed : %> navbar--fixed-<%- @fixed %><% end %>">
+  <tpl-div class="navbar__left">
+    <tpl-a class="navbar__item"><tpl-span class="text--lg"><tpl-span class="logo-dd"><span>D</span><span>D</span></tpl-span> CSkelton</tpl-span></tpl-a>
+  </tpl-div>
+  <tpl-div class="navbar__main">
+    <tpl-a class="navbar__item">Only link</tpl-a>
+    <tpl-div class="navbar__item">
+      <tpl-a class="navbar__list-trigger">
+        DropDown
+        <tpl-plain-icon tpl-icon="angle-down"></tpl-plain-icon>
+      </tpl-a>
+      <tpl-div class="navbar__list" role="menu">
+        <tpl-a class="navbar__list-item">Item1</tpl-a>
+        <tpl-a class="navbar__list-item">Item2</tpl-a>
+        <tpl-a class="navbar__list-item">Item3</tpl-a>
+        <tpl-div class="navbar__item has-divider--top">
+          <tpl-a class="navbar__list-trigger">
+            Nested DropDown
+            <tpl-plain-icon tpl-icon="angle-down"></tpl-plain-icon>
+          </tpl-a>
+          <tpl-div class="navbar__list" role="menu">
+            <tpl-a class="navbar__list-item">Item4</tpl-a>
+            <tpl-a class="navbar__list-item">Item5Item5Item5</tpl-a>
+            <tpl-a class="navbar__list-item">Item6</tpl-a>
+          </tpl-div>
+        </tpl-div>
+        <tpl-a class="navbar__list-item has-divider--top">Item7</tpl-a>
+      </tpl-div>
+    </tpl-div>
+    <tpl-form-element class="navbar__item" tpl-type="search" tpl-transparent-border="true" tpl-name="navbar-demo-search-<%- @id %>">
+      <data-label>Label</data-label>
+      <data-item placeholder="Placeholder">
+        <data-btn tpl-type="base" class="btn--icon" type="button"><tpl-plain-icon tpl-icon="search"></tpl-plain-icon></data-btn>
+      </data-item>
+    </tpl-form-element>
+    <tpl-div class="navbar__item is-static">
+      Text
+    </tpl-div>
+  </tpl-div>
+  <tpl-div class="navbar__right">
+    <tpl-a class="navbar__item">
+      <tpl-plain-icon tpl-icon="bell" class="text--md align--middle"></tpl-icon>
+    </tpl-a>
+    <tpl-div class="navbar__item">
+      <tpl-a class="navbar__list-trigger">
+        <tpl-avatar src="/assets/img/avatar2.jpg" alt="person name" tpl-size="sm"></tpl-avatar>
+        <tpl-plain-icon tpl-icon="caret-down" class="text--sm align--middle"></tpl-icon>
+      </tpl-a>
+      <tpl-div class="navbar__list navbar__list--right" role="menu">
+        <tpl-div class="navbar__list-item has-divider--bottom is-static">
+          <tpl-div class="line-height--sm p-v--sm">
+            Signed in as<br>user name
+          </tpl-div>
+        </tpl-div>
+        <tpl-a class="navbar__list-item">Your profile</tpl-a>
+        <tpl-a class="navbar__list-item">Your stars</tpl-a>
+        <tpl-a class="navbar__list-item has-divider--top">Settings</tpl-a>
+        <tpl-a class="navbar__list-item">Sign out</tpl-a>
+      </tpl-div>
+    </tpl-div>
+    <% if @responsive : %>
+    <tpl-button class="navbar__trigger" type="button"><span>menu</span></tpl-button>
+    <% end %>
+  </tpl-div>
+</tpl-div>

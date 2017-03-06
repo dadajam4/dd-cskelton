@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+//
+// Panels
+//
+
+.#{$tpl}popover--panel {
+
+  .#{$tpl}popover__header {
+    background: $color-container-neutral-bg;
+    padding: $spacing-lg $spacing-lg $spacing-sm;
+    border-top-left-radius: calc(#{$border-radius-md} - #{$border-width-thin});
+    border-top-right-radius: calc(#{$border-radius-md} - #{$border-width-thin});
+  }
+
+  .#{$tpl}popover__body {
+    padding: 0;
+  }
+
+  .#{$tpl}popover__body-list {
+    padding: $spacing-md $spacing-lg;
+    border-top: $border-width-thin solid $color-divider;
+  }
+
+  // Deal with Nubbin Color
+  &.#{$tpl}nubbin--left-top,
+  &.#{$tpl}nubbin--right-top,
+  &.#{$tpl}nubbin--top-left,
+  &.#{$tpl}nubbin--top-right {
+
+    &:before,
+    &:after {
+      background: $color-container-neutral-bg;
+    }
+  }
+
+  // Align nubbin to the icon
+  &.#{$tpl}nubbin--left-top,
+  &.#{$tpl}nubbin--right-top {
+
+    &:before,
+    &:after {
+      top: ($spacing-lg + $spacing-sm);
+    }
+  }
+}

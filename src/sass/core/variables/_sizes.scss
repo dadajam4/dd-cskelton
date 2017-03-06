@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+//
+// Sizes
+//
+
+$size-xxs: 2rem !default;
+$size-xs : 4rem !default;
+$size-sm : 8rem !default;
+$size-md : 14rem !default;
+$size-lg : 20rem !default;
+$size-xl : 30rem !default;
+$size-xxl: 60rem !default;
+
+// nav bar
+$size-navbar-height: 50px !default;
+$size-navbar-side-action-width: 90px !default;
+
+// btn
+$size-btn-padding-horizontal: 1rem !default;
+
+// field
+$size-field-height-xxs        : 1.2rem !default;
+$size-field-height-xs         : 1.5rem !default;
+$size-field-height-sm         : 1.8rem !default;
+$size-field-height-md         : 2.5rem !default;
+$size-field-height-lg         : 3rem !default;
+$size-field-height-xl         : 4rem !default;
+$size-field-margin            : .2rem !default;
+$size-field-padding-horizontal: .7rem !default;
+
+// textarea
+$size-textarea-height-sm       : 4.5rem !default;
+$size-textarea-height-md       : 8.5rem !default;
+$size-textarea-height-lg       : 10rem !default;
+$size-textarea-padding-vertical: .3rem !default;
+
+// pill
+$size-pill-padding-horizontal: .75rem !default;
+$size-pill-height-sm         : $size-field-height-xxs !default;
+$size-pill-height-md         : $size-field-height-xs !default;
+$size-pill-height-lg         : $size-field-height-sm !default;
+
+// spinner
+$size-spinner-xs: .8rem;
+$size-spinner-sm: 1.25rem;
+$size-spinner-md: 2rem;
+$size-spinner-lg: 3.2rem;
+$size-spinner-xl: 5rem;
+
+// * Alias Map
+$sizes: (
+  xxs: $size-xxs,
+  xs : $size-xs,
+  sm : $size-sm,
+  md : $size-md,
+  lg : $size-lg,
+  xl : $size-xl,
+  xxl: $size-xxl,
+
+  navbar-height           : $size-navbar-height,
+  navbar-side-action-width: $size-navbar-side-action-width,
+
+  btn-padding-horizontal: $size-btn-padding-horizontal,
+
+  field-height-xxs        : $size-field-height-xxs,
+  field-height-xs         : $size-field-height-xs,
+  field-height-sm         : $size-field-height-sm,
+  field-height-md         : $size-field-height-md,
+  field-height-lg         : $size-field-height-lg,
+  field-height-xl         : $size-field-height-xl,
+  field-margin            : $size-field-margin,
+  field-padding-horizontal: $size-field-padding-horizontal,
+
+  textarea-height-sm  : $size-textarea-height-sm,
+  textarea-height-md  : $size-textarea-height-md,
+  textarea-height-lg  : $size-textarea-height-lg,
+  textarea-padding-vertical: $size-textarea-padding-vertical,
+
+  pill-height-sm: $size-pill-height-sm,
+  pill-height-md: $size-pill-height-md,
+  pill-height-lg: $size-pill-height-lg,
+
+  spinner-xs: $size-spinner-xs,
+  spinner-sm: $size-spinner-sm,
+  spinner-md: $size-spinner-md,
+  spinner-lg: $size-spinner-lg,
+  spinner-xl: $size-spinner-xl,
+);
+
+$size-key-list: xxs, xs, sm, md, lg, xl, xxl;
+$btn-height-list: xs, sm, md, lg, xl;
+$pill-height-list: sm, md, lg;
+
+$max-height-action-overflow-menu: 628px !default;
+$max-height-card-media: 144px !default;
+$max-height-header-brand: 32px !default;
+$max-width-action-bar: 600px !default;
+$max-width-action-bar-item: 120px !default;
+$max-width-action-bar-with-labels: 320px !default;
+$max-width-action-overflow-menu: 512px !default;
+$max-width-header-brand: 156px !default;
+
+$square-tooltip: 1.25rem !default;
+$square-tooltip-nubbin: 1rem !default;

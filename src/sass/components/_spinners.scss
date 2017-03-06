@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+//
+// Spinners
+//
+
+.#{$tpl}spinner-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: calc(#{$z-index-modal} + 2);
+  background-color: rgba($color-brand-base, .75);
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease, visibility 0s;
+  transition-delay: 0s, 0.3s;
+}
+
+.#{$tpl}spinner-container.#{$tpl}is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0s;
+  transition-delay: 0s, 0s;
+}
+
+.#{$tpl}spinner-container.#{$tpl}hide {
+  display: none;
+}
+
+
+.#{$tpl}spinner {
+  @include spinner-base($with-container: true);
+
+  @each $size in xs, sm, lg, xl {
+    &--#{$size} {
+      @include spinner-size($size: $size, $with-container: true);
+    }
+  }
+}
+

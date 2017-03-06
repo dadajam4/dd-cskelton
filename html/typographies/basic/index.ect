@@ -1,0 +1,73 @@
+<% block 'title': %>Typographies | Basic<% end %>
+<% block 'site-lead': %>
+テキストの基本的なマークアップです。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Text Example -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Text Example</span></h2>
+
+  <p>そのころわたくしは、モリーオ市の博物局に勤めて居りました。<br>十八等官でしたから役所のなかでも、ずうっと下の方でしたし<ruby><rb>俸給</rb><rp>（</rp><rt>ほうきゅう</rt><rp>）</rp></ruby>もほんのわずかでしたが、受持ちが標本の採集や整理で生れ付き好きなことでしたから、わたくしは毎日ずいぶん愉快にはたらきました。殊にそのころ、モリーオ市では競馬場を植物園に<ruby><rb>拵</rb><rp>（</rp><rt>こしら</rt><rp>）</rp></ruby>え直すというので、その景色のいいまわりにアカシヤを植え込んだ広い地面が、切符売場や信号所の建物のついたまま、わたくしどもの役所の方へまわって来たものですから、わたくしはすぐ宿直という名前で月賦で買った小さな蓄音器と二十枚ばかりのレコードをもって、その番小屋にひとり住むことになりました。わたくしはそこの馬を置く場所に板で小さなしきいをつけて一疋の山羊を飼いました。毎朝その乳をしぼってつめたいパンをひたしてたべ、それから黒い革のかばんへすこしの書類や雑誌を入れ、靴もきれいにみがき、並木のポプラの影法師を大股にわたって市の役所へ出て行くのでした。<br>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。<br>またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう</p>
+</section>
+
+<!-- Sizing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Sizing</span></h2>
+
+  <% for size in ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl'] : %>
+  <p class="<%- @tpl %>fs--<%= size %>">サイズ（<%= size %>）のテキストです。 This is size(<%= size %>).</p>
+  <% end %>
+</section>
+
+<!-- Line Height -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Line Height</span></h2>
+
+  <% for size in ['xxs', 'xs', 'sm', 'base', 'lg', 'xl'] : %>
+  <p class="<%- @tpl %>lh--<%= size %>">行間（<%= size %>）のテキストです。のテキストです。のテキストです。 This is Line Height(<%= size %>).</p>
+  <% end %>
+</section>
+
+<!-- Color -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Color</span></h2>
+
+  <% for color in ['base', 'lead', 'muted', 'primary', 'success', 'info', 'warning', 'danger'] : %>
+  <p class="<%- @tpl %>cl--<%= color %>">カラー（<%= color %>）です。</p>
+  <% end %>
+</section>
+
+<!-- Effect -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Effect</span></h2>
+
+  <p>ここに<small>サブテキスト（sub 0123456789）</small>が入ります。</p>
+  <p>ここに<strong>強調テキスト（strong 0123456789）</strong>が入ります。</p>
+  <p>ここに<mark>マーキングテキスト（strong 0123456789）</mark>が入ります。</p>
+  <p>ここに<del>打ち消しテキスト（del 0123456789）</del>が入ります。</p>
+  <p>ここに<ins>挿入テキスト（ins 0123456789）</ins>が入ります。</p>
+  <p>ここに<span class="<%- @tpl %>u">下線テキスト（underline 0123456789）</span>が入ります。</p>
+  <p>ここに<span class="<%- @tpl %>italic">斜体テキスト（italic 0123456789）</span>が入ります。</p>
+  <p>ここに<em>強勢テキスト（em 0123456789）</em>が入ります。</p>
+  <p>ここに<ruby><rb>漢字</rb><rp>（</rp><rt>ふりがな</rt><rp>）</rp></ruby>（ruby）が入ります。</p>
+</section>
+
+<!-- Paragraphs -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Paragraphs</span></h2>
+
+  <p>段落が入ります。</p>
+  <div class="<%- @tpl %>para">段落が入ります。</div>
+  <p>段落が入ります。</p>
+</section>
+
+<!-- Links -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Links</span></h2>
+
+  <p>ここに<a href="">リンクテキスト</a>が入ります。</p>
+  <p>Here is <a href="">link text</a>.</p>
+</section>
+
+

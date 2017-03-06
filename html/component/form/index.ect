@@ -1,0 +1,817 @@
+<% block 'title': %>Component | Form<% end %>
+<% block 'site-lead': %>
+フォーム要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<%
+textFieldTypes = [
+  'text',
+  'password',
+  'search',
+  'tel',
+  'url',
+  'email',
+  'datetime',
+  'date',
+  'month',
+  'week',
+  'time',
+  'datetime-local',
+  'number';
+];
+%>
+
+<!-- Basic Elements -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Basic Elements : 基本要素</h2>
+  <div class="acs-small">
+    基本的なフォーム要素群です。特別なクラス名を指定しない通常のHTMLマークアップ状態でのスタイル例です。
+  </div>
+
+  <section class="<%- @tpl %>-section">
+    <h3>Text Field : テキストフィールド</h3>
+
+    <dl>
+      <dt>通常</dt>
+      <dd>
+<% for type in textFieldTypes : %>
+        <input type="<%- type %>" placeholder="<%- type %>">
+<% end %>
+        <textarea placeholder="textarea"></textarea>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>読み取り専用</dt>
+      <dd>
+        <input type="text" placeholder="text" value="入力内容" readonly>
+        <textarea placeholder="textarea" readonly>入力内容が入ります。</textarea>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>操作無効</dt>
+      <dd>
+        <input type="text" placeholder="text" value="入力内容" disabled>
+        <textarea placeholder="textarea" disabled>入力内容が入ります。</textarea>
+      </dd>
+    </dl>
+  </section>
+
+  <section class="<%- @tpl %>-section">
+    <h3>Choice : 選択</h3>
+
+    <dl>
+      <dt>通常</dt>
+      <dd>
+        <input type="checkbox" name="checkbox-1" value="1">
+        <input type="checkbox" name="checkbox-1" value="2" checked="checked">
+        <input type="radio" name="radio-1" value="1">
+        <input type="radio" name="radio-1" value="2" checked="checked">
+        <select name="multiple-select-1" multiple>
+          <option value="1">選択肢1</option>
+          <option value="2" selected="selected">選択肢2</option>
+          <option value="3">選択肢3</option>
+        </select>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>操作無効</dt>
+      <dd>
+        <input type="checkbox" name="checkbox-2" value="1" disabled>
+        <input type="checkbox" name="checkbox-2" value="2" checked="checked" disabled>
+        <input type="radio" name="radio-2" value="1" disabled>
+        <input type="radio" name="radio-2" value="2" checked="checked" disabled>
+        <select name="multiple-select-2" multiple disabled>
+          <option value="1">選択肢1</option>
+          <option value="2" selected="selected">選択肢2</option>
+          <option value="3">選択肢3</option>
+        </select>
+      </dd>
+    </dl>
+  </section>
+
+  <section class="<%- @tpl %>-section">
+    <h3>Pull Down : プルダウン</h3>
+
+    <dl>
+      <dt>通常</dt>
+      <dd>
+        <select name="select-1">
+          <option value="1">選択肢1</option>
+          <option value="2">選択肢2</option>
+          <option value="3">選択肢3</option>
+        </select>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>操作無効</dt>
+      <dd>
+        <select name="select-2" disabled>
+          <option value="1">選択肢1</option>
+          <option value="2">選択肢2</option>
+          <option value="3">選択肢3</option>
+        </select>
+      </dd>
+    </dl>
+  </section>
+
+  <section class="<%- @tpl %>-section">
+    <h3>Picker : ピッカー</h3>
+
+    <dl>
+      <dt>通常</dt>
+      <dd>
+        <input type="color" name="color-1">
+        <input type="file" name="file-1">
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>操作無効</dt>
+      <dd>
+        <input type="color" name="color-2" disabled>
+        <input type="file" name="file-2" disabled>
+      </dd>
+    </dl>
+  </section>
+</section>
+
+
+
+<!-- Text Field -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Text Field : テキストフィールド</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="el-text-1">Input Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <input id="el-text-1" type="text" placeholder="text" value="">
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="el-text-2">Textarea Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <textarea id="el-text-2" placeholder="textarea"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- Radio -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Radio : ラジオボタン</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Radio Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--group">
+        <span class="<%- @tpl %>-choice">
+          <input type="radio" id="el-radio-1-1" name="el-radio-1">
+          <label class="<%- @tpl %>-choice__label" for="el-radio-1-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+          </label>
+        </span>
+        <span class="<%- @tpl %>-choice">
+          <input type="radio" id="el-radio-1-2" name="el-radio-1">
+          <label class="<%- @tpl %>-choice__label" for="el-radio-1-2">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Radio Inline -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Radio Inline : ラジオボタン - インライン</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Radio Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--group <%- @tpl %>-choice--group-inline">
+        <span class="<%- @tpl %>-choice">
+          <input type="radio" id="el-radio-inline-1-1" name="el-radio-inline-1">
+          <label class="<%- @tpl %>-choice__label" for="el-radio-inline-1-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+          </label>
+        </span>
+        <span class="<%- @tpl %>-choice">
+          <input type="radio" id="el-radio-inline-1-2" name="el-radio-inline-1">
+          <label class="<%- @tpl %>-choice__label" for="el-radio-inline-1-2">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Radio Group Alternate -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Radio Group Alternate</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Radio Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--btn-group <%- @tpl %>-btn-group">
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="radio" name="el-radio-2">
+          <span class="<%- @tpl %>-choice__label">Mon</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="radio" name="el-radio-2">
+          <span class="<%- @tpl %>-choice__label">Tue</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="radio" name="el-radio-2">
+          <span class="<%- @tpl %>-choice__label">Wed</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="radio" name="el-radio-2">
+          <span class="<%- @tpl %>-choice__label">Thu</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="radio" name="el-radio-2">
+          <span class="<%- @tpl %>-choice__label">Fri</span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Checkbox -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Checkbox</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Checkbox Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--group">
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="el-checkbox-1-1" name="el-checkbox-1">
+          <label class="<%- @tpl %>-choice__label" for="el-checkbox-1-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+          </label>
+        </span>
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="el-checkbox-1-2" name="el-checkbox-1">
+          <label class="<%- @tpl %>-choice__label" for="el-checkbox-1-2">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Checkbox Inline -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Checkbox Inline</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Checkbox Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--group <%- @tpl %>-choice--group-inline">
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="el-checkbox-inline-1-1" name="el-checkbox-inline-1">
+          <label class="<%- @tpl %>-choice__label" for="el-checkbox-inline-1-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+          </label>
+        </span>
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="el-checkbox-inline-1-2" name="el-checkbox-inline-1">
+          <label class="<%- @tpl %>-choice__label" for="el-checkbox-inline-1-2">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Checkbox Group Alternate -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Checkbox Group Alternate</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form-element">
+    <legend class="<%- @tpl %>-form-element__label">Checkbox Group Label</legend>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-choice--btn-group <%- @tpl %>-btn-group">
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="checkbox" name="el-checkbox-2">
+          <span class="<%- @tpl %>-choice__label">Mon</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="checkbox" name="el-checkbox-2">
+          <span class="<%- @tpl %>-choice__label">Tue</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="checkbox" name="el-checkbox-2">
+          <span class="<%- @tpl %>-choice__label">Wed</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="checkbox" name="el-checkbox-2">
+          <span class="<%- @tpl %>-choice__label">Thu</span>
+        </label>
+        <label class="<%- @tpl %>-choice-btn <%- @tpl %>-btn">
+          <input type="checkbox" name="el-checkbox-2">
+          <span class="<%- @tpl %>-choice__label">Fri</span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Checkbox Toggle -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Checkbox Toggle</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-choice--toggle">
+      <span class="<%- @tpl %>-form-element__label">Toggle Label</span>
+      <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+      <span id="toggle-desc" class="<%- @tpl %>-choice--faux_container" aria-live="assertive">
+        <span class="<%- @tpl %>-choice--faux"></span>
+        <span class="<%- @tpl %>-choice--on">Enabled</span>
+        <span class="<%- @tpl %>-choice--off">Disabled</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<!-- Pull Down -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Pull Down</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="el-select-1">Select Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-select_container">
+        <select id="el-select-1">
+          <option>Option One</option>
+          <option>Option Two</option>
+          <option>Option Three</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Horizontal Form -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Horizontal Form</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form--horizontal">
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="horizontal-text-1">Input Label</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <input id="horizontal-text-1" type="text" placeholder="text" value="">
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="horizontal-textarea-1">Textarea Label</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <textarea name="horizontal-textarea-1" id="horizontal-textarea-1" placeholder="Textarea"></textarea>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Radio Group Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <span class="<%- @tpl %>-choice">
+            <input type="radio" id="horizontal-radio-1-1" name="horizontal-radio-1">
+            <label class="<%- @tpl %>-choice__label" for="horizontal-radio-1-1">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+            </label>
+          </span>
+          <span class="<%- @tpl %>-choice">
+            <input type="radio" id="horizontal-radio-1-2" name="horizontal-radio-1">
+            <label class="<%- @tpl %>-choice__label" for="horizontal-radio-1-2">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+            </label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Checkbox Group Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <span class="<%- @tpl %>-choice">
+            <input type="checkbox" id="horizontal-checkbox-1-1" name="horizontal-checkbox-1">
+            <label class="<%- @tpl %>-choice__label" for="horizontal-checkbox-1-1">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+            </label>
+          </span>
+          <span class="<%- @tpl %>-choice">
+            <input type="checkbox" id="horizontal-checkbox-1-2" name="horizontal-checkbox-1">
+            <label class="<%- @tpl %>-choice__label" for="horizontal-checkbox-1-2">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+            </label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Toggle Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <label class="<%- @tpl %>-choice--toggle">
+            <span class="<%- @tpl %>-form-element__label">With Label</span>
+            <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="<%- @tpl %>-choice--faux_container" aria-live="assertive">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-choice--on">Enabled</span>
+              <span class="<%- @tpl %>-choice--off">Disabled</span>
+            </span>
+          </label>
+          <label class="<%- @tpl %>-choice--toggle">
+            <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="<%- @tpl %>-choice--faux_container" aria-live="assertive">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-choice--on">Enabled</span>
+              <span class="<%- @tpl %>-choice--off">Disabled</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label" aria-hidden="true">&nbsp;</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="horizontal-checkbox-2-1" name="horizontal-checkbox-2">
+          <label class="<%- @tpl %>-choice__label" for="horizontal-checkbox-2-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">利用規約に同意する</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stacked Form -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Stacked Form</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form--stacked">
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="stacked-text-1">Input Label</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <input id="stacked-text-1" type="text" placeholder="text" value="">
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="stacked-textarea-1">Textarea Label</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <textarea name="stacked-textarea-1" id="stacked-textarea-1" placeholder="Textarea"></textarea>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Radio Group Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <span class="<%- @tpl %>-choice">
+            <input type="radio" id="stacked-radio-1-1" name="stacked-radio-1">
+            <label class="<%- @tpl %>-choice__label" for="stacked-radio-1-1">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+            </label>
+          </span>
+          <span class="<%- @tpl %>-choice">
+            <input type="radio" id="stacked-radio-1-2" name="stacked-radio-1">
+            <label class="<%- @tpl %>-choice__label" for="stacked-radio-1-2">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Radio Label One</span>
+            </label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Toggle Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <label class="<%- @tpl %>-choice--toggle">
+            <span class="<%- @tpl %>-form-element__label">With Label</span>
+            <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="<%- @tpl %>-choice--faux_container" aria-live="assertive">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-choice--on">Enabled</span>
+              <span class="<%- @tpl %>-choice--off">Disabled</span>
+            </span>
+          </label>
+          <label class="<%- @tpl %>-choice--toggle">
+            <input name="checkbox" type="checkbox" aria-describedby="toggle-desc">
+            <span id="toggle-desc" class="<%- @tpl %>-choice--faux_container" aria-live="assertive">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-choice--on">Enabled</span>
+              <span class="<%- @tpl %>-choice--off">Disabled</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label">Checkbox Group Label</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <div class="<%- @tpl %>-choice--group">
+          <span class="<%- @tpl %>-choice">
+            <input type="checkbox" id="stacked-checkbox-1-1" name="stacked-checkbox-1">
+            <label class="<%- @tpl %>-choice__label" for="stacked-checkbox-1-1">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+            </label>
+          </span>
+          <span class="<%- @tpl %>-choice">
+            <input type="checkbox" id="stacked-checkbox-1-2" name="stacked-checkbox-1">
+            <label class="<%- @tpl %>-choice__label" for="stacked-checkbox-1-2">
+              <span class="<%- @tpl %>-choice--faux"></span>
+              <span class="<%- @tpl %>-form-element__label">Checkbox Label One</span>
+            </label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label" aria-hidden="true">&nbsp;</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <span class="<%- @tpl %>-choice">
+          <input type="checkbox" id="stacked-checkbox-2-1" name="stacked-checkbox-2">
+          <label class="<%- @tpl %>-choice__label" for="stacked-checkbox-2-1">
+            <span class="<%- @tpl %>-choice--faux"></span>
+            <span class="<%- @tpl %>-form-element__label">利用規約に同意する</span>
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inline Form -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Inline Form</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form--inline">
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="inline-text-1">Name</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <input id="inline-text-1" type="text" placeholder="text" value="">
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <label class="<%- @tpl %>-form-element__label" for="inline-text-2">Email</label>
+      <div class="<%- @tpl %>-form-element__control">
+        <input id="inline-text-2" type="text" placeholder="text" value="">
+      </div>
+    </div>
+    <div class="<%- @tpl %>-form-element">
+      <div class="<%- @tpl %>-form-element__label" aria-hidden="true">&nbsp;</div>
+      <div class="<%- @tpl %>-form-element__control">
+        <button type="button" class="<%- @tpl %>-btn <%- @tpl %>-btn--sm <%- @tpl %>-btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compound Form -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Compound Form</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <fieldset class="<%- @tpl %>-form--compound">
+    <legend class="<%- @tpl %>-form-element__label <%- @tpl %>-text-title--caps">Location</legend>
+    <div class="<%- @tpl %>-form-element__group">
+      <div class="<%- @tpl %>-form-element__row">
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-2">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-1">Latitude</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-1" type="text" placeholder="text" value="">
+          </div>
+        </div>
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-2">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-2">Longitude</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-2" type="text" placeholder="text" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="<%- @tpl %>-form--compound">
+    <legend class="<%- @tpl %>-form-element__label <%- @tpl %>-text-title--caps">ADDRESS</legend>
+    <div class="<%- @tpl %>-form-element__group">
+      <div class="<%- @tpl %>-form-element__row">
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-1">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-3">Street</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-3" type="text" placeholder="text" value="">
+          </div>
+        </div>
+      </div>
+      <div class="<%- @tpl %>-form-element__row">
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-2">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-4">City</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-4" type="text" placeholder="text" value="">
+          </div>
+        </div>
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-2">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-5">State</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-5" type="text" placeholder="text" value="">
+          </div>
+        </div>
+      </div>
+      <div class="<%- @tpl %>-form-element__row">
+        <div class="<%- @tpl %>-form-element <%- @tpl %>-size--1-1">
+          <label class="<%- @tpl %>-form-element__label" for="compound-text-6">ZIP Code</label>
+          <div class="<%- @tpl %>-form-element__control">
+            <input id="compound-text-6" type="text" placeholder="text" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<!-- Button Group -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Button Group</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="button-text-1">Text Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-form-element__btn_group">
+        <input id="button-text-1" type="text" placeholder="Field Level Help" value="">
+        <button class="<%- @tpl %>-btn <%- @tpl %>-btn--icon" type="button">ボタン</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="button-text-1">Text Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-form-element__btn_group">
+        <input id="button-text-1" type="text" placeholder="Field Level Help" value="">
+        <button class="<%- @tpl %>-btn <%- @tpl %>-btn--icon" type="button"><span class="icon-search"></span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="button-text-1">Text Label</label>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-form-element__btn_group">
+        <input id="button-text-1" type="text" placeholder="Field Level Help" value="">
+        <button class="<%- @tpl %>-btn <%- @tpl %>-btn-primary <%- @tpl %>-btn--icon" type="button"><span class="icon-file"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Field Level Help -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Field Level Help</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="help-text-1">
+      Text Label
+      <a class="<%- @tpl %>-form-element__label_icon icon-info-circle" href="javascript:void(0);"></a>
+    </label>
+    <div class="<%- @tpl %>-form-element__control">
+      <input id="help-text-1" type="text" placeholder="Field Level Help" value="" aria-describedby="help">
+    </div>
+  </div>
+</section>
+
+<!-- File Uploader -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">File Uploader</h2>
+  <div class="acs-small">
+    テキストが入ります。テキストが入ります。
+  </div>
+
+<%
+uploaderStates = [
+  {state: 'no-advanced-upload', name: 'ドラッグ利用できない時'},
+  {state: ''                  , name: 'ドラッグできる時'},
+  {state: 'is-dragover'       , name: 'ドラッグ中の時'},
+  {state: 'state-uploading'   , name: 'アップロード中の時'},
+];
+
+fileStates = {
+uploading: {label: 'アップロード中', progress: 'primary', action: 'キャンセル'},
+error    : {label: '失敗しました'  , progress: 'danger' , action: '削除'},
+uploaded : {label: '完了しました'  , progress: 'primary', action: '削除'},
+};
+
+uploadFiles = [
+{name: 'ファイル1.txt', size: 10  , progress:   0, state: 'uploading'},
+{name: 'ファイル2.txt', size: 10  , progress:  10, state: 'error'},
+{name: 'ファイル3.zip', size: 500 , progress:  50, state: 'uploading'},
+{name: 'ファイル4 ファイル4 ファイル4.torrent', size: 1000, progress: 100, state: 'uploaded'},
+];
+%>
+<% for define, index in uploaderStates : %>
+<% stateClass = if define.state == 'no-advanced-upload' then '' else ' has-advanced-upload ' + define.state %>
+  <div class="<%- @tpl %>-form-element">
+    <label class="<%- @tpl %>-form-element__label" for="uploader-<%- index %>"><%- define.name %></label>
+    <div class="<%- @tpl %>-form-element__control">
+      <div class="<%- @tpl %>-form-uploader<%- stateClass %>">
+        <div class="<%- @tpl %>-form-uploader__input">
+          <span class="<%- @tpl %>-form-uploader__image icon-download"></span>
+          <input class="<%- @tpl %>-form-uploader__file" type="file" name="files[]" id="uploader-<%- index %>" data-multiple-caption="{count} files selected" multiple>
+          <label class="<%- @tpl %>-form-element__label" for="uploader-<%- index %>">
+            <strong>ファイルを選択</strong>
+            <span class="<%- @tpl %>-form-uploader__dragndrop"> もしくはここにドラッグ＆ドロップします</span>
+          </label>
+          <button class="<%- @tpl %>-form-uploader__btn <%- @tpl %>-btn <%- @tpl %>-btn-primary" type="submit">Upload</button>
+        </div>
+        <div class="<%- @tpl %>-form-uploader__container">
+          <div class="<%- @tpl %>-form-uploader__file_list">
+<% if define.state == 'state-uploading' : %>
+<% for file, index in uploadFiles : %>
+<% stateName = fileStates[file.state].label; %>
+<% actionName = fileStates[file.state].action; %>
+<% progressType = fileStates[file.state].progress; %>
+            <div class="<%- @tpl %>-form-uploader__file_info state-<%- file.state %>">
+              <div class="<%- @tpl %>-form-uploader__file_name"><%- file.name %></div>
+              <div class="<%- @tpl %>-form-uploader__file_size"><%- file.size %>Mb</div>
+              <div class="<%- @tpl %>-form-uploader__file_progress"><div class="<%- @tpl %>-progress <%- @tpl %>-progress-<%- progressType %>" data-value="<%- file.progress %>" data-max="100" data-percent="<%- file.progress %>"></div></div>
+              <div class="<%- @tpl %>-form-uploader__file_state"><%- stateName %></div>
+              <div class="<%- @tpl %>-form-uploader__file_actions">
+                <a href="javascript:void(0);"><%- actionName %></a>
+              </div>
+            </div>
+<% end %>
+<% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</section>

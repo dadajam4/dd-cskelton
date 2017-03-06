@@ -1,0 +1,26 @@
+<% block 'title': %>Layout | Themes<% end %>
+<% block 'site-lead': %>
+テーマは、領域に一連のスタイルを適用します。これらは、背景、テキスト、およびボーダーの色の組み合わせを適用します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<%
+themes = [
+  {name: 'default', label: 'Default'},
+  {name: 'shade'  , label: 'Shade'},
+  {name: 'primary', label: 'Primary'},
+  {name: 'info'   , label: 'Info'},
+  {name: 'warning', label: 'Warning'},
+  {name: 'danger' , label: 'Danger'},
+];
+%>
+<!-- Color -->
+<section class="<%- @tpl %>-section <%- @tpl %>-container">
+  <h2 class="<%- @tpl %>-h-section">Color</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+<% for theme in themes %>
+<% end %>
+</section>

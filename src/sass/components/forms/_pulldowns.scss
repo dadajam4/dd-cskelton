@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+//
+// Pulldowns
+//
+
+$select-tri-color: #061c3f;
+$select-tri-size: 5px;
+
+select {
+  // padding: 0 $field-horizontal-padding;
+  border-color: $color-divider;
+  background-color: $color-layout-base;
+  box-shadow: none;
+  border-radius: $border-radius-field;
+  border-style: solid;
+  border-width: $border-width-field;
+  outline: none;
+
+  &:focus {
+    border-color: $color-divider-focus;
+    background-color: $color-layout-base-focus;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: $color-divider-disabled;
+    background-color: $color-layout-base-disabled;
+  }
+
+  &:not([multiple]) {
+    @include field-height(md);
+  }
+
+  &[multiple] {
+    height: auto;
+  }
+}
+
+
+
+.#{$tpl}form-element {
+  select {
+    @include field-style;
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  &--sm select:not([multiple]) {
+    @include font-size(sm);
+    padding: 0 $size-field-padding-horizontal / 1.5;
+    @include field-height(sm);
+  }
+
+  &--lg select:not([multiple]) {
+    @include font-size(lg);
+    @include field-height(lg);
+  }
+}
+
+.#{$tpl}select-container {
+  position: relative;
+  z-index: 1;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+  }
+
+  &:before {
+    border-bottom: $select-tri-size solid $select-tri-color;
+    top: calc(45% - #{$select-tri-size + 1px});
+
+    .#{$tpl}has-error & {
+      border-bottom-color: $color-brand-danger;
+    }
+  }
+
+  &:after {
+    border-top: $select-tri-size solid $select-tri-color;
+    bottom: calc(45% - #{$select-tri-size + 1px});
+
+    .#{$tpl}has-error & {
+      border-top-color: $color-brand-danger;
+    }
+  }
+
+  select {
+    @include field-style;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 3rem;
+
+    .#{$tpl}has-error & {
+      border-color: $color-brand-danger;
+    }
+  }
+}

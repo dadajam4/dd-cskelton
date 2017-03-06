@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+//
+// Utilitiy
+//
+
+@function nounit($value) {
+  $_nounit_divisor: (floor($value) * 2) % 2 + 1;
+  @return ($value / $_nounit_divisor);
+}
+
+@function rem2px($rem) {
+  @return nounit($rem) * $html-base-font-size;
+}
+
+@mixin class-start($classname) {
+  [class^="#{$classname}"], [class*=" #{$classname}"] {
+    @content;
+  }
+}
+
+@mixin class-links() {
+  $all: ();
+
+  @each $one in selector-parse(&) {
+    $lastValue: nth($one, -1);
+    $lastIndex: length($one);
+
+    $all: append($all, set-nth($one, $lastIndex, a#{$lastValue}), comma);
+    $all: append($all, set-nth($one, $lastIndex, button#{$lastValue}), comma);
+  }
+
+  @at-root #{$all} {
+    @content;
+  }
+}
+
+// clearfix
+@mixin clearfix() {
+  &:after {
+    display: block;
+    content: "";
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+}
+
+@mixin effect-fade($targets: ":hover", $prop: opacity, $value: 0.75, $duration: $duration-promptly) {
+  transition: $prop $duration;
+
+  @each $target in $targets {
+    &#{$target} {
+      #{$prop}: $value;
+    }
+  }
+}
+
+@mixin user-drag($drag) {
+  -webkit-user-drag: $drag;
+  -khtml-user-drag: $drag;
+  user-drag: $drag;
+}
+
+@mixin truncate($max-width: 100%, $text: ellipsis) {
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: $text;
+  white-space: nowrap;
+}
+
+// Hyphenate
+@mixin hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@function brightness($color) {
+  $sum: red($color) + green($color) + blue($color);
+  @return percentage($sum / (255*3));
+}
+
+@mixin remove-tap-highlight() {
+  -webkit-tap-highlight-color: rgba(0 ,0 , 0, 0);
+}

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+//
+// Durations
+//
+$duration-instantly: 0s !default;
+$duration-immediately: 0.05s !default;
+$duration-quickly: 0.1s !default;
+$duration-promptly: 0.2s !default;
+$duration-slowly: 0.4s !default;
+$duration-paused: 3.2s !default;
+$duration-toast-short: 4.8s !default;
+$duration-toast-medium: 9.6s !default;
+
+// * Alias Map
+$duration: (
+  instantly   : $duration-instantly,
+  immediately : $duration-immediately,
+  quickly     : $duration-quickly,
+  promptly    : $duration-promptly,
+  slowly      : $duration-slowly,
+  paused      : $duration-paused,
+  toast-short : $duration-toast-short,
+  toast-medium: $duration-toast-medium,
+);

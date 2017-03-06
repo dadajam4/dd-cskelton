@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+//
+// Font Weights
+//
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+
+// * Alias Map
+$font-weights: (
+  light  : $font-weight-light,
+  regular: $font-weight-regular,
+  bold   : $font-weight-bold,
+);

@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+//
+// Sizing
+//
+
+@mixin sizing($suf: "") {
+
+  @for $i from 1 through 12 {
+    .#{$tpl}#{$suf}col--#{$i} {
+      width: ($i / 12 * 100) * 1%;
+    }
+  }
+
+  @each $size in $size-key-list {
+    .#{$tpl}#{$suf}width--#{$size} {
+      width: get-size($size);
+      max-width: 100%;
+    }
+  }
+}
+
+@include sizing;
+@include mq-wide { @include sizing("wide-"); }
+@include mq-narrow { @include sizing("narrow-"); }
+
+@include mq-min("xs") { @include sizing("min-xs-"); }
+@include mq-min("sm") { @include sizing("min-sm-"); }
+@include mq-min("lg") { @include sizing("min-lg-"); }
+
+@include mq-max("xs") { @include sizing("max-xs-"); }
+@include mq-max("sm") { @include sizing("max-sm-"); }
+@include mq-max("lg") { @include sizing("max-lg-"); }
+
+@include mq("xs") { @include sizing("xs-"); }
+@include mq("sm") { @include sizing("sm-"); }
+@include mq("md") { @include sizing("md-"); }
+@include mq("lg") { @include sizing("lg-"); }

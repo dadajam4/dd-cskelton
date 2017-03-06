@@ -1,0 +1,220 @@
+<% block 'title': %>Components | Cards<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<%
+iconTypes = [
+  'default',
+  'shade',
+  'primary',
+  'info',
+  'warning',
+  'success',
+  'danger',
+];
+%>
+
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <article class="<%- @tpl %>card">
+    <div class="<%- @tpl %>card__header <%- @tpl %>grid <%- @tpl %>grid--align-spread">
+      <header class="<%- @tpl %>media <%- @tpl %>media--center <%- @tpl %>has-flexi-truncate">
+        <div class="<%- @tpl %>media__figure">
+          <span class="<%- @tpl %>icon <%- @tpl %>icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="<%- @tpl %>media__body <%- @tpl %>truncate">
+          <h2>
+            <a href="javascript:void(0);" class="<%- @tpl %>text-link--reset">
+              Card Header
+            </a>
+          </h2>
+        </div>
+      </header>
+      <div class="<%- @tpl %>no-flex">
+        <button class="<%- @tpl %>btn <%- @tpl %>btn--sm">New</button>
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__body">
+      <div class="<%- @tpl %>card__body--inner">
+        Card Body (custom goes in here)
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__footer">Card Footer</div>
+  </article>
+</section>
+
+<!-- Base Narrow -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base Narrow</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <article class="<%- @tpl %>card <%- @tpl %>theme--shade <%- @tpl %>card--narrow">
+    <div class="<%- @tpl %>card__header <%- @tpl %>grid <%- @tpl %>grid--align-spread">
+      <header class="<%- @tpl %>media <%- @tpl %>media--center <%- @tpl %>has-flexi-truncate">
+        <div class="<%- @tpl %>media__figure">
+          <span class="<%- @tpl %>icon <%- @tpl %>icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="<%- @tpl %>media__body <%- @tpl %>truncate">
+          <h2>
+            <a href="javascript:void(0);" class="<%- @tpl %>text-link--reset">
+              Card Header
+            </a>
+          </h2>
+        </div>
+      </header>
+      <div class="<%- @tpl %>no-flex">
+        <a class="<%- @tpl %>btn <%- @tpl %>btn--icon" href="javascript:void(0);"><span class="icon-asterisk"></span></a>
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__body">
+      <div class="<%- @tpl %>card__body--inner">
+        Card Body (custom goes in here)
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__footer">Card Footer</div>
+  </article>
+</section>
+
+<!-- Related List With Tiles -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Related List With Tiles</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <article class="<%- @tpl %>card <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>card__header <%- @tpl %>grid <%- @tpl %>grid--align-spread">
+      <header class="<%- @tpl %>media <%- @tpl %>media--center <%- @tpl %>has-flexi-truncate">
+        <div class="<%- @tpl %>media__figure">
+          <span class="<%- @tpl %>icon <%- @tpl %>icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="<%- @tpl %>media__body <%- @tpl %>truncate">
+          <h4>
+            <a href="javascript:void(0);" class="<%- @tpl %>text-link--reset">
+              Contacts (3)
+            </a>
+          </h4>
+        </div>
+      </header>
+      <div class="<%- @tpl %>no-flex">
+        <button class="<%- @tpl %>btn <%- @tpl %>btn--sm">New</button>
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__body">
+      <div class="<%- @tpl %>card__body--inner <%- @tpl %>grid <%- @tpl %>wrap <%- @tpl %>grid--pull-padded">
+
+<% for i in [0..2] : %>
+        <div class="<%- @tpl %>card__tile <%- @tpl %>media <%- @tpl %>card__tile <%- @tpl %>p-h--sm <%- @tpl %>xs-size--1-1 <%- @tpl %>md-size--1-1 <%- @tpl %>size--1-2 <%- @tpl %>min-lg-size--1-3 <%- @tpl %>hint-parent">
+          <div class="<%- @tpl %>media__figure">
+            <span class="<%- @tpl %>icon <%- @tpl %>icon--primary"><span class="icon-drivers-license-o"></span></span>
+          </div>
+          <div class="<%- @tpl %>media__body">
+            <div class="<%- @tpl %>grid <%- @tpl %>grid--align-spread <%- @tpl %>has-flexi-truncate">
+              <h4 class="<%- @tpl %>truncate <%- @tpl %>m-t--xs" title="Related Record Title 1"><a href="javascript:void(0);">Related Record Title 1</a></h4>
+              <div class="<%- @tpl %>shrink-none">
+                <a class="<%- @tpl %>btn <%- @tpl %>btn--icon <%- @tpl %>m-a--none" href="javascript:void(0);"><span class="icon-asterisk"><span class="<%- @tpl %>assistive-text">More options</span></span></a>
+              </div>
+            </div>
+            <div class="<%- @tpl %>fs--sm">
+              <dl class="<%- @tpl %>dl--inline">
+                <dt class="<%- @tpl %>dl--label">
+                  <span class="<%- @tpl %>truncate" title="Type">Type:</span>
+                </dt>
+                <dd class="<%- @tpl %>dl--detail <%- @tpl %>tile__meta">
+                  <span class="<%- @tpl %>truncate" title="Visit">Visit</span>
+                </dd>
+                <dt class="<%- @tpl %>dl--label">
+                  <span class="<%- @tpl %>truncate" title="Date">Date:</span>
+                </dt>
+                <dd class="<%- @tpl %>dl--detail <%- @tpl %>tile__meta">
+                  <span class="<%- @tpl %>truncate" title="1/31/15 3:45PM">1/31/15 3:45PM</span>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+<% end %>
+
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__footer">
+      <a href="javascript:void(0);">View All <span class="<%- @tpl %>assistive-text">entity type</span></a>
+    </div>
+  </article>
+</section>
+
+<!-- Related List With Table -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Related List With Table</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <article class="<%- @tpl %>card <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>card__header <%- @tpl %>grid <%- @tpl %>grid--align-spread">
+      <header class="<%- @tpl %>media <%- @tpl %>media--center <%- @tpl %>has-flexi-truncate">
+        <div class="<%- @tpl %>media__figure">
+          <span class="<%- @tpl %>icon <%- @tpl %>icon--primary"><span class="icon-drivers-license-o"></span></span>
+        </div>
+        <div class="<%- @tpl %>media__body <%- @tpl %>truncate">
+          <h4>
+            <a href="javascript:void(0);" class="<%- @tpl %>text-link--reset">
+              Contacts (3)
+            </a>
+          </h4>
+        </div>
+      </header>
+      <div class="<%- @tpl %>no-flex">
+        <button class="<%- @tpl %>btn <%- @tpl %>btn--sm">New</button>
+      </div>
+    </div>
+    <div class="<%- @tpl %>card__body <%- @tpl %>scrollable--x">
+      <table class="<%- @tpl %>table <%- @tpl %>table--bordered <%- @tpl %>no-row-hover <%- @tpl %>table--cell-buffer">
+        <thead>
+          <tr class="<%- @tpl %>text-title--caps">
+            <th scope="col">
+              <div class="<%- @tpl %>truncate" title="Name">Name</div>
+            </th>
+            <th scope="col">
+              <div class="<%- @tpl %>truncate" title="Company">Company</div>
+            </th>
+            <th scope="col">
+              <div class="<%- @tpl %>truncate" title="Title">Title</div>
+            </th>
+            <th scope="col">
+              <div class="<%- @tpl %>truncate" title="Email">Email</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="<%- @tpl %>hint-parent">
+            <th scope="row">
+              <div class="<%- @tpl %>truncate" title="Adam Choi"><a href="javascript:void(0);">Adam Choi</a></div>
+            </th>
+            <td>
+              <div class="<%- @tpl %>truncate" title="Company One">Company One</div>
+            </td>
+            <td>
+              <div class="<%- @tpl %>truncate" title="Director of Operations">Director of Operations</div>
+            </td>
+            <td>
+              <div class="<%- @tpl %>truncate" title="adam@company.com">adam@company.com</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="<%- @tpl %>card__footer">
+      <a href="javascript:void(0);">View All <span class="<%- @tpl %>assistive-text">entity type</span></a>
+    </div>
+  </article>
+</section>

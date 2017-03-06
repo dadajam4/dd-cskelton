@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+//
+// Position
+//
+
+@mixin position($suf: "") {
+  .#{$tpl}#{$suf}is-static {
+    position: static!important;
+  }
+
+  .#{$tpl}#{$suf}is-relative {
+    position: relative!important;
+  }
+
+  .#{$tpl}#{$suf}is-absolute {
+    position: absolute!important;
+  }
+}
+
+@include position;
+@include mq-wide { @include position("wide-"); }
+@include mq-narrow { @include position("narrow-"); }
+
+@include mq-min("xs") { @include position("min-xs-"); }
+@include mq-min("sm") { @include position("min-sm-"); }
+@include mq-min("lg") { @include position("min-lg-"); }
+
+@include mq-max("xs") { @include position("max-xs-"); }
+@include mq-max("sm") { @include position("max-sm-"); }
+@include mq-max("lg") { @include position("max-lg-"); }
+
+@include mq("xs") { @include position("xs-"); }
+@include mq("sm") { @include position("sm-"); }
+@include mq("md") { @include position("md-"); }
+@include mq("lg") { @include position("lg-"); }

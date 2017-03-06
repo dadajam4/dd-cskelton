@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+//
+// Border Radii
+//
+$border-radius-sm    : .125rem !default;
+$border-radius-md    : .25rem !default;
+$border-radius-lg    : .5rem !default;
+$border-radius-pill  : 15rem !default;
+$border-radius-circle: 50% !default;
+$border-radius-field : $border-radius-md !default;
+$border-radius-navbar : $border-radius-field !default;
+
+// * Alias Map
+$border-radii: (
+  sm    : $border-radius-sm,
+  md    : $border-radius-md,
+  lg    : $border-radius-lg,
+  pill  : $border-radius-lg,
+  circle: $border-radius-circle,
+  field : $border-radius-field,
+  navbar : $border-radius-navbar,
+);

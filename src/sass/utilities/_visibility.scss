@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+//
+// Visibility
+//
+
+@mixin visibility($suf: "") {
+  .#{$tpl}#{$suf}hide { display: none!important; }
+  .#{$tpl}#{$suf}show { display: block!important; }
+  .#{$tpl}#{$suf}show--inline { display: inline!important; }
+  .#{$tpl}#{$suf}show--inline-block { display: inline-block!important; }
+
+  .#{$tpl}#{$suf}hidden { visibility: hidden!important; }
+  .#{$tpl}#{$suf}visible { visibility: visible!important; }
+}
+
+@include visibility;
+@include mq-wide { @include visibility("wide-"); }
+@include mq-narrow { @include visibility("narrow-"); }
+
+@include mq-min("xs") { @include visibility("min-xs-"); }
+@include mq-min("sm") { @include visibility("min-sm-"); }
+@include mq-min("lg") { @include visibility("min-lg-"); }
+
+@include mq-max("xs") { @include visibility("max-xs-"); }
+@include mq-max("sm") { @include visibility("max-sm-"); }
+@include mq-max("lg") { @include visibility("max-lg-"); }
+
+@include mq("xs") { @include visibility("xs-"); }
+@include mq("sm") { @include visibility("sm-"); }
+@include mq("md") { @include visibility("md-"); }
+@include mq("lg") { @include visibility("lg-"); }

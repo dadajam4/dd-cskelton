@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+//
+// Tabs
+//
+
+.#{$tpl}tab {
+
+  //
+  // Default
+  //
+  @include tab;
+
+  &__nav {
+    @include tab-nav;
+    border-bottom: $border-width-thin solid $color-divider;
+  }
+
+  &__item {
+    &.#{$tpl}is-active .#{$tpl}tab__link {
+      border-color: $color-brand-primary;
+      color: $color-typo-primary;
+    }
+  }
+
+  &__link {
+    @include tab-link;
+    height: $line-height-tab;
+    line-height: $line-height-tab;
+    border-bottom: $border-width-thick solid transparent;
+    padding: 0 $spacing-xs;
+    color: $color-typo-base;
+
+    @include mq-min(md) {
+      padding: 0 $spacing-md;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $color-typo-primary;
+    }
+
+    &:focus {
+      border-color: $color-brand-primary;
+    }
+  }
+
+  &__content {
+    @include tab-content;
+    display: none;
+
+    &.#{$tpl}is-show {
+      display: block;
+    }
+  }
+
+
+
+  //
+  // Scoped
+  //
+  &--scoped {
+    @include tab;
+
+    &__nav {
+      @include tab-nav;
+      background-color: $color-container-neutral-bg;
+      border: $border-width-thin solid $color-divider;
+      border-radius: $border-radius-md $border-radius-md 0 0;
+    }
+
+    &__item {
+      position: relative;
+      margin-bottom: ($border-width-thin * -1);
+
+      + .#{$tpl}tab--scoped__item {
+        margin-left: ($border-width-thin * -1);
+      }
+
+      &:first-child .#{$tpl}tab--scoped__link {
+        border-left: 0;
+        border-radius: $border-radius-md 0 0 0;
+      }
+
+      &.#{$tpl}is-active .#{$tpl}tab--scoped__link {
+        background-color: $color-brand-base;
+        color: $color-typo-primary;
+        border-color: $color-divider;
+
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__link {
+      @include tab-link;
+      height: $line-height-tab;
+      line-height: $line-height-tab;
+      padding: 0 $spacing-md;
+      color: $color-typo-base;
+      background-clip: padding-box;
+      border: {
+        left: $border-width-thin solid transparent;
+        right: $border-width-thin solid transparent;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none!important;
+        color: $color-typo-primary;
+        border-color: $color-divider;
+      }
+    }
+
+    &__content {
+      background-color: $color-brand-base;
+      border: $border-width-thin solid $color-divider;
+      border-top: 0;
+      border-radius: 0 0 $border-radius-md $border-radius-md;
+      padding: $spacing-md;
+      display: none;
+
+      &.#{$tpl}is-show {
+        display: block;
+      }
+    }
+  }
+}

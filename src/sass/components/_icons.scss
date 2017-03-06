@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+//
+// Icons
+//
+
+$my-classname: '#{$tpl}icon';
+$icon-border-size: 1px;
+$icon-radius: $border-radius-md;
+
+// @todo: fix reset.css inherited style
+.#{$tpl}fa {
+  text-decoration: inherit;
+}
+
+.#{$my-classname} {
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  border-radius: $icon-radius;
+  transition: background-color .25s;
+  padding: 0;
+  border: solid $icon-border-size;
+  outline: none;
+  background-color: transparent;
+  background-clip: border-box;
+  @include remove-tap-highlight;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include class-links() {
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    @include user-drag(none);
+  }
+
+  &--circle {
+    border-radius: $border-radius-circle;
+  }
+
+  // sizes
+  @include field-height(md);
+  width: get-size(field-height-md);
+  @each $size in $btn-height-list {
+    &--#{$size} {
+      @include field-height($size);
+      width: get-size(field-height-#{$size});
+    }
+  }
+
+  // themes
+  @include auto-parts-theme-classes($my-classname) {
+    color: get-color(parts-#{$_parts-theme-key}-text);
+    background-color: get-color(parts-#{$_parts-theme-key}-bg);
+    @if $_parts-theme-key == neutral {
+      border-color: get-color(parts-#{$_parts-theme-key}-divider);
+    } @else {
+      border-color: get-color(parts-#{$_parts-theme-key}-bg);
+    }
+
+    @at-root {
+      a#{&}:hover,
+      a#{&}:focus,
+      a#{&}:active,
+      button#{&}:hover,
+      button#{&}:focus,
+      button#{&}:active {
+        color: get-color(parts-#{$_parts-theme-key}-text-focus);
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-focus);
+        @if $_parts-theme-key == neutral {
+          border-color: get-color(parts-#{$_parts-theme-key}-divider-focus);
+        } @else {
+          border-color: get-color(parts-#{$_parts-theme-key}-bg-focus);
+        }
+      }
+
+      a#{&}:active,
+      button#{&}:active {
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+      }
+    }
+
+    &.#{$tpl}icon--outline {
+      @include parts-outline-colors($_parts-theme-key);
+
+      @at-root {
+        a#{&}:hover,
+        a#{&}:focus,
+        a#{&}:active,
+        button#{&}:hover,
+        button#{&}:focus,
+        button#{&}:active {
+          @include parts-outline-colors($_parts-theme-key, true);
+        }
+
+        a#{&}:active,
+        button#{&}:active {
+          background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+        }
+      }
+    }
+  }
+}

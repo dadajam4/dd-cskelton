@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+//
+// Container Margins
+//
+$container-margin-xs: 5px;
+$container-margin-sm: 10px;
+$container-margin-md: 15px;
+$container-margin-lg: 30px;
+
+// * Alias Map
+$container-margins: (
+  xs: $container-margin-xs,
+  sm: $container-margin-sm,
+  md: $container-margin-md,
+  lg: $container-margin-lg,
+);

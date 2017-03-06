@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Tables | Components | DD CSkelton</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="/dest/css/dd.css">
+  <script src="/assets/js/jquery-3.1.1.min.js"></script>
+  <script src="/assets/js/demo.js"></script>
+</head>
+
+<body>
+  <div class="dd-page dd-page--limit-size_hoge">
+    <div class="dd-page-container">
+      <div class="dd-page-banner">
+        <a href="/" class="dd-page-banner__link">
+          <!--
+          <tpl-span class="strong text--lg">DD CSkelton</tpl-span>
+-->
+          <span class="dd-text--lg">
+            <span class="dd-logo-dd">
+              <span>D</span>
+              <span>D</span>
+            </span>
+            CSkelton
+          </span>
+        </a>
+        <a href="javascript:void(0);" class="dd-page-menu__trigger">
+          <span>menu</span>
+        </a>
+      </div>
+      <header class="dd-page-header">
+        <h1 class="dd-page-title">
+          Data Tables
+        </h1>
+        <div class="dd-page-lead">
+          <div class="dd-page-lead__container">
+            &#x30DC;&#x30BF;&#x30F3;&#x8981;&#x7D20;&#x3067;&#x3059;&#x3002;
+          </div>
+        </div>
+      </header>
+      <div class="dd-page-content">
+        <section class="dd-container dd-p-t--lg">
+          <nav role="navigation" aria-label="Breadcrumbs">
+            <ol class="dd-breadcrumb">
+              <li>
+                <a href="/">
+                  <span class="dd-fa dd-fa-home"></span>
+                  Home</a>
+              </li>
+              <li>
+                Components </li>
+              <li>
+                Data Tables </li>
+            </ol>
+          </nav>
+        </section>
+        <!-- Base -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Base
+            </span>
+          </h2>
+          <div class="dd-scrollable">
+            <table id="demo-table-1" class="dd-table dd-table--bordered dd-table--cell-buffer">
+              <thead>
+                <tr class="dd-text-title--caps">
+                  <th scope="col">
+                    <div class="dd-truncate" title="Opportunity Name">
+                      Opportunity Name
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Account Name">
+                      Account Name
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Close Date">
+                      Close Date
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Stage">
+                      Stage
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Confidence">
+                      Confidence
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Amount">
+                      Amount
+                    </div>
+                  </th>
+                  <th scope="col">
+                    <div class="dd-truncate" title="Contact">
+                      Contact
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" data-label="Opportunity Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      <a href="javascript:void(0);">Cloudhub</a>
+                    </div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      Cloudhub
+                    </div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="dd-truncate" title="4/14/2015">
+                      4/14/2015
+                    </div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="dd-truncate" title="Prospecting">
+                      Prospecting
+                    </div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="dd-truncate" title="20%">
+                      20%
+                    </div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="dd-truncate" title="$25k">
+                      $25k
+                    </div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="dd-truncate" title="jrogers@cloudhub.com">
+                      <a href="javascript:void(0);">jrogers@cloudhub.com</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" data-label="Opportunity Name">
+                    <div class="dd-truncate" title="Cloudhub + Anypoint Connectors">
+                      <a href="javascript:void(0);">Cloudhub + Anypoint Connectors</a>
+                    </div>
+                  </th>
+                  <td data-label="Account Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      Cloudhub
+                    </div>
+                  </td>
+                  <td data-label="Close Date">
+                    <div class="dd-truncate" title="4/14/2015">
+                      4/14/2015
+                    </div>
+                  </td>
+                  <td data-label="Prospecting">
+                    <div class="dd-truncate" title="Prospecting">
+                      Prospecting
+                    </div>
+                  </td>
+                  <td data-label="Confidence">
+                    <div class="dd-truncate" title="20%">
+                      20%
+                    </div>
+                  </td>
+                  <td data-label="Amount">
+                    <div class="dd-truncate" title="$25k">
+                      $25k
+                    </div>
+                  </td>
+                  <td data-label="Contact">
+                    <div class="dd-truncate" title="jrogers@cloudhub.com">
+                      <a href="javascript:void(0);">jrogers@cloudhub.com</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dd-box dd-m-t--md dd-scrollable">
+            <div class="dd-form-element">
+              <div class="dd-form-element__label">Setting</div>
+              <div class="dd-form-element__control">
+                <div class="dd-toggle-group dd-toggle-group--inline">
+                  <div class="dd-toggle-wrap">
+                    <label class="dd-toggle">
+                      <span class="dd-form-element__label">striped</span>
+                      <input type="checkbox" aria-describedby="toggle-desc" id="_index-checkbox-toggle-1" class="demo-toggle-class" name="checkbox-toggle" value="dd-table--striped" data-target="#demo-table-1">
+                      <span id="toggle-desc" class="dd-toggle__faux-container" aria-live="assertive">
+                        <span class="dd-toggle__faux"></span>
+                        <span class="dd-toggle__on">Enabled</span>
+                        <span class="dd-toggle__off">Disabled</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="dd-toggle-wrap">
+                    <label class="dd-toggle">
+                      <span class="dd-form-element__label">no row hover</span>
+                      <input type="checkbox" aria-describedby="toggle-desc" id="_index-checkbox-toggle-2" class="demo-toggle-class" name="checkbox-toggle" value="dd-no-row-hover" data-target="#demo-table-1">
+                      <span id="toggle-desc" class="dd-toggle__faux-container" aria-live="assertive">
+                        <span class="dd-toggle__faux"></span>
+                        <span class="dd-toggle__on">Enabled</span>
+                        <span class="dd-toggle__off">Disabled</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="dd-toggle-wrap">
+                    <label class="dd-toggle">
+                      <span class="dd-form-element__label">vertical border</span>
+                      <input type="checkbox" aria-describedby="toggle-desc" id="_index-checkbox-toggle-3" class="demo-toggle-class" name="checkbox-toggle" value="dd-table--col-bordered" data-target="#demo-table-1">
+                      <span id="toggle-desc" class="dd-toggle__faux-container" aria-live="assertive">
+                        <span class="dd-toggle__faux"></span>
+                        <span class="dd-toggle__on">Enabled</span>
+                        <span class="dd-toggle__off">Disabled</span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="dd-toggle-wrap">
+                    <label class="dd-toggle">
+                      <span class="dd-form-element__label">fixed layout</span>
+                      <input type="checkbox" aria-describedby="toggle-desc" id="_index-checkbox-toggle-4" class="demo-toggle-class" name="checkbox-toggle" value="dd-table--fixed-layout" data-target="#demo-table-1">
+                      <span id="toggle-desc" class="dd-toggle__faux-container" aria-live="assertive">
+                        <span class="dd-toggle__faux"></span>
+                        <span class="dd-toggle__on">Enabled</span>
+                        <span class="dd-toggle__off">Disabled</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="dd-form-element__error">
+                  This is error message.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Advanced -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Advanced
+            </span>
+          </h2>
+          <div class="dd-box dd-m-b--md dd-scrollable">
+            <div class="dd-form-element">
+              <div class="dd-form-element__label">Responsive Setting</div>
+              <div class="dd-form-element__control">
+                <div class="dd-choice-group dd-btn-group dd-btn-group--neutral">
+                  <label class="dd-choice-btn dd-btn">
+                    <input type="radio" id="_index-demo-table-2-1" class="demo-change-class" name="demo-table-2" value="" checked data-target="#demo-table-2">
+                    <span class="dd-choice__label">default</span>
+                  </label>
+                  <label class="dd-choice-btn dd-btn">
+                    <input type="radio" id="_index-demo-table-2-2" class="demo-change-class" name="demo-table-2" value="dd-table--stacked-horizontal" data-target="#demo-table-2">
+                    <span class="dd-choice__label">Stacked With Horizontal Cells</span>
+                  </label>
+                  <label class="dd-choice-btn dd-btn">
+                    <input type="radio" id="_index-demo-table-2-3" class="demo-change-class" name="demo-table-2" value="dd-table--stacked" data-target="#demo-table-2">
+                    <span class="dd-choice__label">Stacked</span>
+                  </label>
+                  <label class="dd-choice-btn dd-btn">
+                    <input type="radio" id="_index-demo-table-2-4" class="demo-change-class" name="demo-table-2" value="dd-narrow-table--stacked-horizontal" data-target="#demo-table-2">
+                    <span class="dd-choice__label">Stacked With Horizontal Cells (Narrow)</span>
+                  </label>
+                  <label class="dd-choice-btn dd-btn">
+                    <input type="radio" id="_index-demo-table-2-5" class="demo-change-class" name="demo-table-2" value="dd-narrow-table--stacked" data-target="#demo-table-2">
+                    <span class="dd-choice__label">Stacked (Narrow)</span>
+                  </label>
+                </div>
+                <div class="dd-form-element__error">
+                  This is error message.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dd-scrollable--x">
+            <table class="dd-table dd-table--bordered dd-table--fixed-layout" id="demo-table-2" role="grid">
+              <thead>
+                <tr class="dd-text-title--caps">
+                  <th class="dd-cell-shrink" scope="col">
+                    <label class="dd-choice">
+                      <input type="checkbox" name="demo-select-all" value="">
+                      <span class="dd-choice__faux"></span>
+                      <span class="dd-assistive-text">
+                        Select All
+                      </span>
+                    </label>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Opportunity Name">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Opportunity Name">
+                        Opportunity Name
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-203">
+                        Opportunity Name column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-203">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Account Name">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Account Name">
+                        Account Name
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-204">
+                        Account Name column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-204">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Close Date">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Close Date">
+                        Close Date
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-205">
+                        Close Date column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-205">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Stage">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Stage">
+                        Stage
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-206">
+                        Stage column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-206">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Confidence">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Confidence">
+                        Confidence
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-207">
+                        Confidence column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-207">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Amount">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Amount">
+                        Amount
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-208">
+                        Amount column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-208">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-is-sortable dd-is-resizable" scope="col" aria-label="Contact">
+                    <a href="javascript:void(0);" class="dd-th__action dd-text-link--reset">
+                      <span class="dd-assistive-text">
+                        Sort
+                      </span>
+                      <span class="dd-truncate" title="Contact">
+                        Contact
+                      </span>
+                      <span class="dd-fa dd-fa-arrow-down dd-is-sortable__icon"></span>
+                      <span class="dd-assistive-text" aria-live="assertive" aria-atomic="true">
+                      </span>
+                    </a>
+                    <div class="dd-resizable">
+                      <label class="dd-assistive-text" for="cell-resize-handle-209">
+                        Contact column width
+                      </label>
+                      <input class="dd-resizable__input dd-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-209">
+                      <span class="dd-resizable__handle">
+                        <span class="dd-resizable__divider">
+                        </span>
+                      </span>
+                    </div>
+                  </th>
+                  <th class="dd-cell-shrink" scope="col">
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="dd-hint-parent">
+                  <td class="dd-cell-shrink" role="gridcell" data-label="Select row Cloudhub">
+                    <label class="dd-choice">
+                      <input type="checkbox" name="demo-select" value="">
+                      <span class="dd-choice__faux"></span>
+                      <span class="dd-assistive-text">
+                        Select row Cloudhub
+                      </span>
+                    </label>
+                  </td>
+                  <th scope="row" data-label="Opportunity Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      Cloudhub
+                    </div>
+                  </th>
+                  <td role="gridcell" data-label="Account Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      Cloudhub
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Close Date">
+                    <div class="dd-truncate" title="4/14/2015">
+                      4/14/2015
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Prospecting">
+                    <div class="dd-truncate" title="Prospecting">
+                      Prospecting
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Confidence">
+                    <div class="dd-truncate" title="20%">
+                      20%
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Amount">
+                    <div class="dd-truncate" title="$25k">
+                      $25k
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Contact">
+                    <div class="dd-truncate" title="jrogers@cloudhub.com">
+                      <a href="javascript:void(0);">jrogers@cloudhub.com</a>
+                    </div>
+                  </td>
+                  <td class="dd-cell-shrink" role="gridcell" data-label="Actions">
+                    <button class="dd-icon dd-icon--sm" type="button">
+                      <span class="dd-fa dd-fa-caret-down"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="dd-hint-parent">
+                  <td class="dd-cell-shrink" role="gridcell" data-label="Select row Cloudhub + Anypoint Connectors">
+                    <label class="dd-choice">
+                      <input type="checkbox" name="demo-select" value="">
+                      <span class="dd-choice__faux"></span>
+                      <span class="dd-assistive-text">
+                        Select row Cloudhub + Anypoint Connectors
+                      </span>
+                    </label>
+                  </td>
+                  <th scope="row" data-label="Opportunity Name">
+                    <div class="dd-truncate" title="Cloudhub + Anypoint Connectors">
+                      Cloudhub + Anypoint Connectors
+                    </div>
+                  </th>
+                  <td role="gridcell" data-label="Account Name">
+                    <div class="dd-truncate" title="Cloudhub">
+                      Cloudhub
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Close Date">
+                    <div class="dd-truncate" title="4/14/2015">
+                      4/14/2015
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Prospecting">
+                    <div class="dd-truncate" title="Prospecting">
+                      Prospecting
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Confidence">
+                    <div class="dd-truncate" title="20%">
+                      20%
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Amount">
+                    <div class="dd-truncate" title="$25k">
+                      $25k
+                    </div>
+                  </td>
+                  <td role="gridcell" data-label="Contact">
+                    <div class="dd-truncate" title="jrogers@cloudhub.com">
+                      <a href="javascript:void(0);">jrogers@cloudhub.com</a>
+                    </div>
+                  </td>
+                  <td class="dd-cell-shrink" role="gridcell" data-label="Actions">
+                    <button class="dd-icon dd-icon--sm" type="button">
+                      <span class="dd-fa dd-fa-caret-down"></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+      <nav class="dd-page-menu">
+        <div class="dd-page-menu__inner">
+          <nav class="dd-page-navi">
+            <a href="/" class="dd-page-navi__item">
+              Top
+            </a>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-is-active dd-has-child">
+              Components
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/components/accordions/" class="dd-page-navi__child">
+                Accordions
+              </a>
+              <a href="/components/badges/" class="dd-page-navi__child">
+                Badges
+              </a>
+              <a href="/components/boxes/" class="dd-page-navi__child">
+                Boxes
+              </a>
+              <a href="/components/breadcrumbs/" class="dd-page-navi__child">
+                Breadcrumbs
+              </a>
+              <a href="/components/buttons/" class="dd-page-navi__child">
+                Buttons
+              </a>
+              <a href="/components/cards/" class="dd-page-navi__child">
+                Cards
+              </a>
+              <a href="/components/data-tables/" class="dd-page-navi__child dd-is-active">
+                Data Tables
+              </a>
+              <a href="/components/flags/" class="dd-page-navi__child">
+                Flags
+              </a>
+              <a href="/components/forms/" class="dd-page-navi__child">
+                Forms
+              </a>
+              <a href="/components/icons/" class="dd-page-navi__child">
+                Icons
+              </a>
+              <a href="/components/images/" class="dd-page-navi__child">
+                Images
+              </a>
+              <a href="/components/lists/" class="dd-page-navi__child">
+                Lists
+              </a>
+              <a href="/components/media-objects/" class="dd-page-navi__child">
+                Media Objects
+              </a>
+              <a href="/components/menus/" class="dd-page-navi__child">
+                Menus
+              </a>
+              <a href="/components/messages/" class="dd-page-navi__child">
+                Messages
+              </a>
+              <a href="/components/modal/" class="dd-page-navi__child">
+                Modal
+              </a>
+              <a href="/components/navigation/" class="dd-page-navi__child">
+                Navigation
+              </a>
+              <a href="/components/popovers/" class="dd-page-navi__child">
+                Popovers
+              </a>
+              <a href="/components/progress/" class="dd-page-navi__child">
+                Progress
+              </a>
+              <a href="/components/spinners/" class="dd-page-navi__child">
+                Spinners
+              </a>
+              <a href="/components/tabs/" class="dd-page-navi__child">
+                Tabs
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Layouts
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/layouts/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/layouts/borders/" class="dd-page-navi__child">
+                Borders
+              </a>
+              <a href="/layouts/floats/" class="dd-page-navi__child">
+                Floats
+              </a>
+              <a href="/layouts/grid/" class="dd-page-navi__child">
+                Grid
+              </a>
+              <a href="/layouts/position/" class="dd-page-navi__child">
+                Position
+              </a>
+              <a href="/layouts/scrollable/" class="dd-page-navi__child">
+                Scrollable
+              </a>
+              <a href="/layouts/sizing/" class="dd-page-navi__child">
+                Sizing
+              </a>
+              <a href="/layouts/spacing/" class="dd-page-navi__child">
+                Spacing
+              </a>
+              <a href="/layouts/themes/" class="dd-page-navi__child">
+                Themes
+              </a>
+              <a href="/layouts/visibility/" class="dd-page-navi__child">
+                Visibility
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Typographies
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/typographies/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/typographies/basic/" class="dd-page-navi__child">
+                Basic
+              </a>
+              <a href="/typographies/heading/" class="dd-page-navi__child">
+                Heading
+              </a>
+              <a href="/typographies/truncation/" class="dd-page-navi__child">
+                Truncation
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+      <footer class="dd-page-footer dd-theme-inverse">
+        <div class="dd-page-footer__inner">
+          &#xA9; Copyright 2017 dadajam All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

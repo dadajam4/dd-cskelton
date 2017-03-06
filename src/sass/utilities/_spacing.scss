@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+//
+// Spacing
+//
+
+$properties: (m: margin, p: padding);
+$directions: (
+  t: (top),
+  r: (right),
+  b: (bottom),
+  l: (left),
+  v: (top, bottom),
+  h: (left, right),
+  a: (top, right, bottom, left),
+);
+
+$sizes: (
+  none: $spacing-none,
+  xxxs: $spacing-xxxs,
+  xxs : $spacing-xxs,
+  xs  : $spacing-xs,
+  sm  : $spacing-sm,
+  md  : $spacing-md,
+  lg  : $spacing-lg,
+  xl  : $spacing-xl,
+  xxl : $spacing-xxl,
+);
+
+@mixin space($suf: "") {
+  @each $property-cel, $property-name in $properties {
+    @each $direction-cel, $direction-targets in $directions {
+      @each $size-cel, $size-val in $sizes {
+        .#{$tpl}#{$suf}#{$property-cel}-#{$direction-cel}--#{$size-cel} {
+          @each $direction-name in $direction-targets {
+            #{$property-name}-#{$direction-name}: $size-val!important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include space;
+@include mq-wide { @include space("wide-"); }
+@include mq-narrow { @include space("narrow-"); }
+
+@include mq-min("xs") { @include space("min-xs-"); }
+@include mq-min("sm") { @include space("min-sm-"); }
+@include mq-min("lg") { @include space("min-lg-"); }
+
+@include mq-max("xs") { @include space("max-xs-"); }
+@include mq-max("sm") { @include space("max-sm-"); }
+@include mq-max("lg") { @include space("max-lg-"); }
+
+@include mq("xs") { @include space("xs-"); }
+@include mq("sm") { @include space("sm-"); }
+@include mq("md") { @include space("md-"); }
+@include mq("lg") { @include space("lg-"); }

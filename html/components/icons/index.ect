@@ -1,0 +1,120 @@
+<% block 'title': %>Components | Icons<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<%
+sizes = ['xxs', 'xs', 'sm', 'md', 'lg'];
+%>
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <%- @siteConfig.iconHtml(0) %>
+</section>
+
+<!-- Container -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Container</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <span class="<%- @tpl %>icon<%- key.name %>"><%- @siteConfig.iconHtml(index) %></span>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <span class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--circle"><%- @siteConfig.iconHtml(index) %></span>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <span class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--outline"><%- @siteConfig.iconHtml(index) %></span>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <span class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--circle <%- @tpl %>icon--outline"><%- @siteConfig.iconHtml(index) %></span>
+    <% end %>
+    <% end %>
+  </div>
+</section>
+
+<!-- Sizing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Sizing</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+<% for size in sizes : %>
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <span class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--<%- size %>"><%- @siteConfig.iconHtml(index) %></span>
+    <% end %>
+  </div>
+<% end %>
+</section>
+
+<!-- Clickable -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Clickable</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <a class="<%- @tpl %>icon<%- key.name %>" href="javascript:void(0);"><%- @siteConfig.iconHtml(index) %></a>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <button class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--circle" type="button"><%- @siteConfig.iconHtml(index) %></button>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <a class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--outline" href="javascript:void(0);"><%- @siteConfig.iconHtml(index) %></a>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <button class="<%- @tpl %>icon<%- key.name %> <%- @tpl %>icon--circle <%- @tpl %>icon--outline" type="button"><%- @siteConfig.iconHtml(index) %></button>
+    <% end %>
+    <% end %>
+  </div>
+</section>
+
+<!-- Icons -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Icons</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <% for icon, index in @siteConfig.icons : %>
+    <a class="<%- @tpl %>icon" href="javascript:void(0);"><%- @siteConfig.iconHtml(index) %></a>
+  <% end %>
+
+
+</section>

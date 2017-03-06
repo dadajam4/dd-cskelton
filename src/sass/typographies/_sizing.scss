@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+//
+// Sizing
+//
+
+// size
+@each $key, $map in $font-sizes {
+  .#{$tpl}text--#{$key} {
+    @include font-size($key);
+  }
+}
+
+// line heights
+@each $key, $height in $line-heights {
+  .#{$tpl}line-height--#{$key} {
+    line-height: $height;
+  }
+}

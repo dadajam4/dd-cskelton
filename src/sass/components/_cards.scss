@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+//
+// Cards
+//
+
+.#{$tpl}card {
+  @include box($borders: around, $padding: 0);
+  box-shadow: $shadow-card;
+  max-width: 100%;
+  display: block;
+  transition: transform $duration-quickly ease-out;
+
+  + .#{$tpl}card {
+    margin-top: $spacing-lg;
+  }
+
+  &__header,
+  &__footer,
+  &__body--inner {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+
+  &__header {
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__body:empty,
+  &__footer:empty {
+    display: none;
+  }
+
+  &__footer {
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+    text-align: right;
+  }
+
+  &--narrow {
+
+    .#{$tpl}card__header,
+    .#{$tpl}card__footer,
+    .#{$tpl}card__body--inner {
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+
+  @at-root a#{&} {
+    @extend .#{$tpl}text-link--reset;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-$spacing-xxxs);
+    }
+  }
+}
+
+.#{$tpl}card__tile {
+  margin-top: $spacing-sm;
+}

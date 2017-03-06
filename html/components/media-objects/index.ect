@@ -1,0 +1,40 @@
+<% block 'title': %>Components | Media Objects<% end %>
+<% block 'site-lead': %>
+テキストと図形が隣に必要な場合は、メディアオブジェクトを使用します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>media">
+    <div class="<%- @tpl %>media__figure">
+      <img src="//placehold.it/48x48" class="<%- @tpl %>avatar--large" alt="Placeholder">
+    </div>
+    <div class="<%- @tpl %>media__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minus molestias reprehenderit consequuntur sapiente. Modi veritatis totam accusantium numquam assumenda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Responsive -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Responsive</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>media <%- @tpl %>media--responsive">
+    <div class="<%- @tpl %>media__figure">
+      <img src="//placehold.it/48x48" class="<%- @tpl %>avatar--large" alt="Placeholder">
+    </div>
+    <div class="<%- @tpl %>media__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minus molestias reprehenderit consequuntur sapiente. Modi veritatis totam accusantium numquam assumenda.</p>
+    </div>
+  </div>
+</section>
+

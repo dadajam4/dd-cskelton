@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+//
+// RESET ELEMENTS STYLE
+//
+
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-weight: normal;
+  font-style: normal;
+  background: transparent;
+}
+
+sup, sub {
+  font-size: 60%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  padding-left: 2em;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  // font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// button,
+// input[type="button"],
+// input[type="submit"] {
+//   vertical-align: baseline;
+// }
+
+// change colours to suit your needs
+ins {
+  // background-color: #ff9;
+  // color: #000;
+  // text-decoration: none;
+}
+
+// change colours to suit your needs
+// mark {
+//   background-color: #ff9;
+//   color: #000;
+//   font-style: italic;
+//   font-weight: bold;
+// }
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #c0c1c2;
+}
+
+th {
+  box-sizing: border-box;
+  border: 1px solid #c0c1c2;
+  background-color: #e5f3ff;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  box-sizing: border-box;
+  border: 1px solid #c0c1c2;
+  padding: 10px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+ruby {
+  line-height: 100%;
+}
+
+rt {
+  font-size: 50%;
+  line-height: 50%;
+}

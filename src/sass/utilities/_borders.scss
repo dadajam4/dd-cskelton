@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+//
+// Borders
+//
+
+@mixin my-border($suf: "") {
+  .#{$tpl}#{$suf}border {
+    &--arround { border: solid $border-width-thin $color-divider; }
+
+    @each $pos in top, right, bottom, left {
+      &--#{$pos} { border-#{$pos}: solid $border-width-thin $color-divider; }
+    }
+  }
+}
+
+@include my-border;
+// @include mq-wide { @include floats("wide-"); }
+// @include mq-narrow { @include floats("narrow-"); }

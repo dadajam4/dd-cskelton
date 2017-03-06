@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+//
+// Accordions
+//
+
+.#{$tpl}accordion {
+  overflow: hidden;
+
+  &__title {
+    padding: $spacing-xs;
+    display: block;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    outline: 0;
+    @include text-link--reset;
+
+    &:before {
+      @extend .#{$tpl}fa;
+      @extend .#{$tpl}fa-caret-right;
+      width: 1.5rem;
+      text-align: center;
+      transition: transform $duration-promptly;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      transform: translateX($spacing-xxxs);
+    }
+
+    &.#{$tpl}is-active:before {
+      @extend .#{$tpl}fa-caret-down;
+    }
+  }
+
+  &__content {
+    display: none;
+    opacity: 0;
+    padding: 0 $spacing-sm $spacing-sm;
+    transition: padding $duration-slowly;
+
+    &:not(.#{$tpl}is-active) {
+      padding-bottom: 0;
+    }
+  }
+
+  &--styled {
+    @include box($padding: 0, $borders: around);
+
+    .#{$tpl}accordion__title {
+      border-top: solid $border-width-thin solid $color-divider;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+
+    @include container-theme-keys() {
+      $sel: '';
+
+      @if $_container-theme-key != base {
+        $sel: '.#{$tpl}theme--#{$_container-theme-key}';
+      } @else {
+        $sel: '.#{$tpl}.theme';
+      }
+
+      &#{$sel} > .#{$tpl}accordion__title {
+        border-top-color: get-color(container-#{$_container-theme-key}-divider);
+      }
+    }
+  }
+}

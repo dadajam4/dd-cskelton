@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+//
+// Media Objects
+//
+
+.#{$tpl}media {
+  display: flex;
+  align-items: flex-start;
+
+  &__figure {
+    flex-shrink: 0;
+    margin-right: $spacing-sm;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0; // This fixes an issue with truncation inside flexbox due to the changes in flex basis (already in FFOX, coming to Chrome)
+  }
+
+  &__body,
+  &__body > :last-child { // @TODO: Watch this - overreaching?
+    margin-bottom: 0;
+  }
+}
+
+.#{$tpl}media--center {
+  align-items: center;
+}
+
+
+
+@include mq-narrow {
+
+  .#{$tpl}media--responsive {
+    display: block;
+
+    .#{$tpl}media__figure {
+      margin: 0 0 $spacing-sm;
+    }
+  }
+}

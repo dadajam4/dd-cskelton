@@ -1,0 +1,36 @@
+<% block 'title': %>Layouts | Visibility<% end %>
+<% block 'site-lead': %>
+可視性ヘルパーは、領域の可視状態を変更します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Hide Show -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Hide Show</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>hide">I am hidden</div>
+  <div class="<%- @tpl %>show">I am shown as a block</div>
+  <div class="<%- @tpl %>show--inline">I am shown as an inline</div>
+  <div class="<%- @tpl %>show--inline-block">I am shown as an inline-block</div>
+
+  <div class="<%- @tpl %>pc-hide">I am hidden only PC</div>
+  <div class="<%- @tpl %>sp-hide">I am hidden only SP</div>
+</section>
+
+
+<!-- Hidden Visible -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Hidden Visible</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>hidden">I am hidden</div>
+  <div class="<%- @tpl %>visible">I am visible</div>
+
+  <div class="<%- @tpl %>pc-hidden">I am hidden only PC</div>
+  <div class="<%- @tpl %>sp-hidden">I am hidden only SP</div>
+</section>

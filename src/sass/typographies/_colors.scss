@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+//
+// Colors
+//
+
+@include typo-theme-keys() {
+  .#{$tpl}cl--#{$_typo-theme-key} {
+    @include color(typo-#{$_typo-theme-key}, true);
+  }
+}

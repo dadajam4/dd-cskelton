@@ -1,0 +1,442 @@
+@charset "utf-8";
+
+//
+// Navigations
+//
+$my-classname: #{$tpl}navbar;
+$my-target-thems: base, neutral, primary, inverse;
+.#{$my-classname} {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: $border-radius-navbar;
+  background: $color-container-base-bg;
+  width: 100%;
+  overflow: visible;
+
+  @each $theme in $my-target-thems {
+    $theme-key: &;
+    @if $theme != base {
+      $theme-key: &--#{$theme};
+    }
+
+    @at-root #{$theme-key} {
+      @include container-bg-color($theme);
+      @include container-color($theme);
+
+      .#{$my-classname}__item {
+        @include container-color($theme);
+        @include parts-accent-color($theme);
+
+        &:hover, &:focus {
+          @include container-bg-color($theme, $focus: true);
+        }
+
+        &:active,
+        &.#{$tpl}is-active {
+          @include container-bg-color($theme, $active: true);
+        }
+      }
+
+      .#{$my-classname}__list {
+        @include container-bg-color($theme);
+        @include container-color($theme);
+
+        &-item,
+        &-trigger {
+          @include container-color($theme);
+          @include parts-accent-color($theme);
+
+          &:hover, &:focus {
+            @include container-bg-color($theme, $focus: true);
+          }
+
+          &:active,
+          &.#{$tpl}is-active {
+            @include container-bg-color($theme, $active: true);
+          }
+        }
+      }
+    }
+  }
+
+  &__left {
+    padding-left: $border-radius-navbar;
+    padding-right: $spacing-sm;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__main {
+    flex-grow: 2;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: $border-radius-navbar;
+    padding-right: $border-radius-navbar;
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--spread {
+      justify-content: space-around;
+    }
+
+    &--fill {
+      justify-content: space-around;
+      flex-wrap: nowrap;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &__right {
+    padding-right: $border-radius-navbar;
+    padding-left: $spacing-sm;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__side-action {
+    display: inline-flex;
+    align-items: center;
+    border-radius: $border-radius-navbar 0 0 $border-radius-navbar;
+    overflow: hidden;
+
+    .#{$my-classname}__title + & {
+      order: 4;
+      margin-left: auto;
+      border-radius: 0 $border-radius-navbar $border-radius-navbar 0;
+    }
+  }
+
+  // @theme my theme only
+  &:not(&--primary):not(&--inverse) &__side-action &__item {
+    color: $color-typo-link;
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $size-navbar-side-action-width;
+    right: $size-navbar-side-action-width;
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    &-text {
+      @include text-heading--sm;
+      @include truncate;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__item {
+
+    min-width: $size-navbar-height;
+    text-align: center;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+
+    position: relative;
+    display: block;
+    line-height: $size-navbar-height;
+    height: $size-navbar-height;
+    padding: 0 $spacing-sm;
+    white-space: nowrap;
+    @include user-drag(none);
+    transition:
+      color $duration-promptly,
+      background-color $duration-promptly,
+      border-color $duration-promptly;
+
+    &.#{$tpl}is-static,
+    &.#{$tpl}form-element {
+      background: transparent!important;
+    }
+
+
+    .#{$tpl}dropdown {
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      line-height: $line-height-md;
+    }
+
+    &.#{$tpl}is-active {
+      overflow: visible;
+    }
+
+    // form element
+    .#{$tpl}form-element {
+
+      &__control {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    line-height: $line-height-md;
+    top: 100%;
+    left: 0;
+    z-index: $z-index-dropdown;
+    transition: opacity $duration-slowly;
+    text-align: left;
+    box-shadow: $shadow-header;
+    min-width: 100%;
+    display: none;
+
+    &--right {
+      right: 0;
+      left: auto;
+    }
+
+    & & {
+      position: relative;
+      top: 0;
+      margin-left: -$spacing-sm;
+      margin-right: -$spacing-sm;
+      box-shadow: none;
+    }
+
+    .#{$my-classname}__item,
+    .#{$my-classname}__list-item {
+      height: auto;
+    }
+
+    .#{$my-classname}__list-trigger {
+      text-align: left;
+    }
+
+    &.#{$tpl}is-open {
+      display: block;
+    }
+
+    &-trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      @include text-link--reset;
+      // display: block;
+      margin-left: -$spacing-sm;
+      margin-right: -$spacing-sm;
+      padding: 0 $spacing-sm;
+      line-height: $size-navbar-height;
+      height: $size-navbar-height;
+      white-space: nowrap;
+      overflow: hidden;
+      @include user-drag(none);
+      text-decoration: none;
+
+      & > .#{$tpl}fa {
+        line-height: inherit;
+        transition: transform $duration-promptly;
+        margin-left: $spacing-xs;
+      }
+
+      &.#{$tpl}is-active > .#{$tpl}fa {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-item {
+      display: block;
+      line-height: $size-navbar-height;
+      height: $size-navbar-height;
+      padding: 0 $spacing-sm;
+      @include user-drag(none);
+      text-decoration: none!important;
+
+      &.#{$tpl}is-static {
+        background-color: transparent!important;
+      }
+    }
+  }
+
+  &__trigger {
+    display: none;
+  }
+
+  &--responsive {
+
+    /**
+     * narrow
+     */
+    @include mq-max($navbar-mq-change-target) {
+      display: block;
+
+      .#{$my-classname}__left {
+        // display: block;
+        // padding-right: $border-radius-navbar;
+      }
+
+      .#{$my-classname}__main {
+        @include container-colors(inverse, $link: false);
+        border-radius: 0 0 $border-radius-navbar $border-radius-navbar;
+        transition: opacity $duration-slowly;
+        display: none;
+        // max-height: calc(100% - #{$size-navbar-height});
+        // @include scrollable--y;
+
+        &:before,
+        &:after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: $spacing-sm;
+        }
+
+        &.#{$tpl}is-open {
+          display: block;
+        }
+
+        .#{$my-classname}__item {
+          display: block;
+          text-align: left;
+          line-height: inherit;
+          height: auto;
+          padding-top: $spacing-xs;
+          padding-bottom: $spacing-xs;
+          @include container-bg-color(inverse);
+          border-color: $color-parts-inverse-accent;
+
+          &:hover,
+          &:focus {
+            background-color: $color-container-inverse-bg-focus;
+          }
+
+          &:active,
+          &.#{$tpl}is-active {
+            background-color: $color-container-inverse-bg-active;
+          }
+        }
+
+        .#{$my-classname}__list {
+          position: relative;
+          top: 0;
+          margin-top: $spacing-xs;
+          margin-bottom: -$spacing-xs;
+          margin-left: -$spacing-sm;
+          margin-right: -$spacing-sm;
+
+          &-trigger {
+            line-height: inherit;
+            height: auto;
+            margin-top: -$spacing-xs;
+            margin-bottom: -$spacing-xs;
+            padding-top: $spacing-xs;
+            padding-bottom: $spacing-xs;
+            @include container-bg-color(inverse);
+            border-color: $color-parts-inverse-accent;
+
+            &:hover,
+            &:focus {
+              background-color: $color-container-inverse-bg-focus;
+            }
+
+            &:active,
+            &.#{$tpl}is-active {
+              background-color: $color-container-inverse-bg-active;
+            }
+          }
+
+          &-item {
+            @include container-bg-color(inverse);
+            border-color: $color-parts-inverse-accent;
+            padding-left: $spacing-lg;
+
+            &:hover,
+            &:focus {
+              background-color: $color-container-inverse-bg-focus;
+            }
+
+            &:active,
+            &.#{$tpl}is-active {
+              background-color: $color-container-inverse-bg-active;
+            }
+          }
+        }
+
+        .#{$tpl}form-element__label {
+          display: block;
+        }
+
+        .#{$tpl}form-element__control {
+          display: block;
+        }
+      }
+
+      .#{$my-classname}__right {
+        position: absolute;
+        right: $border-radius-navbar;
+        top: 0;
+      }
+
+      .#{$my-classname}__trigger {
+        @include navbar-menu-trigger;
+      }
+    }
+  }
+
+
+
+  //
+  // Fixing
+  //
+  &--fixed {
+    &-top {
+      position: fixed;
+      z-index: $z-index-page-menu;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: $shadow-header;
+
+      &.#{$my-classname}--responsive {
+        @include mq-max($navbar-mq-change-target) {
+          .#{$my-classname}__main {
+            position: fixed;
+            z-index: $z-index-page-menu + 1;
+            left: 0;
+            width: 100%;
+            top: $size-navbar-height;
+            @include scrollable--y($max-height: calc(100vh - #{$size-navbar-height}));
+            box-shadow: $shadow-header;
+          }
+        }
+      }
+    }
+
+    &-bottom {
+      position: fixed;
+      z-index: $z-index-page-menu - 1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}

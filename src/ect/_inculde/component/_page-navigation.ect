@@ -1,0 +1,25 @@
+<tpl-nav class="page-menu">
+  <tpl-div class="page-menu__inner">
+    <tpl-nav class="page-navi">
+<% for parentCategory in @siteConfig.navigation : %>
+<%
+parentCategoryId = parentCategory.name.toLowerCase();
+parentHasChild   = parentCategory.children;
+parentIsActive   = parentCategoryId == @parentCategory or (parentCategory.url == '/' and @parentCategory == null and @childCategory == null);
+
+%>
+      <tpl-a
+        class="page-navi__item<% if parentIsActive : %> is-active<% end %><% if parentHasChild : %> has-child<% end %>"
+        href="<% if parentHasChild : %>javascript:void(0);<% else if parentCategory.url : %><%- parentCategory.url %><% else : %>/<%- parentCategoryId %>/<% end %>"><%- parentCategory.label %></tpl-a>
+<% if parentHasChild : %>
+      <tpl-div class="page-navi__children">
+<% for childCategory in parentCategory.children : %>
+<% childCategoryId = childCategory.name; %>
+        <tpl-a class="page-navi__child<% if childCategoryId == @childCategory : %> is-active<% end %>" href="/<%- parentCategoryId %>/<%- childCategoryId %>/"><%- childCategory.label %></tpl-a>
+<% end %>
+      </tpl-div>
+<% end %>
+<% end %>
+    </tpl-nav>
+  </tpl-div>
+</tpl-nav>

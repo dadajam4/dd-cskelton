@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+//
+// Tabs
+//
+
+@mixin tab {
+  display: block;
+  width: 100%;
+}
+
+@mixin tab-nav {
+  display: flex;
+  align-items: flex-start;
+  @include scrollable--x;
+}
+
+@mixin tab-content {
+  position: relative;
+  padding: $spacing-md 0;
+}
+
+@mixin tab-link {
+  @include truncate;
+  display: block;
+  text-decoration: none;
+  @include user-drag(none);
+  cursor: pointer; // needed in case links have no href & use JS
+
+  &:focus {
+    outline: 0;
+  }
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+//
+// Line Heights
+//
+$line-height-reset  : 1;
+$line-height-icon   : 1 !default;
+$line-height-heading: 1.25 !default;
+$line-height-tab    : 2.5rem !default;
+$line-height-xxs    : 1 !default;
+$line-height-xs     : 1.2 !default;
+$line-height-sm     : 1.45 !default;
+$line-height-md     : 1.73 !default;
+$line-height-lg     : 1.8 !default;
+$line-height-xl     : 2 !default;
+
+// * Alias Map
+$line-heights: (
+  reset  : $line-height-reset,
+  icon   : $line-height-icon,
+  heading: $line-height-heading,
+  tab    : $line-height-tab,
+  xxs    : $line-height-xxs,
+  xs     : $line-height-xs,
+  sm     : $line-height-sm,
+  md     : $line-height-md,
+  lg     : $line-height-lg,
+  xl     : $line-height-xl,
+);

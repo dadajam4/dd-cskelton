@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+//
+// Menus
+//
+
+.#{$tpl}dropdown {
+  position: absolute;
+  z-index: $z-index-dropdown;
+  left: 50%;
+  float: left;
+  min-width: $size-xxs;
+  max-width: $size-md;
+  margin-top: $spacing-xxxs;
+  border: $border-width-thin solid $color-divider;
+  border-radius: $border-radius-md;
+  padding: $spacing-xxs 0;
+  font-size: $fs-sm;
+  background: $color-brand-base;
+  box-shadow: $shadow-drop-down;
+  transform: translateX(-50%);
+
+  &--left {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  &--right {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  &--bottom {
+    bottom: 100%;
+  }
+
+  &--small {
+    min-width: $size-sm;
+  }
+
+  &--medium {
+    min-width: $size-md;
+  }
+
+  &--large {
+    min-width: $size-lg;
+    max-width: $max-width-action-overflow-menu;
+  }
+
+  // Apply to Dropdown UL
+  &--length-5 {
+    @include dropdown-overflow-length(5);
+  }
+
+  &--length-7 {
+    @include dropdown-overflow-length(7);
+  }
+
+  &--length-10 {
+    @include dropdown-overflow-length(10);
+  }
+
+  &--length-with-icon-5 {
+    @include dropdown-overflow-length(5, $icon-size: $size-field-height-sm);
+  }
+
+  &--length-with-icon-7 {
+    @include dropdown-overflow-length(7, $icon-size: $size-field-height-sm);
+  }
+
+  &--length-with-icon-10 {
+    @include dropdown-overflow-length(10, $icon-size: $size-field-height-sm);
+  }
+
+  mark {
+    font-weight: $font-weight-bold;
+    background-color: transparent;
+  }
+
+  &[class*="#{$tpl}nubbin--top"] {
+    margin-top: ($square-tooltip-nubbin / 2);
+  }
+
+  &[class*="#{$tpl}nubbin--bottom"] {
+    margin-bottom: ($square-tooltip-nubbin / 2);
+  }
+
+  &__header {
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  &__item {
+    @include line-height(base);
+
+    > a {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: $spacing-xs $spacing-sm;
+      white-space: nowrap;
+      cursor: pointer;
+      color: $color-typo-base!important;
+
+      // &,
+      // &:hover,
+      // &:visited,
+      // &:focus {
+      //   color: $color-typo-base!important;
+      // }
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        text-decoration: none;
+        background-color: $color-brand-base-focus;
+      }
+
+      &:active {
+        text-decoration: none;
+        background-color: $color-brand-base-focus;
+      }
+
+      &[aria-disabled="true"] {
+        color: $color-typo-muted;
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    // .#{$tpl}icon--selected {
+    //   opacity: 0;
+    //   transition: opacity $duration-immediately ease;
+    // }
+
+    // &.#{$tpl}is-selected .#{$tpl}icon--selected {
+    //   fill: $color-text-icon-default-hover;
+    //   opacity: 1;
+    // }
+  }
+}
+
+.#{$tpl}dropdown-trigger {
+  position: relative;
+  display: inline-block;
+
+  .#{$tpl}dropdown {
+    top: 100%;
+  }
+
+  .#{$tpl}dropdown--bottom {
+    top: auto;
+  }
+
+  &--hover {
+
+    .#{$tpl}dropdown {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity $duration-quickly linear, visibility $duration-quickly linear;
+    }
+
+    &:hover,
+    &:focus {
+      outline: 0;
+
+      .#{$tpl}dropdown {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity $duration-quickly linear, visibility $duration-quickly linear;
+      }
+    }
+  }
+
+  // If someone is using javascript for click to toggle - this modifier will help
+  &--click {
+
+    .#{$tpl}dropdown {
+      display: none;
+    }
+
+    &.#{$tpl}is-open .#{$tpl}dropdown {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  // Deal with positioning when target is just an icon
+  & > .#{$tpl}icon {
+
+    ~ .#{$tpl}dropdown--left[class*="#{$tpl}nubbin"] {
+      left: (get-size(field-height-md) * .5 - $spacing-lg);
+    }
+
+    ~ .#{$tpl}dropdown--right[class*="#{$tpl}nubbin"] {
+      right: (get-size(field-height-md) * .5 - $spacing-lg);
+    }
+
+    @each $size in $btn-height-list {
+      &--#{$size} {
+        ~ .#{$tpl}dropdown--left[class*="#{$tpl}nubbin"] {
+          left: (get-size(field-height-#{$size}) * .5 - $spacing-lg);
+        }
+
+        ~ .#{$tpl}dropdown--right[class*="#{$tpl}nubbin"] {
+          right: (get-size(field-height-#{$size}) * .5 - $spacing-lg);
+        }
+      }
+    }
+  }
+}

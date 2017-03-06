@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+//
+// Dividers
+//
+
+$divider-width: 1px;
+
+$directions: (
+  top: (top),
+  right: (right),
+  bottom: (bottom),
+  left: (left),
+  vertical: (top, bottom),
+  horizontal: (left, right),
+  arround: (top, right, bottom, left),
+);
+
+@mixin dividers($suf: "") {
+  @each $direction-cel, $direction-targets in $directions {
+    .#{$tpl}#{$suf}has-dividers--#{$direction-cel} > *,
+    .#{$tpl}#{$suf}has-divider--#{$direction-cel} {
+      border-width: 0;
+      border-style: solid;
+      border-color: $color-divider;
+
+      @each $direction-name in $direction-targets {
+        border-#{$direction-name}-width: $divider-width;
+      }
+    }
+
+    .#{$tpl}#{$suf}has-dividers--#{$direction-cel}-space > *,
+    .#{$tpl}#{$suf}has-divider--#{$direction-cel}-space {
+      border-width: 0;
+      border-style: solid;
+      border-color: $color-divider;
+
+      @each $direction-name in $direction-targets {
+        border-#{$direction-name}-width: $divider-width;
+        margin-#{$direction-name}: $spacing-xs;
+        padding-#{$direction-name}: $spacing-xs;
+      }
+    }
+  }
+
+  // dividers fix
+  .#{$tpl}#{$suf}has-dividers--vertical > *,
+  .#{$tpl}#{$suf}has-dividers--arround > * {
+    &:not(:first-child) {
+      margin-top: -$divider-width;
+    }
+  }
+
+  .#{$tpl}#{$suf}has-dividers--horizontal > *,
+  .#{$tpl}#{$suf}has-dividers--arround > * {
+    &:not(:first-child) {
+      margin-left: -$divider-width;
+    }
+  }
+}
+
+@include dividers;
+@include mq-wide { @include dividers("wide-"); }
+@include mq-narrow { @include dividers("narrow-"); }
+
+@include mq-min("xs") { @include dividers("min-xs-"); }
+@include mq-min("sm") { @include dividers("min-sm-"); }
+@include mq-min("lg") { @include dividers("min-lg-"); }
+
+@include mq-max("xs") { @include dividers("max-xs-"); }
+@include mq-max("sm") { @include dividers("max-sm-"); }
+@include mq-max("lg") { @include dividers("max-lg-"); }
+
+@include mq("xs") { @include dividers("xs-"); }
+@include mq("sm") { @include dividers("sm-"); }
+@include mq("md") { @include dividers("md-"); }
+@include mq("lg") { @include dividers("lg-"); }

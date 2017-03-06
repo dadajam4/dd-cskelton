@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+//
+// Border
+//
+
+@function get-border-radius($key, $unit: null) {
+  $value: map-get($spacings, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}
+
+@function get-border-width($key, $unit: null) {
+  $value: map-get($border-widths, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}
+
+// Border Helper
+@mixin border($borders: null, $radius: null) {
+
+  @if $borders != null {
+
+    @if $borders == around {
+      border: $border-width-thin solid $color-divider;
+    }
+
+    @else {
+
+      @each $positions in $borders {
+
+        @each $position in $positions {
+          border-#{$position}: $border-width-thin solid $color-divider;
+        }
+      }
+    }
+  }
+
+  @if $radius != null {
+    border-radius: $radius;
+    background-clip: padding-box;
+  }
+}

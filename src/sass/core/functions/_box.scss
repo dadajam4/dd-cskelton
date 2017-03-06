@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+//
+// box
+//
+
+// Bounding Box for components
+@mixin box($padding: $spacing-md, $border-radius: $border-radius-md, $borders: null) {
+  padding: $padding;
+  background-clip: border-box;
+
+  @if $border-radius != null {
+    border-radius: $border-radius;
+  }
+
+  @if $borders != null {
+    @include border($borders);
+  }
+}

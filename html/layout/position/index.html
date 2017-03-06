@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Layout | Position</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/dest/css/acs.css">
+
+<script src="/assets/js/jquery-3.1.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+</head>
+<body>
+  <div class="acs-site acs-site--limit-size_hoge">
+    <div class="acs-site__container">
+      <div class="acs-site-banner">
+        <a class="acs-site-banner__link" href="/">
+          <span class="acs-site-banner__logo-icon icon-logo-ac-mono">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          <span class="acs-logo-text acs-logo-inverse">ADVANCE CODE</span>
+        </a>
+        <a class="acs-site__btn-menu" href="javascript:void(0);"><span>menu</span></a>
+      </div>
+
+      <header class="acs-site__header">
+        <h1 class="acs-site__title">
+<!--
+          <span class="icon-logo-ac">
+            <span class="path1"></span><span class="path2"></span>
+          </span>
+          &nbsp;
+-->
+          Layout | Position        </h1>
+        <div class="acs-site__lead">
+          <div class="acs-site__lead-container">
+            可視性ヘルパーは、領域の可視状態を変更します。
+          </div>
+        </div>
+      </header>
+
+      <div class="acs-site-content">
+        
+
+<!-- Relative &amp; Absolute -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Relative &amp; Absolute</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-box acs-theme--shade" style="position: relative;">
+    <div class="acs-is-relative">
+      <div class="acs-is-absolute" style="top: 1rem; left: 1rem; border: 1px solid red; background: #f4f6f9; opacity: 0.8;">An absolutely positioned element is positioned relative to the nearest positioned ancestor.</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Static &amp; Absolute -->
+<section class="acs-section acs-container">
+  <h2 class="acs-h-section">Static &amp; Absolute</h2>
+  <div class="acs-small">
+    テキストが入ります。
+  </div>
+
+  <div class="acs-box acs-theme--shade" style="position: relative;">
+    <div class="acs-is-static">
+      <div class="acs-is-absolute" style="top: 1rem; left: 1rem; border: 1px solid red; background: #f4f6f9; opacity: 0.8;">An absolutely positioned element is positioned relative to the nearest positioned ancestor.</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</section>
+      </div>
+
+      <nav class="acs-site-navigation acs-theme-inverse">
+  <div class="acs-site-navigation__inner">
+    <p>text</p>
+    <ul class="acs-site-menu">
+      <li class="acs-site-menu__item">
+        <a href="/">Top</a>
+      </li>
+      <li class="acs-site-menu__item is-active has-child">
+        <a href="javascript:void(0);">Layout</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/layout/themes/">Themes</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/grid/">Grid</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/sizing/">Sizing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/spacing/">Spacing</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/floats/">Floats</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item is-active"><a href="/layout/position/">Position</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/scrollable/">Scrollable</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/layout/visibility/">Visibility</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Element</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/element/hoge/">リンク</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/element/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Component</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/component/forms/">Forms</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/component/buttons/">Buttons</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/component/lists/">Lists</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/component/hoge/">リンク</a></li>
+        </ul>
+      </li>
+      <li class="acs-site-menu__item has-child">
+        <a href="javascript:void(0);">Typography</a>
+        <ul class="acs-site-sub-menu">
+          <li class="acs-site-sub-menu__item"><a href="/typography/basic/">Basic</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/heading/">Heading</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/alignment/">Alignment</a></li>
+          <li class="acs-site-sub-menu__item"><a href="/typography/truncation/">Truncation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      <footer class="acs-site-footer acs-theme-inverse">
+        <div class="acs-site-footer__inner">
+          &copy; Copyright 2017 Advance Code. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

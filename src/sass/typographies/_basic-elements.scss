@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+//
+// Basic Elements
+//
+
+
+
+//
+// small
+//
+@mixin sel-small {
+  small, .#{$tpl}small { @content; }
+}
+
+@include sel-small {
+  font-size: 85%;
+}
+
+
+
+//
+// strong
+//
+@mixin sel-strong {
+  strong, .#{$tpl}strong { @content; }
+}
+
+@include sel-strong {
+  font-weight: bold;
+}
+
+
+
+//
+// ac-italic
+//
+.#{$tpl}italic {
+  font-style: italic;
+}
+
+
+
+//
+// ac-em
+//
+@mixin sel-em {
+  em, .#{$tpl}em { @content; }
+}
+
+@include sel-em {
+  font-style: italic;
+}
+
+
+
+//
+// mark
+//
+@mixin sel-mark {
+  mark, .#{$tpl}mark { @content; }
+}
+
+@include sel-mark {
+  padding: .2em;
+  background-color: $color-layout-mark;
+  color: $color-typo-base;
+}
+
+
+
+//
+// deleted
+//
+@mixin sel-del {
+  s, strike, del, .#{$tpl}del { @content; }
+}
+
+@include sel-del {
+  text-decoration: line-through;
+}
+
+
+
+//
+// ins
+//
+@mixin sel-ins {
+  ins, .#{$tpl}ins { @content; }
+}
+
+@include sel-ins {
+  text-decoration: underline;
+}
+
+
+
+//
+// underline
+//
+@mixin sel-underline {
+  u, .#{$tpl}u { @content; }
+}
+
+@include sel-underline {
+  text-decoration: underline;
+}
+
+
+
+//
+// code
+//
+code {
+  background: $color-brand-gray-lighter;
+  padding: 2px 4px;
+  border-radius: $border-radius-sm;
+}
+
+pre {
+  @include box($padding: $spacing-md, $border-radius: $border-radius-md, $borders: arround);
+  @include container-colors(neutral);
+  @include scrollable--x;
+}
+
+
+
+//
+// cite
+//
+cite {
+  font-style: italic;
+}
+
+
+
+//
+// blockquote
+//
+blockquote {
+  margin-bottom: $spacing-md;
+  border-left: solid $spacing-xxs $color-brand-gray-light;
+  padding: $spacing-xxs $spacing-md;
+  padding-right: 0;
+  @include font-size(lg);
+  @include line-height(sm);
+
+  footer {
+    font-size: 80%;
+    color: $color-brand-muted;
+    @include line-height(md);
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+.#{$tpl}blockquote--reverse {
+  border-left: 0;
+  border-right: solid $spacing-xxs $color-brand-gray-light;
+  text-align: right;
+  padding: $spacing-xxs $spacing-md;
+  padding-left: 0;
+
+  footer {
+    &:before {
+      content: "";
+    }
+
+    &:after {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+
+
+//
+// Paragraphs
+//
+@mixin sel-para {
+  p, .#{$tpl}para { @content; }
+}
+
+.#{$tpl}para {
+  margin-bottom: $spacing-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

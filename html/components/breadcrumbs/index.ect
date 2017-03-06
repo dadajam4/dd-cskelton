@@ -1,0 +1,21 @@
+<% block 'title': %>Components | Breadcrumbs<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <nav role="navigation" aria-label="Breadcrumbs">
+    <ol class="<%- @tpl %>breadcrumb">
+      <li><a href="javascript:void(0);">Parent Entity</a></li>
+      <li><a href="javascript:void(0);">Parent Record Name</a></li>
+      <li>Current Record Name</li>
+    </ol>
+  </nav>
+</section>

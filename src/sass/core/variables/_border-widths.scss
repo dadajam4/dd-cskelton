@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+//
+// Border Widths
+//
+$border-width-thin: 1px !default;
+$border-width-thick: 2px !default;
+$border-width-field: $border-width-thin !default;
+$border-width-navbar: $border-width-thin !default;
+
+// * Alias Map
+$border-widths: (
+  thin : $border-width-thin,
+  thick: $border-width-thick,
+  field: $border-width-field,
+  navbar: $border-width-navbar,
+);

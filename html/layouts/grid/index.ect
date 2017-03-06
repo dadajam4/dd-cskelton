@@ -1,0 +1,232 @@
+<% block 'title': %>Layouts | Grid<% end %>
+<% block 'site-lead': %>
+グリッドヘルパーは領域に一連のレイアウトを設定します。<br>
+これらは枠組み、サイズ、並び順、上下左右の位置を適用します。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Automatic Sizing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Automatic Sizing</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid">
+    <div class="<%- @tpl %>col">
+      <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">col</div>
+    </div>
+    <div class="<%- @tpl %>col">
+      <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">col</div>
+    </div>
+  </div>
+
+  <div class="<%- @tpl %>grid">
+    <div class="<%- @tpl %>col">
+      <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">テキストが入ります。テキストが入ります。</div>
+    </div>
+    <div class="<%- @tpl %>col">
+      <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">col</div>
+    </div>
+    <div class="<%- @tpl %>col">
+      <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">col</div>
+    </div>
+  </div>
+</section>
+
+<!-- Manual Sizing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Manual Sizing</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>wrap">
+    <div class="<%- @tpl %>size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">1 / 1</div>
+
+    <div class="<%- @tpl %>pc-size--4-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">PC: 4 / 12, SP: 1 / 1</div>
+    <div class="<%- @tpl %>pc-size--8-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">PC: 8 / 12, SP: 1 / 1</div>
+
+    <div class="<%- @tpl %>pc-size--6-12 <%- @tpl %>sp-size--1-1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">PC: 6 / 12, SP: 1 / 1</div>
+    <div class="<%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">PC: 3 / 12, SP: 1 / 2</div>
+    <div class="<%- @tpl %>pc-size--3-12 <%- @tpl %>sp-size--1-2 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade <%- @tpl %>text-align--center <%- @tpl %>text--center">PC: 3 / 12, SP: 1 / 2</div>
+  </div>
+</section>
+
+<!-- Horizontal Alignment Center -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Horizontal Alignment Center</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-center <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Horizontal Alignment Space -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Horizontal Alignment Space</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-space <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Horizontal Alignment Spread -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Horizontal Alignment Spread</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-spread <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Horizontal Alignment End -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Horizontal Alignment End</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-end <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Vertical Alignment Start -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Alignment Start</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--vertical-align-start <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Vertical Alignment Center -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Alignment Center</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--vertical-align-center <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Vertical Alignment End -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Alignment End</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--vertical-align-end <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Vertical Alignment Item -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Alignment Item</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-spread <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>align-top <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Top Align</div>
+    <div class="<%- @tpl %>align-middle <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Middle Align</div>
+    <div class="<%- @tpl %>align-bottom <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Bottom Align</div>
+  </div>
+</section>
+
+<!-- Vertical Stretch -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Stretch</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--vertical-stretch <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+  </div>
+</section>
+
+<!-- Alignment Item Center -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Alignment Item Center</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>grid--align-center <%- @tpl %>grid--vertical-align-center <%- @tpl %>box <%- @tpl %>theme--shade" style="height: 250px;">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">Content determines the width unless otherwise set</div>
+  </div>
+</section>
+
+<!-- Alignment Item Center -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Alignment Item Bump</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">2</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">3</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">4</div>
+    <div class="<%- @tpl %>col--bump-left <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">5</div>
+    <div class="<%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">6</div>
+  </div>
+</section>
+
+
+<!-- Order -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Order</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>grid <%- @tpl %>box <%- @tpl %>theme--shade">
+    <div class="<%- @tpl %>order--1 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">1</div>
+    <div class="<%- @tpl %>pc-order--2 <%- @tpl %>sp-order--3 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">PC: 2, SP: 3</div>
+    <div class="<%- @tpl %>pc-order--3 <%- @tpl %>sp-order--2 <%- @tpl %>box <%- @tpl %>box--sm <%- @tpl %>theme-border--shade">PC: 3, SP: 2</div>
+  </div>
+</section>

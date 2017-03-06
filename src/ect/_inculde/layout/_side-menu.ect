@@ -1,0 +1,55 @@
+<% extend @inc + '/layout/_base' %>
+
+  <tpl-div class="page page--limit-size_hoge">
+    <tpl-div class="page-container">
+      <tpl-div class="page-banner">
+        <tpl-a class="page-banner__link" href="/">
+<!--
+          <tpl-span class="strong text--lg"><%- @config.PACKAGE_TITLE %></tpl-span>
+-->
+          <tpl-span class="text--lg"><tpl-span class="logo-dd"><span>D</span><span>D</span></tpl-span> CSkelton</tpl-span>
+        </tpl-a>
+        <tpl-a class="page-menu__trigger"><span>menu</span></tpl-a>
+      </tpl-div>
+
+      <tpl-header class="page-header">
+        <tpl-h1 class="page-title">
+          <%- @_pageTitle || @pageTitle %>
+        </tpl-h1>
+        <tpl-div class="page-lead">
+          <tpl-div class="page-lead__container">
+            <% content 'page-lead' %>
+          </tpl-div>
+        </tpl-div>
+      </tpl-header>
+
+      <tpl-div class="page-content">
+
+        <% if @breads.length : %>
+        <tpl-section class="container p-t--lg">
+          <nav role="navigation" aria-label="Breadcrumbs">
+            <tpl-ol class="breadcrumb">
+              <li><a href="/"><tpl-plain-icon tpl-icon="home"></tpl-plain-icon> Home</a></li>
+              <% for bread, index in @breads : %>
+              <% isCurrent = index == @breads.length - 1 %>
+              <li>
+                <% if bread.url and !isCurrent : %><a href="<%- bread.url %>"><% end %>
+                <%- bread.label %>
+                <% if bread.url and !isCurrent : %></a><% end %>
+              <% end %>
+            </tpl-ol>
+          </nav>
+        </tpl-section>
+        <% end %>
+        <% content %>
+      </tpl-div>
+
+      <% include '_inculde/component/_page-navigation.ect', @ %>
+
+      <tpl-footer class="page-footer theme-inverse">
+        <tpl-div class="page-footer__inner">
+          &copy; Copyright 2017 dadajam All rights reserved.
+        </tpl-div>
+      </tpl-footer>
+    </tpl-div>
+  </tpl-div>

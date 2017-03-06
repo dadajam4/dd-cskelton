@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+//
+// Alignments
+//
+
+.#{$tpl}text--left   { text-align: left; }
+.#{$tpl}text--center { text-align: center; }
+.#{$tpl}text--right  { text-align: right; }
+
+.#{$tpl}align--top    { vertical-align: top; align-self: flex-start; }
+.#{$tpl}align--middle { vertical-align: middle; align-self: center; }
+.#{$tpl}align--bottom { vertical-align: bottom; align-self: flex-end; }

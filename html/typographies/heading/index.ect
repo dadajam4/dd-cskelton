@@ -1,0 +1,28 @@
+<% block 'title': %>Typographies | Heading<% end %>
+<% block 'site-lead': %>
+見出しです。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Heading -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Heading : 見出し</span></h2>
+
+  <% for level in [1...7] : %>
+  <h<%= level %>>
+    和文テキストが入ります。 This is Level(<%= level %>).
+    <small>見出し内sub text</small>
+  </h<%= level %>>
+  <% end %>
+</section>
+
+<!-- Lead -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Lead : リード文</span></h2>
+
+  <div>
+    <p class="<%- @tpl %>lead">これはリード文です。 this is lead text.</p>
+    <p>これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。</p>
+  </div>
+</section>
+

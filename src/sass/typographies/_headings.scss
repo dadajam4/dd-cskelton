@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+//
+// Heading
+//
+
+.#{$tpl}text-heading--lg {
+  @include text-heading--lg;
+}
+
+.#{$tpl}text-heading--md {
+  @include text-heading--md;
+}
+
+.#{$tpl}text-heading--sm {
+  @include text-heading--sm;
+}
+
+
+@mixin text-heading--label {
+  @include font-size(sm);
+  @include line-height(xs);
+  color: $color-typo-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+@mixin sel-h {
+  h1, .#{$tpl}h1,
+  h2, .#{$tpl}h2,
+  h3, .#{$tpl}h3,
+  h4, .#{$tpl}h4,
+  h5, .#{$tpl}h5,
+  h6, .#{$tpl}h6 { @content; }
+}
+
+// @mixin sel-h-lg {
+//   h1, .#{$tpl}h1,
+//   h2, .#{$tpl}h2,
+//   h3, .#{$tpl}h3 { @content; }
+// }
+
+// @mixin sel-h-sm {
+//   h4, .#{$tpl}h4,
+//   h5, .#{$tpl}h5,
+//   h6, .#{$tpl}h6 { @content; }
+// }
+
+// @include sel-h {
+//   @include line-height(heading);
+//   color: $color-typo-heading;
+
+//   @include sel-small {
+//     font-weight: 400%;
+//     color: $color-typo-muted;
+//     @include line-height(xxs);
+//   }
+// }
+
+// @include sel-h-lg {
+//   margin-top: 2rem;
+//   margin-bottom: 1rem;
+
+//   @include sel-small {
+//     font-size: 65%;
+//   }
+// }
+
+// @include sel-h-sm {
+//   margin-top: 1rem;
+//   margin-bottom: 1rem;
+
+//   @include sel-small {
+//     font-size: 75%;
+//   }
+// }
+
+h1, .#{$tpl}h1 {
+  font-size: $fs-base * 2.26666666666667;
+}
+
+h2, .#{$tpl}h2 {
+  font-size: $fs-xxl;
+}
+
+h3, .#{$tpl}h3 {
+  font-size: $fs-base * 1.46666666666667;
+}
+
+h4, .#{$tpl}h4 {
+  font-size: $fs-base * 1.2;
+}
+
+h5, .#{$tpl}h5 {
+  font-size: $fs-base * 0.93333333333333;
+}
+
+h6, .#{$tpl}h6 {
+  font-size: $fs-sm;
+}
+
+
+
+//
+// section heading
+//
+.#{$tpl}h-section {
+  // padding: 1.3rem 3.2rem 1.3rem 5.9rem;
+  // padding: 1.3rem 0 0;
+  margin-top: 4rem;
+  margin-bottom: 1.3rem;
+  position: relative;
+  z-index: 1;
+  @include line-height(heading);
+  color: $color-typo-base;
+
+  @each $key, $val in $container-margins {
+    @include mq($key) {
+      // padding-left: $val * 2;
+      margin-left: -$val * 2;
+      margin-right: -$val;
+    }
+  }
+
+
+
+  .#{$tpl}section > &:first-child {
+    @each $key, $val in $container-margins {
+      @include mq($key) {
+        margin-top: -$val * .5;
+      }
+    }
+  }
+
+  .#{$tpl}inner {
+    display: inline-block;
+    font-size: $fs-lg;
+    font-weight: bold;
+    border-bottom: solid 1px $color-typo-base;
+    margin-left: 0;
+    padding-right: 1rem;
+    @each $key, $val in $container-margins {
+      @include mq($key) {
+        padding-left: $val * 2;
+        // margin-left: -$val * 2;
+        // margin-right: -$val;
+      }
+    }
+
+  }
+}
+
+
+
+// lead
+.#{$tpl}lead {
+  @include font-size(xl);
+  @include line-height(sm);
+  color: $color-typo-lead;
+}
+
+
+
+// caption
+.#{$tpl}text-title--caps {
+  @include font-size(sm);
+  @include line-height(xs);
+  color: $color-typo-lead;
+}
+
+
+
+
+// //
+// // ac-logo-bnr
+// //
+// @mixin ac-logo($name, $width, $height) {
+//   display: inline-block;
+//   vertical-align: bottom;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: center;
+//   background-image: url(../img/logo/#{$name}.svg);
+//   width: #{$width}px;
+//   height: #{$height}px;
+//   line-height: #{$height}px;
+//   white-space: nowrap;
+//   text-indent: 100%;
+//   overflow: hidden;
+
+//   &.#{$tpl}logo-inverse {
+//     background-image: url(../img/logo/#{$name}-inverse.svg);
+//   }
+// }
+
+// .#{$tpl}logo-bnr {
+//   @include ac-logo(logo-bnr, 200, 34);
+// }
+
+// // origin 329, 32
+// .#{$tpl}logo-text {
+//   @include ac-logo(logo-text, 164.5, 16);
+// }

@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+//
+// Themes
+//
+
+$my-classname: '#{$tpl}theme';
+
+.#{$my-classname} {
+  @include auto-container-theme-classes($my-classname) {
+    @include container-colors($_container-theme-key);
+  }
+}

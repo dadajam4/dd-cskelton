@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Buttons | Components | DD CSkelton</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="/dest/css/dd.css">
+  <script src="/assets/js/jquery-3.1.1.min.js"></script>
+  <script src="/assets/js/demo.js"></script>
+</head>
+
+<body>
+  <div class="dd-page dd-page--limit-size_hoge">
+    <div class="dd-page-container">
+      <div class="dd-page-banner">
+        <a href="/" class="dd-page-banner__link">
+          <!--
+          <tpl-span class="strong text--lg">DD CSkelton</tpl-span>
+-->
+          <span class="dd-text--lg">
+            <span class="dd-logo-dd">
+              <span>D</span>
+              <span>D</span>
+            </span>
+            CSkelton
+          </span>
+        </a>
+        <a href="javascript:void(0);" class="dd-page-menu__trigger">
+          <span>menu</span>
+        </a>
+      </div>
+      <header class="dd-page-header">
+        <h1 class="dd-page-title">
+          Buttons
+        </h1>
+        <div class="dd-page-lead">
+          <div class="dd-page-lead__container">
+            &#x30DC;&#x30BF;&#x30F3;&#x8981;&#x7D20;&#x3067;&#x3059;&#x3002;
+          </div>
+        </div>
+      </header>
+      <div class="dd-page-content">
+        <section class="dd-container dd-p-t--lg">
+          <nav role="navigation" aria-label="Breadcrumbs">
+            <ol class="dd-breadcrumb">
+              <li>
+                <a href="/">
+                  <span class="dd-fa dd-fa-home"></span>
+                  Home</a>
+              </li>
+              <li>
+                Components </li>
+              <li>
+                Buttons </li>
+            </ol>
+          </nav>
+        </section>
+        <!-- Base -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Base
+            </span>
+          </h2>
+          <a class="dd-btn" href="javascript:void(0);">
+            a
+          </a>
+          <button class="dd-btn" type="button">
+            button
+          </button>
+        </section>
+        <!-- Types -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Types
+            </span>
+          </h2>
+          <button class="dd-btn" type="button">
+            base
+          </button>
+          <button class="dd-btn dd-btn--neutral" type="button">
+            neutral
+          </button>
+          <button class="dd-btn dd-btn--primary" type="button">
+            primary
+          </button>
+          <button class="dd-btn dd-btn--shade" type="button">
+            shade
+          </button>
+          <button class="dd-btn dd-btn--inverse" type="button">
+            inverse
+          </button>
+          <button class="dd-btn dd-btn--info" type="button">
+            info
+          </button>
+          <button class="dd-btn dd-btn--success" type="button">
+            success
+          </button>
+          <button class="dd-btn dd-btn--warning" type="button">
+            warning
+          </button>
+          <button class="dd-btn dd-btn--danger" type="button">
+            danger
+          </button>
+        </section>
+        <!-- Outline -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Outline
+            </span>
+          </h2>
+          <button class="dd-btn dd-btn--neutral dd-btn--outline" type="button">
+            neutral
+          </button>
+          <button class="dd-btn dd-btn--primary dd-btn--outline" type="button">
+            primary
+          </button>
+          <button class="dd-btn dd-btn--shade dd-btn--outline" type="button">
+            shade
+          </button>
+          <button class="dd-btn dd-btn--inverse dd-btn--outline" type="button">
+            inverse
+          </button>
+          <button class="dd-btn dd-btn--info dd-btn--outline" type="button">
+            info
+          </button>
+          <button class="dd-btn dd-btn--success dd-btn--outline" type="button">
+            success
+          </button>
+          <button class="dd-btn dd-btn--warning dd-btn--outline" type="button">
+            warning
+          </button>
+          <button class="dd-btn dd-btn--danger dd-btn--outline" type="button">
+            danger
+          </button>
+        </section>
+        <!-- Sizes -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Sizes
+            </span>
+          </h2>
+          <button class="dd-btn dd-btn--neutral dd-btn--xs" type="button">
+            xs
+          </button>
+          <button class="dd-btn dd-btn--neutral dd-btn--sm" type="button">
+            sm
+          </button>
+          <button class="dd-btn dd-btn--neutral dd-btn--md" type="button">
+            md
+          </button>
+          <button class="dd-btn dd-btn--neutral dd-btn--lg" type="button">
+            lg
+          </button>
+          <button class="dd-btn dd-btn--neutral dd-btn--xl" type="button">
+            xl
+          </button>
+        </section>
+        <!-- Icon -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Icon
+            </span>
+          </h2>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-glass"></span>
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-music"></span>
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-search"></span>
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-envelope-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-heart"></span>
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star"></span>
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-user"></span>
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--xs dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-film"></span>
+            </button>
+          </div>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-glass"></span>
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-music"></span>
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-search"></span>
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-envelope-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-heart"></span>
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star"></span>
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-user"></span>
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--sm dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-film"></span>
+            </button>
+          </div>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-glass"></span>
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-music"></span>
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-search"></span>
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-envelope-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-heart"></span>
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star"></span>
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-user"></span>
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--md dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-film"></span>
+            </button>
+          </div>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-glass"></span>
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-music"></span>
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-search"></span>
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-envelope-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-heart"></span>
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star"></span>
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-user"></span>
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--lg dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-film"></span>
+            </button>
+          </div>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-glass"></span>
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-music"></span>
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-search"></span>
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-envelope-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-heart"></span>
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star"></span>
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-star-o"></span>
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-user"></span>
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--xl dd-btn--icon" type="button">
+              <span class="dd-fa dd-fa-film"></span>
+            </button>
+          </div>
+        </section>
+        <!-- Labeled -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Labeled
+            </span>
+          </h2>
+          <span class="dd-btn dd-btn--primary dd-btn--label">
+            No Clickable...
+          </span>
+        </section>
+        <!-- States -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              States
+            </span>
+          </h2>
+          <dl>
+            <dt>&#x7121;&#x52B9;&#x72B6;&#x614B;</dt>
+            <button class="dd-btn" type="button" disabled>
+              base
+            </button>
+            <button class="dd-btn dd-btn--neutral" type="button" disabled>
+              neutral
+            </button>
+            <button class="dd-btn dd-btn--primary" type="button" disabled>
+              primary
+            </button>
+            <button class="dd-btn dd-btn--shade" type="button" disabled>
+              shade
+            </button>
+            <button class="dd-btn dd-btn--inverse" type="button" disabled>
+              inverse
+            </button>
+            <button class="dd-btn dd-btn--info" type="button" disabled>
+              info
+            </button>
+            <button class="dd-btn dd-btn--success" type="button" disabled>
+              success
+            </button>
+            <button class="dd-btn dd-btn--warning" type="button" disabled>
+              warning
+            </button>
+            <button class="dd-btn dd-btn--danger" type="button" disabled>
+              danger
+            </button>
+            <dd>
+            </dd>
+          </dl>
+        </section>
+        <!-- Loading -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Loading
+            </span>
+          </h2>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--loading" type="button">
+              base
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--loading" type="button">
+              neutral
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--loading" type="button">
+              primary
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--loading" type="button">
+              shade
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--loading" type="button">
+              inverse
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--loading" type="button">
+              info
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--loading" type="button">
+              success
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--loading" type="button">
+              warning
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--loading" type="button">
+              danger
+            </button>
+          </div>
+          <div class="dd-m-v--md">
+            <button class="dd-btn dd-btn--outline dd-btn--loading" type="button">
+              base
+            </button>
+            <button class="dd-btn dd-btn--neutral dd-btn--outline dd-btn--loading" type="button">
+              neutral
+            </button>
+            <button class="dd-btn dd-btn--primary dd-btn--outline dd-btn--loading" type="button">
+              primary
+            </button>
+            <button class="dd-btn dd-btn--shade dd-btn--outline dd-btn--loading" type="button">
+              shade
+            </button>
+            <button class="dd-btn dd-btn--inverse dd-btn--outline dd-btn--loading" type="button">
+              inverse
+            </button>
+            <button class="dd-btn dd-btn--info dd-btn--outline dd-btn--loading" type="button">
+              info
+            </button>
+            <button class="dd-btn dd-btn--success dd-btn--outline dd-btn--loading" type="button">
+              success
+            </button>
+            <button class="dd-btn dd-btn--warning dd-btn--outline dd-btn--loading" type="button">
+              warning
+            </button>
+            <button class="dd-btn dd-btn--danger dd-btn--outline dd-btn--loading" type="button">
+              danger
+            </button>
+          </div>
+        </section>
+        <!-- Animated -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Animated
+            </span>
+          </h2>
+          <button class="dd-btn dd-btn--neutral dd-btn--animated" type="button">
+            <span class="dd-btn-content dd-btn-content--visible">
+              Next
+            </span>
+            <span class="dd-btn-content dd-btn-content--hidden">
+              <span class="dd-fa dd-fa-arrow-right"></span>
+            </span>
+          </button>
+          <button class="dd-btn dd-btn--primary dd-btn--animated-vertical" type="button">
+            <span class="dd-btn-content dd-btn-content--visible">
+              <span class="dd-fa dd-fa-shopping-cart dd-p-h--sm"></span>
+            </span>
+            <span class="dd-btn-content dd-btn-content--hidden">
+              Shop
+            </span>
+          </button>
+          <button class="dd-btn dd-btn--success dd-btn--animated-fade" type="button">
+            <span class="dd-btn-content dd-btn-content--visible">
+              Sign-up for a Pro account
+            </span>
+            <span class="dd-btn-content dd-btn-content--hidden">
+              $12.99 a month
+            </span>
+          </button>
+        </section>
+        <!-- Group -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Group
+            </span>
+          </h2>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group">
+              <button class="dd-btn" type="button">
+                base - 1
+              </button>
+              <button class="dd-btn" type="button">
+                base - 2
+              </button>
+              <button class="dd-btn" type="button">
+                base - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral">
+              <button class="dd-btn" type="button">
+                neutral - 1
+              </button>
+              <button class="dd-btn" type="button">
+                neutral - 2
+              </button>
+              <button class="dd-btn" type="button">
+                neutral - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--primary">
+              <button class="dd-btn" type="button">
+                primary - 1
+              </button>
+              <button class="dd-btn" type="button">
+                primary - 2
+              </button>
+              <button class="dd-btn" type="button">
+                primary - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--shade">
+              <button class="dd-btn" type="button">
+                shade - 1
+              </button>
+              <button class="dd-btn" type="button">
+                shade - 2
+              </button>
+              <button class="dd-btn" type="button">
+                shade - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--inverse">
+              <button class="dd-btn" type="button">
+                inverse - 1
+              </button>
+              <button class="dd-btn" type="button">
+                inverse - 2
+              </button>
+              <button class="dd-btn" type="button">
+                inverse - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--info">
+              <button class="dd-btn" type="button">
+                info - 1
+              </button>
+              <button class="dd-btn" type="button">
+                info - 2
+              </button>
+              <button class="dd-btn" type="button">
+                info - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--success">
+              <button class="dd-btn" type="button">
+                success - 1
+              </button>
+              <button class="dd-btn" type="button">
+                success - 2
+              </button>
+              <button class="dd-btn" type="button">
+                success - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--warning">
+              <button class="dd-btn" type="button">
+                warning - 1
+              </button>
+              <button class="dd-btn" type="button">
+                warning - 2
+              </button>
+              <button class="dd-btn" type="button">
+                warning - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--danger">
+              <button class="dd-btn" type="button">
+                danger - 1
+              </button>
+              <button class="dd-btn" type="button">
+                danger - 2
+              </button>
+              <button class="dd-btn" type="button">
+                danger - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group is-disabled" disabled>
+              <button class="dd-btn" type="button">
+                disabled - 1
+              </button>
+              <button class="dd-btn" type="button">
+                disabled - 2
+              </button>
+              <button class="dd-btn" type="button">
+                disabled - 3
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Group Outline -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Group Outline
+            </span>
+          </h2>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                neutral - 1
+              </button>
+              <button class="dd-btn" type="button">
+                neutral - 2
+              </button>
+              <button class="dd-btn" type="button">
+                neutral - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--primary dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                primary - 1
+              </button>
+              <button class="dd-btn" type="button">
+                primary - 2
+              </button>
+              <button class="dd-btn" type="button">
+                primary - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--shade dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                shade - 1
+              </button>
+              <button class="dd-btn" type="button">
+                shade - 2
+              </button>
+              <button class="dd-btn" type="button">
+                shade - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--inverse dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                inverse - 1
+              </button>
+              <button class="dd-btn" type="button">
+                inverse - 2
+              </button>
+              <button class="dd-btn" type="button">
+                inverse - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--info dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                info - 1
+              </button>
+              <button class="dd-btn" type="button">
+                info - 2
+              </button>
+              <button class="dd-btn" type="button">
+                info - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--success dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                success - 1
+              </button>
+              <button class="dd-btn" type="button">
+                success - 2
+              </button>
+              <button class="dd-btn" type="button">
+                success - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--warning dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                warning - 1
+              </button>
+              <button class="dd-btn" type="button">
+                warning - 2
+              </button>
+              <button class="dd-btn" type="button">
+                warning - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--danger dd-btn-group--outline">
+              <button class="dd-btn" type="button">
+                danger - 1
+              </button>
+              <button class="dd-btn" type="button">
+                danger - 2
+              </button>
+              <button class="dd-btn" type="button">
+                danger - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--primary dd-btn-group--outline is-disabled" disabled>
+              <button class="dd-btn" type="button">
+                disabled - 1
+              </button>
+              <button class="dd-btn" type="button">
+                disabled - 2
+              </button>
+              <button class="dd-btn" type="button">
+                disabled - 3
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Group Sizes -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Group Sizes
+            </span>
+          </h2>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--xs">
+              <button class="dd-btn" type="button">
+                xs - 1
+              </button>
+              <button class="dd-btn" type="button">
+                xs - 2
+              </button>
+              <button class="dd-btn" type="button">
+                xs - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--sm">
+              <button class="dd-btn" type="button">
+                sm - 1
+              </button>
+              <button class="dd-btn" type="button">
+                sm - 2
+              </button>
+              <button class="dd-btn" type="button">
+                sm - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--md">
+              <button class="dd-btn" type="button">
+                md - 1
+              </button>
+              <button class="dd-btn" type="button">
+                md - 2
+              </button>
+              <button class="dd-btn" type="button">
+                md - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--lg">
+              <button class="dd-btn" type="button">
+                lg - 1
+              </button>
+              <button class="dd-btn" type="button">
+                lg - 2
+              </button>
+              <button class="dd-btn" type="button">
+                lg - 3
+              </button>
+            </div>
+          </div>
+          <div class="dd-m-v--xs">
+            <div class="dd-btn-group dd-btn-group--neutral dd-btn-group--xl">
+              <button class="dd-btn" type="button">
+                xl - 1
+              </button>
+              <button class="dd-btn" type="button">
+                xl - 2
+              </button>
+              <button class="dd-btn" type="button">
+                xl - 3
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="dd-page-menu">
+        <div class="dd-page-menu__inner">
+          <nav class="dd-page-navi">
+            <a href="/" class="dd-page-navi__item">
+              Top
+            </a>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-is-active dd-has-child">
+              Components
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/components/accordions/" class="dd-page-navi__child">
+                Accordions
+              </a>
+              <a href="/components/badges/" class="dd-page-navi__child">
+                Badges
+              </a>
+              <a href="/components/boxes/" class="dd-page-navi__child">
+                Boxes
+              </a>
+              <a href="/components/breadcrumbs/" class="dd-page-navi__child">
+                Breadcrumbs
+              </a>
+              <a href="/components/buttons/" class="dd-page-navi__child dd-is-active">
+                Buttons
+              </a>
+              <a href="/components/cards/" class="dd-page-navi__child">
+                Cards
+              </a>
+              <a href="/components/data-tables/" class="dd-page-navi__child">
+                Data Tables
+              </a>
+              <a href="/components/flags/" class="dd-page-navi__child">
+                Flags
+              </a>
+              <a href="/components/forms/" class="dd-page-navi__child">
+                Forms
+              </a>
+              <a href="/components/icons/" class="dd-page-navi__child">
+                Icons
+              </a>
+              <a href="/components/images/" class="dd-page-navi__child">
+                Images
+              </a>
+              <a href="/components/lists/" class="dd-page-navi__child">
+                Lists
+              </a>
+              <a href="/components/media-objects/" class="dd-page-navi__child">
+                Media Objects
+              </a>
+              <a href="/components/menus/" class="dd-page-navi__child">
+                Menus
+              </a>
+              <a href="/components/messages/" class="dd-page-navi__child">
+                Messages
+              </a>
+              <a href="/components/modal/" class="dd-page-navi__child">
+                Modal
+              </a>
+              <a href="/components/navigation/" class="dd-page-navi__child">
+                Navigation
+              </a>
+              <a href="/components/popovers/" class="dd-page-navi__child">
+                Popovers
+              </a>
+              <a href="/components/progress/" class="dd-page-navi__child">
+                Progress
+              </a>
+              <a href="/components/spinners/" class="dd-page-navi__child">
+                Spinners
+              </a>
+              <a href="/components/tabs/" class="dd-page-navi__child">
+                Tabs
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Layouts
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/layouts/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/layouts/borders/" class="dd-page-navi__child">
+                Borders
+              </a>
+              <a href="/layouts/floats/" class="dd-page-navi__child">
+                Floats
+              </a>
+              <a href="/layouts/grid/" class="dd-page-navi__child">
+                Grid
+              </a>
+              <a href="/layouts/position/" class="dd-page-navi__child">
+                Position
+              </a>
+              <a href="/layouts/scrollable/" class="dd-page-navi__child">
+                Scrollable
+              </a>
+              <a href="/layouts/sizing/" class="dd-page-navi__child">
+                Sizing
+              </a>
+              <a href="/layouts/spacing/" class="dd-page-navi__child">
+                Spacing
+              </a>
+              <a href="/layouts/themes/" class="dd-page-navi__child">
+                Themes
+              </a>
+              <a href="/layouts/visibility/" class="dd-page-navi__child">
+                Visibility
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Typographies
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/typographies/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/typographies/basic/" class="dd-page-navi__child">
+                Basic
+              </a>
+              <a href="/typographies/heading/" class="dd-page-navi__child">
+                Heading
+              </a>
+              <a href="/typographies/truncation/" class="dd-page-navi__child">
+                Truncation
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+      <footer class="dd-page-footer dd-theme-inverse">
+        <div class="dd-page-footer__inner">
+          &#xA9; Copyright 2017 dadajam All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

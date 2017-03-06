@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+//
+// Scrollable
+//
+
+@mixin my-scrollable($suf: "") {
+  .#{$tpl}#{$suf}scrollable {
+    @include scrollable;
+  }
+
+  .#{$tpl}#{$suf}scrollable--x {
+    @include scrollable--x;
+  }
+
+  .#{$tpl}#{$suf}scrollable--y {
+    @include scrollable--y;
+  }
+}
+
+@include my-scrollable;
+@include mq-wide { @include my-scrollable("wide-"); }
+@include mq-narrow { @include my-scrollable("narrow-"); }
+
+@include mq-min("xs") { @include my-scrollable("min-xs-"); }
+@include mq-min("sm") { @include my-scrollable("min-sm-"); }
+@include mq-min("lg") { @include my-scrollable("min-lg-"); }
+
+@include mq-max("xs") { @include my-scrollable("max-xs-"); }
+@include mq-max("sm") { @include my-scrollable("max-sm-"); }
+@include mq-max("lg") { @include my-scrollable("max-lg-"); }
+
+@include mq("xs") { @include my-scrollable("xs-"); }
+@include mq("sm") { @include my-scrollable("sm-"); }
+@include mq("md") { @include my-scrollable("md-"); }
+@include mq("lg") { @include my-scrollable("lg-"); }

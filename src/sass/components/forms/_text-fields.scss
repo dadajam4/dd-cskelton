@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+//
+// Text Fields
+//
+
+$target-typs:
+  text,
+  password,
+  search,
+  tel,
+  url,
+  email,
+  datetime,
+  date,
+  month,
+  week,
+  time,
+  datetime-local,
+  number;
+
+$corner-radius: 0px;
+
+@function get-text-field-sel {
+  $result: "";
+  @for $i from 1 through length($target-typs) {
+    $type: nth($target-typs, $i);
+    $result: $result + "input[type=\"#{$type}\"]";
+
+    @if $i != length($target-typs) {
+      $result: $result + ",";
+    }
+  }
+  @return $result;
+}
+
+@mixin text-field-sel() {
+  #{get-text-field-sel()} {
+    @content;
+  }
+}
+
+@include text-field-sel() {
+  @include field-style;
+
+  // webkit shadow dom
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &::-webkit-datetime-edit-year-field,
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-week-field,
+  &::-webkit-datetime-edit-hour-field,
+  &::-webkit-datetime-edit-minute-field {
+    color: $color-typo-muted;
+
+    &:after {
+      content: "";
+    }
+
+    &:not([aria-valuenow]) {
+      color: transparent;
+    }
+  }
+
+  &::-webkit-datetime-edit-text {
+    color: $color-typo-muted;
+  }
+
+  &::-webkit-clear-button {
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  // &::-webkit-calendar-picker-indicator {
+  //   color: transparent;
+  //   background: url("../../resource/img/pixicus/calendar.png") no-repeat;
+  //   background-size: auto;
+  //   padding: 2px 2px 4px 1px;
+  // }
+
+  .#{$tpl}form-element & {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .#{$tpl}form-element--sm & {
+    @include font-size(sm);
+    padding: 0 $size-field-padding-horizontal / 1.5;
+    @include field-height(sm);
+  }
+
+  .#{$tpl}form-element--lg & {
+    @include font-size(lg);
+    @include field-height(lg);
+  }
+}
+
+textarea {
+  @include field-base-style;
+  height: $size-textarea-height-md;
+  overflow: auto;
+  resize: vertical;
+  padding-top: $size-textarea-padding-vertical;
+  padding-bottom: $size-textarea-padding-vertical;
+
+  // placeholder
+  &::placeholder {
+    padding-top: $size-textarea-padding-vertical;
+  }
+
+  .#{$tpl}form-element & {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .#{$tpl}form-element--sm & {
+    @include font-size(sm);
+    padding-left: $size-field-padding-horizontal / 1.5;
+    padding-right: $size-field-padding-horizontal / 1.5;
+    height: $size-textarea-height-sm;
+  }
+
+  .#{$tpl}form-element--lg & {
+    @include font-size(lg);
+    height: $size-textarea-height-lg;
+  }
+}
+
+.#{$tpl}editable {
+  @include field-base-style;
+  padding-top: $size-textarea-padding-vertical;
+  padding-bottom: $size-textarea-padding-vertical;
+  @include scrollable--x;
+
+  &.#{$tpl}has-tag-input {
+    cursor: pointer;
+  }
+
+  &__tag-input {
+    max-width: 100%!important;
+    border: 0!important;
+    vertical-align: middle;
+    line-height: $size-field-height-sm!important;
+    height: $size-field-height-sm!important;
+    padding: 0!important;
+    border-radius: 0!important;
+  }
+}
+
+
+
+//
+// button group
+//
+.#{$tpl}form-element__btn-group {
+  display: flex;
+
+  .#{$tpl}btn {
+    border-radius: $border-radius-field 0 0 $border-radius-field;
+
+    & + input {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      &:not(:focus) {
+        border-left-color: transparent;
+        // border-left-width: 0;
+      }
+    }
+  }
+
+  &:not(.#{$tpl}form-element__btn-group--left) {
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &:not(:focus) {
+        border-right-color: transparent;
+        // border-right-width: 0;
+      }
+
+      & + .#{$tpl}btn {
+        border-radius: 0 $border-radius-field $border-radius-field 0;
+      }
+    }
+  }
+
+  .#{$tpl}btn {
+    @include field-height(md);
+    margin: 0;
+    box-shadow: none;
+
+    &.#{$tpl}btn--icon {
+      width: $size-field-height-md;
+    }
+
+    .#{$tpl}form-element--sm & {
+      @include field-height(sm);
+
+      &.#{$tpl}btn--icon {
+        width: $size-field-height-sm;
+      }
+    }
+
+    .#{$tpl}form-element--lg & {
+      @include field-height(lg);
+
+      &.#{$tpl}btn--icon {
+        width: $size-field-height-lg;
+      }
+    }
+  }
+}

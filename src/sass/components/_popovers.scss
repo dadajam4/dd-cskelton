@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+//
+// Popovers
+//
+
+@import "./popovers/nubbins";
+@import "./popovers/panels";
+
+.#{$tpl}popover {
+  @include popover($shadow: $shadow-drop-down);
+  border: $border-width-thin solid $color-divider;
+
+  &__body {
+    // @include hyphenate;
+    position: relative;
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  &__close {
+    position: relative;
+    z-index: ($z-index-dialog + 1);
+  }
+
+  &[class*="theme--"] {
+    border: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

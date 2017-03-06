@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+//
+// Data Tables
+//
+
+$table-base-padding: .75rem;
+$resize-handle-width: 4px;
+
+@mixin table-stacked($is-horizontal: false) {
+  border: 0;
+
+  thead {
+    // scss-lint:disable ImportantRule
+    position: absolute !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+  }
+
+  // th {
+  //   border-top: 0;
+  // }
+
+  tr {
+    display: block;
+    border-top: 1px solid $color-divider;
+  }
+
+  th,
+  td {
+    display: block;
+    padding: $table-base-padding;
+    max-width: 100%;
+    width: 100%;
+    clear: both;
+    white-space: normal;
+    overflow: hidden;
+    text-align: left;
+
+    // Remove max width from truncate definition
+    &.#{$tpl}truncate {
+      max-width: 100%;
+    }
+
+    &:before {
+      @include text-heading--label;
+      // color: #f00;
+      display: block;
+      padding-bottom: .5rem;
+      content: attr(data-label);
+    }
+  }
+
+  tr > td:first-child,
+  tr > td:last-child {
+    padding: 1rem;
+  }
+
+  &:not(.#{$tpl}no-row-hover) tbody tr:hover:not(.#{$tpl}is-selected) {
+
+    // scss-lint:disable ImportantRule
+    td,
+    th {
+      background-color: inherit !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .#{$tpl}is-interactive .#{$tpl}btn {
+    visibility: visible;
+  }
+
+  .#{$tpl}cell-shrink {
+    width: auto;
+
+    &:first-child {
+      @if $is-horizontal == false {
+        text-align: inherit;
+      }
+      padding-left: $table-base-padding;
+    }
+
+    &:last-child {
+      @if $is-horizontal {
+        text-align: right;
+      }
+      padding-right: $table-base-padding;
+    }
+  }
+}
+
+
+@mixin table-row-focus($shadow: true) {
+  background-color: $color-layout-base-focus;
+
+  @if $shadow {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 -1px 0 inset, rgba(0, 0, 0, 0.1) 0 1px 0 inset;
+  }
+}
+
+.#{$tpl}table {
+  width: 100%;
+  border-collapse: collapse;
+  @include font-size(base);
+  margin: 0;
+  padding: 0;
+  color: $color-typo-base;
+  background-color: $color-layout-base;
+  border-color: $color-divider;
+  border-style: solid;
+  border-width: 0px;
+  text-align: left;
+
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    border-collapse: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0px;
+    text-align: inherit;
+  }
+
+  th,
+  td {
+    padding: $table-base-padding;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  // cell shrink
+  .#{$tpl}cell-shrink {
+    width: 1%;
+  }
+
+  // sortable
+  .#{$tpl}is-sortable {
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // th action
+  .#{$tpl}th__action {
+    display: flex;
+    padding: $table-base-padding;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+      background-color: $color-layout-base-focus;
+
+      .#{$tpl}is-sortable__icon {
+        display: inline-block;
+      }
+    }
+  }
+
+  // Selected Table Row + Hover
+  tbody tr.#{$tpl}is-selected,
+  &:not(.#{$tpl}no-row-hover) tr.#{$tpl}is-selected:hover {
+
+    > td,
+    > th {
+      background-color: mix($color-brand-base, $color-brand-primary, 95%);
+    }
+  }
+
+  // Icon inside sortable th
+  .#{$tpl}is-sortable__icon {
+    margin-left: .75rem;
+    @include font-size(xs);
+    @include line-height(lg);
+    display: none;
+    transition: transform .25s;
+  }
+
+  // Active state of sorted column
+  .#{$tpl}is-sorted {
+
+    .#{$tpl}is-sortable__icon {
+      display: inline-block;
+    }
+
+    // Change direction of arrow
+    &--asc .#{$tpl}is-sortable__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+
+
+
+  // resizable
+  .#{$tpl}is-resizable {
+    .#{$tpl}th__action:hover,
+    .#{$tpl}th__action:focus {
+      box-shadow: rgba(0, 0, 0, .1) -1 * $resize-handle-width 0 0 inset;
+    }
+  }
+
+  .#{$tpl}resizable {
+    max-width: 100%;
+
+    &__handle {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $resize-handle-width;
+      height: 100%;
+      background-color: $color-brand-primary;
+      display: block;
+      cursor: col-resize;
+      opacity: 0;
+      z-index: 5000;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 1;
+      }
+    }
+
+    &__divider {
+      position: absolute;
+      right: 0;
+      height: 100vh;
+      width: 1px;
+      background-color: $color-brand-primary;
+    }
+
+    &__input:focus ~ .#{$tpl}resizable__handle {
+      opacity: 1;
+    }
+  }
+
+  // cell buffer
+  &--cell-buffer {
+    tr {
+      & > th,
+      & > td {
+        &:first-child {
+          padding-left: 2.25rem;
+        }
+
+        &:last-child {
+          padding-right: 2.25rem;
+        }
+      }
+    }
+  }
+
+  // compact
+  &--compact {
+    th,
+    td {
+      padding: .5rem;
+    }
+  }
+
+  // bordered
+  &--bordered {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: $color-divider;
+
+    tbody {
+      th, td {
+        border-top-width: 1px;
+      }
+    }
+
+    &:not(.#{$tpl}no-row-hover) tbody tr:hover:not(.#{$tpl}is-selected) {
+      & > th,
+      & > td {
+        @include table-row-focus;
+      }
+    }
+  }
+
+  // striped
+  &--striped {
+    tbody tr:nth-of-type(even) {
+      & > th,
+      & > td {
+        @include table-row-focus($shadow: false);
+      }
+    }
+  }
+
+  // col bordered
+  &--col-bordered {
+    td + td,
+    td + th,
+    th + td,
+    th + th {
+      border-left-width: 1px;
+    }
+  }
+
+  // fixed layout
+  &--fixed-layout {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+
+    .#{$tpl}cell-shrink {
+      width: 4.5rem;
+
+      &:nth-child(n) {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      &:first-child {
+        text-align: right;
+        padding-right: $table-base-padding;
+      }
+
+      &:last-child {
+        text-align: left;
+        padding-left: $table-base-padding;
+      }
+    }
+  }
+}
+
+
+
+//
+// Responsive
+//
+
+@mixin table-responsive($suf: "") {
+
+  // Stacked row with stacked cells
+  .#{$tpl}#{$suf}table--stacked {
+    @include table-stacked;
+
+    td:before,
+    th:before {
+      padding-bottom: .5rem;
+    }
+  }
+
+  // Stacked rows with horizontal cells
+  .#{$tpl}#{$suf}table--stacked-horizontal {
+    @include table-stacked($is-horizontal: true);
+
+    th,
+    td {
+      text-align: right;
+
+      &:before {
+        float: left;
+        // text-align: left;
+        margin-top: .3rem;
+        margin-right: 1em;
+      }
+    }
+
+    // Revert max-width: $size-small;
+    .#{$tpl}truncate {
+      // max-width: 100%;
+      white-space: normal;
+    }
+  }
+}
+
+@include table-responsive;
+@include mq-wide { @include table-responsive("wide-"); }
+@include mq-narrow { @include table-responsive("narrow-"); }

@@ -1,0 +1,183 @@
+<% block 'title': %>Components | Lists<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Vertical -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul>
+    <li>Vertical List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+</section>
+
+<!-- Inline -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Inline</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>list--inline">
+    <li>Inline List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+</section>
+
+<!-- Dotted -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Dotted</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>list--dotted">
+    <li>Dotted List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+
+  <ul class="<%- @tpl %>list--dotted <%- @tpl %>list--inline">
+    <li>Inline Dotted List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+</section>
+
+<!-- Ordered -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Ordered</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>list--ordered">
+    <li>Ordered List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+
+  <ul class="<%- @tpl %>list--ordered <%- @tpl %>list--inline">
+    <li>Inline Ordered List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+</section>
+
+<!-- Dividers -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Dividers</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>has-dividers--v">
+    <li class="<%- @tpl %>item">Vertical List</li>
+    <li class="<%- @tpl %>item">List Item</li>
+    <li class="<%- @tpl %>item">List Item</li>
+  </ul>
+</section>
+
+<!-- Single Divider -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Single Divider</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li class="<%- @tpl %>has-divider--t">Has Top Divider</li>
+  </ul>
+</section>
+
+<!-- Vertical Spacing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Vertical Spacing</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>has-dividers--v <%- @tpl %>list--has-space">
+    <li class="<%- @tpl %>item">Vertical List</li>
+    <li class="<%- @tpl %>item">List Item</li>
+    <li class="<%- @tpl %>item">List Item</li>
+  </ul>
+</section>
+
+<!-- Inline Spacing -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Inline Spacing</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <ul class="<%- @tpl %>list--inline <%- @tpl %>list--has-space">
+    <li>Inline List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+
+  <ul class="<%- @tpl %>list--dotted <%- @tpl %>list--inline <%- @tpl %>list--has-space">
+    <li>Inline Dotted List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+
+  <ul class="<%- @tpl %>list--ordered <%- @tpl %>list--inline <%- @tpl %>list--has-space">
+    <li>Inline Ordered List</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+  </ul>
+</section>
+
+<!-- Description List -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Description List</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <dl>
+    <dt>First Label:</dt>
+    <dd>Description for first label</dd>
+    <dt>Second Label:</dt>
+    <dd>Description for second label</dd>
+  </dl>
+</section>
+
+<!-- Name Value Pair -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Name Value Pair</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <dl class="<%- @tpl %>dl--inline">
+    <dt class="<%- @tpl %>dl--label <%- @tpl %>truncate" title="First Label">First Label:</dt>
+    <dd class="<%- @tpl %>dl--detail <%- @tpl %>truncate">Description for first label</dd>
+    <dt class="<%- @tpl %>dl--label <%- @tpl %>truncate" title="Second Label">Second Label:</dt>
+    <dd class="<%- @tpl %>dl--detail <%- @tpl %>truncate">Description for second label</dd>
+  </dl>
+</section>

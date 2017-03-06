@@ -1,0 +1,413 @@
+@charset "utf-8";
+
+//
+// Choices
+//
+
+$target-typs:
+  checkbox,
+  radio;
+
+$choice-faux-size: 1rem;
+
+@function get-choice-sel {
+  $result: "";
+  @for $i from 1 through length($target-typs) {
+    $type: nth($target-typs, $i);
+    $result: $result + "input[type=\"#{$type}\"]";
+
+    @if $i != length($target-typs) {
+      $result: $result + ",";
+    }
+  }
+  @return $result;
+}
+
+@mixin choice-sel() {
+  #{get-choice-sel()} {
+    @content;
+  }
+}
+
+
+
+//
+// element
+//
+
+@mixin hidden-choice() {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+
+
+.#{$tpl}choice {
+  display: block;
+
+  &__faux {
+    user-select: none;
+    @include remove-tap-highlight;
+    cursor: pointer;
+    background-color: $color-layout-base;
+    margin-right: .5rem;
+    width: $choice-faux-size;
+    height: $choice-faux-size;
+    line-height: $choice-faux-size;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    border: 1px solid $color-divider;
+    transition: border .1s, background-color .1s;
+
+    &:after {
+      content: "";
+      position: absolute;
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include hidden-choice();
+
+    &:focus {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+        // box-shadow: 0 0 0px 1px $color-brand-primary;
+        border-color: $color-brand-primary;
+      }
+    }
+  }
+
+  .#{$tpl}has-error & {
+    input {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+        border-color: $color-brand-danger;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+
+        &:after {
+          width: $choice-faux-size / 2;
+          height: $choice-faux-size / 4;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+          border-bottom: 2px solid;
+          border-left: 2px solid $color-brand-primary;
+          color: $color-brand-primary;
+        }
+      }
+    }
+
+    &:disabled {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+
+        &:after {
+          border-color: $color-divider-disabled!important;
+          color: $color-divider-disabled!important;
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    & + .#{$tpl}choice__faux,
+    & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+      border-radius: $border-radius-circle;
+    }
+
+    &:checked {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+
+        &:after {
+          width: $choice-faux-size / 2;
+          height: $choice-faux-size / 2;
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          border-radius: $border-radius-circle;
+          background-color: $color-brand-primary;
+        }
+      }
+    }
+
+    &:disabled {
+      & + .#{$tpl}choice__faux,
+      & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+
+        &:after {
+          background-color: $color-divider-disabled!important;
+          color: $color-divider-disabled!important;
+        }
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    @include remove-tap-highlight;
+
+    .#{$tpl}form-element__label {
+      margin-bottom: 0;
+      vertical-align: middle;
+      @include remove-tap-highlight;
+    }
+  }
+
+  :disabled {
+    & + .#{$tpl}choice__faux,
+    & + .#{$tpl}choice__label .#{$tpl}choice__faux {
+      background-color: $color-layout-base-disabled;
+      border-color: $color-divider-disabled;
+    }
+
+    &,
+    & + .#{$tpl}choice__faux,
+    & + .#{$tpl}choice__label,
+    & + .#{$tpl}choice__label .#{$tpl}choice__faux,
+    & + .#{$tpl}choice__label .#{$tpl}form-element__label {
+      cursor: not-allowed;
+      color: $color-typo-disabled;
+    }
+  }
+}
+
+.#{$tpl}choice-group {
+  &:not(&--inline) {
+    .#{$tpl}choice {
+      & + .#{$tpl}choice {
+        margin-top: .25rem;
+      }
+    }
+  }
+
+  &--inline {
+    .#{$tpl}choice {
+      display: inline-block;
+      vertical-align: top;
+
+      & + .#{$tpl}choice {
+        margin-left: .25rem;
+      }
+    }
+  }
+}
+
+.#{$tpl}choice-btn {
+  display: flex;
+  padding: 0;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @include hidden-choice();
+  }
+
+  .#{$tpl}choice__label {
+    padding: 0 $size-btn-padding-horizontal;
+  }
+}
+
+
+
+//
+// toggle
+//
+$choice-toggle-size: 20px;
+$choice-toggle-checked-border-width: 2px;
+$choice-toggle-checked-border-color: #fff;
+$choice-toggle-checked-width: $choice-toggle-size * .36;
+$choice-toggle-checked-height: $choice-toggle-size * .56;
+$choice-toggle-padding: $choice-toggle-size * 0.1;
+$choice-toggle-border-size: $choice-toggle-padding * .5;
+$choice-toggle-containe-width: $choice-toggle-size * 2 + $choice-toggle-padding * 4;
+$choice-toggle-containe-height: $choice-toggle-size + $choice-toggle-padding * 2;
+$choice-toggle-duration: $duration-promptly;
+$choice-toggle-easing: cubic-bezier(.75, 0, .08, 1);
+
+.#{$tpl}toggle-group {
+  .#{$tpl}toggle-wrap {
+    display: block;
+  }
+
+  &--inline {
+    .#{$tpl}toggle-wrap {
+      display: inline-block;
+
+      & + .#{$tpl}toggle-wrap {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+
+.#{$tpl}toggle {
+  display: inline-block;
+
+  .#{$tpl}form-element__label {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    @include remove-tap-highlight;
+  }
+
+  input[type="checkbox"] {
+    @include hidden-choice;
+  }
+
+  .#{$tpl}toggle__faux-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    @include remove-tap-highlight;
+  }
+
+  .#{$tpl}toggle__faux {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: $choice-toggle-containe-width;
+    height: $choice-toggle-containe-height;
+    line-height: $choice-toggle-containe-height;
+    border: $choice-toggle-border-size solid $color-divider;
+    padding: $choice-toggle-border-size;
+    background-color: $color-layout-base-disabled;
+    border-radius: $choice-toggle-containe-height * .5;
+    transition: background-color $choice-toggle-duration $choice-toggle-easing;
+    @include remove-tap-highlight;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: ($choice-toggle-size - $choice-toggle-checked-height) * .5;
+      left: $choice-toggle-padding + ($choice-toggle-size - $choice-toggle-checked-width) * .5;
+      height: $choice-toggle-checked-height;
+      width: $choice-toggle-checked-width;
+      border-bottom: $choice-toggle-checked-border-width solid $choice-toggle-checked-border-color;
+      border-right: $choice-toggle-checked-border-width solid $choice-toggle-checked-border-color;
+      border-radius: 0;
+      background-color: transparent;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity $choice-toggle-duration $choice-toggle-easing;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: $choice-toggle-border-size;
+      left: $choice-toggle-border-size;
+      width: $choice-toggle-size;
+      height: $choice-toggle-size;
+      background-color: #fff;
+      border-radius: $choice-toggle-size * .5;
+      transition: left $choice-toggle-duration $choice-toggle-easing;
+    }
+  }
+
+  .#{$tpl}toggle__on,
+  .#{$tpl}toggle__off {
+    @include font-size(xs);
+    line-height: 1.2;
+    user-select: none;
+    position: absolute;
+    // margin-top: .25rem;
+    margin-left: .25rem;
+    display: block;
+  }
+
+  input {
+    & + .#{$tpl}toggle__faux-container {
+      .#{$tpl}toggle__off {
+        visibility: visible;
+      }
+
+      .#{$tpl}toggle__on {
+        visibility: hidden;
+      }
+    }
+  }
+
+  input:focus {
+    & + .#{$tpl}toggle__faux-container .#{$tpl}toggle__faux,
+    & + .#{$tpl}toggle__faux {
+      border-color: $color-brand-primary;
+    }
+  }
+
+  input:checked {
+    & + .#{$tpl}toggle__faux-container .#{$tpl}toggle__faux,
+    & + .#{$tpl}toggle__faux {
+      border-color: $color-brand-primary;
+      background-color: $color-brand-primary;
+
+      &:before {
+        opacity: 1;
+      }
+
+      &:after {
+        left: $choice-toggle-border-size + $choice-toggle-containe-width * .5;
+      }
+    }
+
+    & + .#{$tpl}toggle__faux-container {
+
+      .#{$tpl}toggle__off {
+        visibility: hidden;
+      }
+
+      .#{$tpl}toggle__on {
+        visibility: visible;
+      }
+    }
+  }
+
+  input:disabled {
+    & + .#{$tpl}toggle__faux-container .#{$tpl}toggle__faux,
+    & + .#{$tpl}toggle__faux {
+      border-color: $color-divider-disabled;
+      background-color: $color-divider-disabled;
+      cursor: not-allowed;
+    }
+
+    & + .#{$tpl}toggle__faux-container {
+      @include color(typo-disabled);
+    }
+  }
+
+  .#{$tpl}has-error & {
+    input {
+      & + .#{$tpl}toggle__faux-container .#{$tpl}toggle__faux,
+      & + .#{$tpl}toggle__faux {
+        border-color: $color-brand-danger;
+        // background-color: $color-divider-disabled;
+      }
+
+      & + .#{$tpl}toggle__faux-container {
+        @include color(typo-danger);
+      }
+    }
+  }
+}

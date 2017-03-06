@@ -1,0 +1,424 @@
+@charset "utf-8";
+
+//
+// Page Layouts
+//
+
+.#{$tpl}page {
+
+  // container
+  &-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // banner
+  &-banner {
+    position: fixed;
+    z-index: $z-index-page-menu + 1;
+    left: 0;
+    top: 0;
+    background: $color-brand-primary;
+
+    &__link {
+      @include effect-fade($targets: ":active", $prop: background-color, $value: rgba(0, 0, 0, 0.25));
+      @include user-drag(none);
+      @include color(typo-inverse, true);
+
+      &:active,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // header
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // lead
+  &-lead {
+    width: 100%;
+    @include container($margin-attr: margin);
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include font-size(sm);
+  }
+
+  // title
+  &-title {
+    width: 100%;
+    @include container($margin-attr: padding);
+    background-color: $color-layout-inverse;
+    color: $color-typo-inverse;
+    margin: 0;
+    @include font-size(xxl);
+    @include line-height(xs);
+    display: flex;
+    align-items: center;
+  }
+
+  // content
+  &-content {
+    // position: relative;
+    // z-index: 1;
+    min-height: calc(100vh - #{$page-banner-height * 3});
+    padding-bottom: $page-content-padding-bottom;
+    overflow-x: auto;
+  }
+
+  // menu
+  &-menu {
+    position: fixed;
+    z-index: $z-index-page-menu;
+    left: 0;
+    bottom: 0;
+
+    &__inner {
+      @include container-colors(inverse);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding: 2em;
+      padding-bottom: 5em;
+      @include scrollable--y;
+    }
+  }
+
+  // navi
+  &-navi {
+    margin-left: -2em;
+    margin-right: -2em;
+
+    &__item {
+      display: block;
+      padding: $spacing-sm $spacing-lg;
+      transition: background-color, color;
+      transition-duration: $duration-promptly;
+      @include user-drag(none);
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:focus,
+      &.#{$tpl}is-active.#{$tpl}has-child {
+        background: $color-brand-inverse-focus;
+      }
+
+      &.#{$tpl}is-active:not(.#{$tpl}has-child) {
+        background-color: $color-brand-base;
+        color: $color-brand-inverse;
+        cursor: default;
+      }
+    }
+
+    &__children {}
+
+    &__child {
+      display: block;
+      height: 0;
+      padding: 0 $spacing-lg;
+      overflow: hidden;
+      transition: color $duration-promptly,
+                  padding $duration-slowly,
+                  padding-left $duration-promptly;
+
+      &:after {
+        @extend .#{$fa-css-prefix};
+        content: $fa-var-angle-right;
+        margin-left: .8em;
+        margin-right: 0;
+        opacity: 0;
+        transition: opacity, margin .25s;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color-typo-primary!important;
+        text-decoration: none;
+
+        &:after {
+          opacity: 1;
+          margin-left: .4em;
+          margin-right: .4em;
+        }
+      }
+
+      &.#{$tpl}is-active {
+        background-color: $color-brand-base;
+        color: $color-brand-inverse!important;
+        pointer-events: none;
+      }
+
+      @for $i from 1 through $page-max-nav-item {
+        &:nth-child(#{$i}n) {
+          transition-delay: 0s, ($i - 1) * .01s, ($i - 1) * .01s, ($i - 1) * .025s;
+        }
+      }
+
+      @at-root .#{$tpl}page-navi__item.#{$tpl}is-active + .#{$tpl}page-navi__children & {
+        display: block;
+        height: auto;
+        padding-top: $spacing-sm;
+        padding-bottom: $spacing-sm;
+        padding-left: $spacing-xxl;
+      }
+    }
+  }
+
+  // footer
+  &-footer {
+    position: relative;
+    z-index: 1;
+    @include container-colors(inverse);
+    // padding-top: 2.5rem;
+    // padding-bottom: 2.5rem;
+    min-height: $page-banner-height;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+
+    &__inner {
+      @include container($margin-attr: margin);
+    }
+  }
+
+
+
+  /**
+   * wide
+   */
+  @include mq-min($navbar-mq-change-target) {
+
+    // container
+    &-container {
+      padding-left: $page-side-width;
+    }
+
+    // banner
+    &-banner {
+      width: $page-side-width;
+      height: $page-banner-height;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__link {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    // header
+    &-title {
+      order: 2;
+      min-height: $page-banner-height;
+      max-width: none;
+    }
+
+    &-lead {
+      order: 1;
+      min-height: $page-banner-height;
+    }
+
+    // menu
+    &-menu {
+      top: $page-banner-height;
+      width: $page-side-width;
+
+      &__inner {
+        right: 0;
+      }
+
+      &__trigger {
+        display: none;
+      }
+    }
+  }// End Wide
+
+
+
+  /**
+   * narrow
+   */
+  @include mq-max($navbar-mq-change-target) {
+
+    // banner
+    &-banner {
+      width: 100%;
+      height: $size-navbar-height;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+      &__link {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+    }
+
+    // header
+    &-header {
+      padding-top: $size-navbar-height;
+    }
+
+    &-lead {
+    }
+
+    &-title {
+      padding-top: .5em;
+      padding-bottom: .5em;
+    }
+
+    &-content {
+      min-height: calc(100vh - #{$size-navbar-height * 3 + $page-banner-height});
+    }
+
+    // menu
+    &-menu {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0);
+      pointer-events: none;
+      overflow-x: hidden;
+      transition: background-color .35s;
+
+      .#{$tpl}is-navigation-open & {
+        pointer-events: auto;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &__inner {
+        display: inline-block;
+        margin-top: $size-navbar-height;
+        width: $page-side-width;
+        max-width: 100%;
+        transition: left .35s;
+        left: -$page-side-width;
+
+        .#{$tpl}is-navigation-open & {
+          left: 0;
+        }
+      }
+
+      &__trigger {
+        $my-size: $size-navbar-height;
+        $my-width: 2px;
+        $my-padding: 17px;
+
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: ($size-navbar-height - $my-size) / 2;
+        width: $my-size;
+        height: $my-size;
+        line-height: $my-size;
+        @include effect-fade($targets: ":active", $prop: background-color, $value: rgba(0, 0, 0, 0.25));
+
+        &:before,
+        &:after,
+        & > span {
+          position: absolute;
+          z-index: 1;
+          background: #fff;
+          left: $my-padding * 0.75;
+          width: $my-size - $my-padding * 1.5;
+          height: $my-width;
+          border-radius: $border-radius-md;
+          transition: .35s;
+        }
+
+        &:before {
+          content: "";
+          top: $my-padding - $my-width / 2;
+          transition-property: transform, top;
+        }
+
+        & > span {
+          top: $my-size / 2 - $my-width / 2;
+          text-indent: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          transform-origin: 50% 50%;
+          transition-property: opacity;
+          opacity: 1;
+        }
+
+
+        &:after {
+          content: "";
+          bottom: $my-padding - $my-width / 2;
+          transition-property: transform, top;
+        }
+
+        .#{$tpl}is-navigation-open & {
+
+          &:before {
+            transform: rotate(45deg);
+            top: $my-size / 2 - $my-width / 2;
+          }
+
+          & > span {
+            opacity: 0;
+          }
+
+          &:after {
+            transform: rotate(-45deg);
+            top: $my-size / 2 - $my-width / 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$tpl}logo-dd {
+  $my-rotate: 45deg;
+  $my-second-position: .5em;
+  display: inline-block;
+  font-size: 115%;
+  position: relative;
+  top: -$my-second-position / 8;
+  letter-spacing: -.5em;
+
+  & > span {
+    letter-spacing: normal;
+    // font-weight: bold;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+
+    &:first-child {
+      top: $my-second-position / 5;
+    }
+
+    &:last-child {
+      transform: rotate(10deg);
+      margin-left: -$my-second-position * 0.9;
+      top: -$my-second-position / 5;
+    }
+  }
+}

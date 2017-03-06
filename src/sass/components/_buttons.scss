@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+//
+// Buttons
+//
+
+$my-classname: #{$tpl}btn;
+$my-group-btn-radius: rem2px($border-radius-field) - $border-width-field;
+.#{$my-classname} {
+  appearance: none;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  border-width: $border-width-field;
+  border-radius: $border-radius-field;
+  border-style: solid;
+  background: transparent;
+  vertical-align: middle;
+  padding: 0 $size-btn-padding-horizontal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  background-clip: border-box;
+
+  @include remove-tap-highlight;
+
+  &:not(.#{$tpl}btn--label) {
+    cursor: pointer;
+    user-select: none;
+    @include user-drag(none);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  // &.is-active {
+  //   pointer-events: none;
+  // }
+
+  transition:
+    color $duration-promptly,
+    background-color $duration-promptly,
+    border-color $duration-promptly;
+
+  // sizing
+  @include field-height(md);
+  &.#{$tpl}btn--icon {
+    padding-left: 0;
+    padding-right: 0;
+    width: $size-field-height-md;
+
+    .#{$tpl}-fa {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      line-height: inherit;
+      text-align: center;
+      vertical-align: bottom;
+    }
+  }
+
+  @each $size in $btn-height-list {
+    &.#{$tpl}btn--#{$size} {
+      @include field-height($size);
+
+      &.#{$tpl}btn--icon {
+        width: get-size(field-height-#{$size});
+      }
+    }
+  }
+
+  // loading
+  &--loading {
+    color: transparent!important;
+    pointer-events: none!important;
+
+    $spinner-size: get-down-size-key(md);
+    &:after {
+      content: "";
+      @include spinner-base();
+      @include spinner-size($spinner-size);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -$_spinner-size-value / 2;
+      margin-left: -$_spinner-size-value / 2;
+    }
+
+    @each $size in $btn-height-list {
+      &.#{$tpl}btn--#{$size} {
+        $spinner-size: get-down-size-key($size);
+        @if $spinner-size == xxs {
+          $spinner-size: xs;
+        }
+
+        &:after {
+          @include spinner-size($spinner-size);
+          margin-top: -$_spinner-size-value / 2;
+          margin-left: -$_spinner-size-value / 2;
+        }
+      }
+    }
+  }
+
+  // themes
+  @include auto-parts-theme-classes($my-classname) {
+    @include parts-colors($_parts-theme-key);
+    &:hover:not(.#{$tpl}btn--label),
+    &:focus:not(.#{$tpl}btn--label),
+    &:active:not(.#{$tpl}btn--label) {
+      @include parts-colors($_parts-theme-key, true);
+    }
+
+    &:active:not(.#{$tpl}btn--label) {
+      background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+    }
+
+    &.#{$tpl}btn--outline {
+      @include parts-outline-colors($_parts-theme-key);
+      &:hover:not(.#{$tpl}btn--label),
+      &:focus:not(.#{$tpl}btn--label),
+      &:active:not(.#{$tpl}btn--label) {
+        @include parts-outline-colors($_parts-theme-key, true);
+      }
+
+      &:active:not(.#{$tpl}btn--label) {
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+      }
+
+      @if $_parts-theme-key != base {
+        &.#{$tpl}btn--loading:after {
+          border-color: get-color(parts-#{$_parts-theme-key}-divider);
+          border-left-color: #fff;
+        }
+      }
+    }
+  }
+
+  // animated [horizontal]
+  &-content {
+    position: relative;
+    display: block;
+
+    &--hidden {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: auto;
+      pointer-events: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .#{$tpl}btn-content {
+
+      &--visible {
+        pointer-events: none;
+      }
+
+      &--hidden {
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &--animated {
+    .#{$tpl}btn-content {
+      left: auto;
+      right: 0;
+      transition: right $duration-promptly ease 0s;
+
+      &--visible {
+
+      }
+
+      &--hidden {
+        right: -100%;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .#{$tpl}btn-content {
+        &--visible {
+          right: 200%;
+        }
+
+        &--hidden {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  // animated [vertical]
+  &--animated-vertical {
+    .#{$tpl}btn-content {
+      transition:
+        top $duration-promptly ease 0s,
+        transform $duration-promptly ease 0s;
+
+      &--visible {
+        transform: translateY(0);
+      }
+
+      &--hidden {
+        top: -150%;
+        right: 0;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .#{$tpl}btn-content {
+        &--visible {
+          transform: translateY(200%);
+        }
+
+        &--hidden {
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  // animated [fade]
+  &--animated-fade {
+    .#{$tpl}btn-content {
+      opacity: 1;
+      transform: scale(1);
+
+      transition:
+        opacity $duration-promptly ease 0s,
+        transform $duration-promptly ease 0s;
+
+      &--visible {
+        transform: translateY(0);
+      }
+
+      &--hidden {
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transform: scale(1.5);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .#{$tpl}btn-content {
+        &--visible {
+          opacity: 0;
+          transform: scale(.75);
+        }
+
+        &--hidden {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+$my-classname: #{$tpl}btn-group;
+.#{$my-classname} {
+  display: inline-flex;
+  letter-spacing: -.5em;
+  border-width: $border-width-field;
+  border-radius: $border-radius-field;
+  border-style: solid;
+
+  & > * {
+    letter-spacing: normal;
+  }
+
+  & > .#{$tpl}btn {
+    border-radius: 0;
+    border: 0;
+
+    &:first-child {
+      border-radius: $my-group-btn-radius 0 0 $my-group-btn-radius;
+    }
+
+    &:last-child {
+      border-radius: 0 $my-group-btn-radius $my-group-btn-radius 0;
+    }
+  }
+
+  &:not(.#{$tpl}choice-group) > .#{$tpl}btn + .#{$tpl}btn,
+  &.#{$tpl}choice-group > .#{$tpl}btn + .#{$tpl}btn .#{$tpl}choice__label {
+    border-left-style: solid;
+    border-left-width: $border-width-field;
+  }
+
+  // sizing
+  @each $size in $btn-height-list {
+    &.#{$tpl}btn-group--#{$size} > .#{$tpl}btn { @include field-height($size); }
+  }
+
+  // themes
+  @include auto-parts-theme-classes($my-classname) {
+    @include parts-divider-color($_parts-theme-key);
+
+    & > .#{$tpl}btn {
+      @include parts-color($_parts-theme-key);
+      @include parts-bg-color($_parts-theme-key);
+
+      &:not(.#{$tpl}choice-btn),
+      &.#{$tpl}choice-btn input + .#{$tpl}choice__label {
+        @include parts-accent-color($_parts-theme-key);
+      }
+
+      &:not(.#{$tpl}choice-btn):hover:not(:active),
+      &.#{$tpl}choice-btn input:checked + .#{$tpl}choice__label,
+      &:focus,
+      &:active {
+        @include parts-color($_parts-theme-key, true);
+        @include parts-bg-color($_parts-theme-key, true);
+      }
+
+      &:active {
+        background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+      }
+    }
+
+    &.#{$tpl}btn-group--outline {
+      @include parts-outline-divider-color($_parts-theme-key);
+      background-color: transparent;
+
+      & > .#{$tpl}btn {
+        @include parts-outline-color($_parts-theme-key);
+        @include parts-outline-bg-color($_parts-theme-key);
+
+        &:not(.#{$tpl}choice-btn),
+        &.#{$tpl}choice-btn input + .#{$tpl}choice__label {
+          @include parts-accent-color($_parts-theme-key);
+        }
+
+        &:not(.#{$tpl}choice-btn):hover:not(:active),
+        &.#{$tpl}choice-btn input:checked + .#{$tpl}choice__label,
+        &:focus,
+        &:active {
+          @include parts-outline-color($_parts-theme-key, true);
+          @include parts-outline-bg-color($_parts-theme-key, true);
+        }
+
+        &:active {
+          background-color: get-color(parts-#{$_parts-theme-key}-bg-active);
+        }
+      }
+    }
+  }
+}

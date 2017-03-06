@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+//
+// Ranges
+//
+$size-range-thumb: 20px;
+$size-range-track: 4px;
+
+.#{$tpl}range {
+  height: $size-range-thumb;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $duration-promptly;
+
+  &.#{$tpl}is-ready {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &-inner {
+    height: $size-range-thumb;
+    position: relative;
+    margin: 0 $size-range-thumb / 2;
+  }
+
+  &__track,
+  &__track-fill {
+    position: absolute;
+    left: 0;
+    height: $size-range-thumb;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: $size-range-thumb / 2 - $size-range-track / 2;
+      height: $size-range-track;
+      border-radius: $size-range-track;
+    }
+  }
+
+  &__track {
+    width: 100%;
+    cursor: pointer;
+
+    &:before {
+      background: $color-brand-gray-lighter;
+
+      .#{$tpl}form-element.#{$tpl}has-error & {
+        background: rgba($color-brand-danger, .2);
+      }
+    }
+  }
+
+  &__track-fill {
+    pointer-events: none;
+
+    &:before {
+      background: $color-brand-primary;
+
+      .#{$tpl}form-element.#{$tpl}has-error & {
+        background: $color-brand-danger;
+      }
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    appearance: none;
+    outline: none;
+    top: 0;
+    width: $size-range-thumb;
+    height: $size-range-thumb;
+    border-radius: 100%;
+    border: 0;
+    background: #fff linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15), 0 0 0 1px rgba(34, 36, 38, .15) inset;
+    margin-left: -$size-range-thumb / 2;
+    cursor: pointer;
+    user-select: none;
+    @include user-drag(none);
+
+    .#{$tpl}form-element.#{$tpl}has-error & {
+      box-shadow: 0 1px 2px 0 $color-brand-danger, 0 0 0 1px $color-brand-danger inset;
+    }
+  }
+}

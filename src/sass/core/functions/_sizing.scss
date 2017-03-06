@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+//
+// Sizing
+//
+
+@function get-size($key, $unit: null) {
+  $value: map-get($sizes, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}
+
+@function get-slided-size-key($size, $index: 0) {
+  $target-index: index($size-key-list, $size);
+  @if $target-index == null {
+    @return $size;
+  }
+  @return nth($size-key-list, $target-index + $index);
+}
+
+@function get-up-size-key($size, $index: 1) {
+  @return get-slided-size-key($size, $index);
+}
+
+@function get-down-size-key($size, $index: 1) {
+  @return get-slided-size-key($size, -$index);
+}
+
+@mixin field-height($size) {
+  @include font-size($size);
+  $rem: get-size(field-height-#{$size});
+  $px: rem2px($rem);
+  height: $px;
+  line-height: $px - $border-width-field * 2;
+}
+
+@mixin pill-height($size) {
+  $font-size: get-down-size-key($size);
+
+  @include font-size($font-size);
+
+  $rem: get-size(pill-height-#{$size});
+  $px: rem2px($rem);
+  height: $px;
+  line-height: $px - $border-width-field * 2;
+}

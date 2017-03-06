@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+//
+// Links
+//
+
+@mixin sel-link {
+  a, .#{$tpl}link { @content; }
+}
+
+// @mixin sel-link-states {
+//   &,
+//   &:hover,
+//   &:active,
+//   &:visited { @content; }
+// }
+
+@include sel-link {
+  color: $color-typo-link;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: $color-typo-link;
+  }
+
+  &:hover,
+  &:active {
+    // color: $color-brand-primary;
+    text-decoration: underline;
+  }
+}

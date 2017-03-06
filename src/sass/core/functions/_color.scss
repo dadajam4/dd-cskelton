@@ -1,0 +1,291 @@
+@charset "utf-8";
+
+//
+// Core Color Functions
+//
+
+@function get-color($key, $lighten: 0, $darken: 0) {
+  $color: map-get($colors, $key);
+  @if $lighten != 0 {
+    $color: lighten($color, $lighten);
+  }
+  @if $darken != 0 {
+    $color: darken($color, $darken);
+  }
+  @return $color;
+}
+
+@mixin link-colors($color) {
+  &,
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: $color;
+  }
+}
+
+@mixin color($key, $link: false) {
+  $color: get-color($key);
+
+  @if $link {
+    @include link-colors($color)
+  } @else {
+    color: $color;
+  }
+}
+
+
+
+//
+// typo
+//
+$_typo-theme-key: nil;
+
+@mixin typo-theme-keys() {
+  $old: $_typo-theme-key;
+  @each $key in $typo-theme-keys {
+    $_typo-theme-key: $key !global;
+    @content;
+  }
+  $_typo-theme-key: $old !global;
+}
+
+
+
+//
+// parts
+//
+$_parts-theme-key: nil;
+
+@mixin parts-theme-keys() {
+  $old: $_parts-theme-key;
+  @each $key in $parts-theme-keys {
+    $_parts-theme-key: $key !global;
+    @content;
+  }
+  $_parts-theme-key: $old !global;
+}
+
+
+
+@mixin auto-parts-theme-classes($classname) {
+  $cel: "";
+
+  @at-root {
+    @include parts-theme-keys() {
+      $sel: '';
+
+      @if $_parts-theme-key == disabled {
+        $sel: '.#{$classname}[disabled], .#{$classname}.#{$tpl}is-disabled';
+      } @else if $_parts-theme-key != base {
+        $sel: '.#{$classname}--#{$_parts-theme-key}';
+      } @else {
+        $sel: '.#{$classname}';
+      }
+
+      #{$sel} {
+        @content;
+        @if $_parts-theme-key == disabled {
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@function get-focus-str($focus: false) {
+  $focus-str: "";
+  @if $focus {
+    $focus-str: "-focus";
+  }
+  @return $focus-str;
+}
+
+@function get-active-str($active: false) {
+  $active-str: "";
+  @if $active {
+    $active-str: "-active";
+  }
+  @return $active-str;
+}
+
+// Getter
+@function get-parts-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $focus-str: get-focus-str($focus);
+  @return get-color(parts-#{$key}-text#{$focus-str}, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-parts-outline-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $color: get-color(parts-#{$key}-bg, $lighten: $lighten, $darken: $darken);
+  @if $focus {
+    @if brightness($color) > 75% {
+      $color: $color-typo-base;
+    } @else {
+      $color: $color-typo-base-inverse;
+    }
+  }
+  @return $color;
+}
+
+@function get-parts-divider-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $focus-str: get-focus-str($focus);
+  @return get-color(parts-#{$key}-divider#{$focus-str}, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-parts-outline-divider-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  @return get-color(parts-#{$key}-bg, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-parts-accent-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $focus-str: get-focus-str($focus);
+  @return get-color(parts-#{$key}-accent#{$focus-str}, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-parts-bg-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $focus-str: get-focus-str($focus);
+  @return get-color(parts-#{$key}-bg#{$focus-str}, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-parts-outline-bg-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  $color: transparent;
+  @if $focus {
+    $color: get-color(parts-#{$key}-bg, $lighten: $lighten, $darken: $darken);
+  }
+  @return $color;
+}
+
+
+
+// Mixins
+@mixin parts-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  color: get-parts-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-outline-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  color: get-parts-outline-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-divider-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  border-color: get-parts-divider-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-outline-divider-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  border-color: get-parts-outline-divider-color($key, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-accent-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  border-color: get-parts-accent-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-bg-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  background-color: get-parts-bg-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-outline-bg-color($key, $focus: false, $lighten: 0, $darken: 0) {
+  background-color: get-parts-outline-bg-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-colors($key, $focus: false, $lighten: 0, $darken: 0, $divider: true) {
+  @include parts-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+  @include parts-divider-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+  @include parts-bg-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin parts-outline-colors($key, $focus: false, $lighten: 0, $darken: 0) {
+  @include parts-outline-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+  @include parts-outline-divider-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+  @include parts-outline-bg-color($key, $focus: $focus, $lighten: $lighten, $darken: $darken);
+}
+
+
+
+//
+// container
+//
+$_container-theme-key: nil;
+
+@mixin container-theme-keys() {
+  $old: $_container-theme-key;
+  @each $key in $container-theme-keys {
+    $_container-theme-key: $key !global;
+    @content;
+  }
+  $_container-theme-key: $old !global;
+}
+
+@mixin auto-container-theme-classes($classname) {
+  @at-root {
+    @include container-theme-keys() {
+      $sel: '';
+
+      @if $_container-theme-key != base {
+        $sel: '.#{$classname}--#{$_container-theme-key}';
+      } @else {
+        $sel: '.#{$classname}';
+      }
+
+      #{$sel} {
+        @content;
+      }
+    }
+  }
+}
+
+
+
+// Getter
+@function get-container-color($key, $lighten: 0, $darken: 0) {
+  @return get-color(container-#{$key}-text, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-container-link-color($key, $lighten: 0, $darken: 0) {
+  @return get-color(container-#{$key}-link, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-container-divider-color($key, $lighten: 0, $darken: 0) {
+  @return get-color(container-#{$key}-divider, $lighten: $lighten, $darken: $darken);
+}
+
+@function get-container-bg-color($key, $focus: false, $active: false, $lighten: 0, $darken: 0) {
+  $focus-str: get-focus-str($focus);
+  $active-str: get-active-str($active);
+  @return get-color(container-#{$key}-bg#{$focus-str}#{$active-str}, $lighten: $lighten, $darken: $darken);
+}
+
+
+
+// Mixins
+@mixin container-color($key, $lighten: 0, $darken: 0) {
+  color: get-container-color($key, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin container-link-color($key, $lighten: 0, $darken: 0) {
+  $link-color: get-container-link-color($key, $lighten: $lighten, $darken: $darken);
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $link-color;
+  }
+}
+
+@mixin container-divider-color($key, $lighten: 0, $darken: 0) {
+  border-color: get-container-divider-color($key, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin container-bg-color($key, $focus: false, $active: false, $lighten: 0, $darken: 0) {
+  background-color: get-container-bg-color($key, $focus: $focus, $active: $active, $lighten: $lighten, $darken: $darken);
+}
+
+@mixin container-colors($key, $lighten: 0, $darken: 0, $link: true) {
+  @include container-color($key, $lighten: $lighten, $darken: $darken);
+
+  @if $link == true {
+    @include container-link-color($key, $lighten: $lighten, $darken: $darken);
+  }
+
+  @include container-divider-color($key, $lighten: $lighten, $darken: $darken);
+  @include container-bg-color($key, $lighten: $lighten, $darken: $darken);
+}

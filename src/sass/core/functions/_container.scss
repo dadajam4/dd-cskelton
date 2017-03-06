@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+//
+// Container
+//
+
+@function get-container-size($mq) {
+  @return map-get($container-sizes, $mq);
+}
+
+@mixin container-size() {
+  .#{$tpl}site--limit-size & {
+    @each $key, $val in $container-sizes {
+      @include mq($key) {
+        max-width: $val;
+      }
+    }
+  }
+}
+
+@function get-container-margin($mq) {
+  @return map-get($container-margins, $mq);
+}
+@mixin container-margin($margin-attr: margin) {
+  @each $key, $val in $container-margins {
+    @include mq($key) {
+      @if $margin-attr == margin {
+        margin-left: $val;
+        margin-right: $val;
+        padding-left: $val;
+        padding-right: $val;
+      } @else {
+        padding-left: $val * 2;
+        padding-right: $val * 2;
+      }
+    }
+  }
+}
+
+@mixin container($margin-attr: margin) {
+  margin-left: auto;
+  margin-right: auto;
+
+  @if $margin-attr == margin {
+    @include container-size();
+  }
+
+  @include container-margin($margin-attr);
+}

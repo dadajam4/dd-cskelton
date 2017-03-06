@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+//
+// Dropdown
+//
+
+@mixin dropdown-overflow-length($length, $font-size: $fs-base, $line-height: $line-height-md, $padding: $spacing-md, $icon-size: null) {
+  // Calculate icon and padding since icon will always be taller than line height of text
+  @if $icon-size != null {
+    max-height: calc((#{$icon-size} + #{$padding}) * #{$length});
+  }
+  // Calculate text height and padding
+  @else {
+    max-height: calc(((#{$font-size} * #{$line-height}) + #{$padding}) * #{$length});
+  }
+  overflow-y: auto;
+  @include enable-ios-momentum-scrolling;
+}

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grid | Layouts | DD CSkelton</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="/dest/css/dd.css">
+  <script src="/assets/js/jquery-3.1.1.min.js"></script>
+  <script src="/assets/js/demo.js"></script>
+</head>
+
+<body>
+  <div class="dd-page dd-page--limit-size_hoge">
+    <div class="dd-page-container">
+      <div class="dd-page-banner">
+        <a href="/" class="dd-page-banner__link">
+          <!--
+          <tpl-span class="strong text--lg">DD CSkelton</tpl-span>
+-->
+          <span class="dd-text--lg">
+            <span class="dd-logo-dd">
+              <span>D</span>
+              <span>D</span>
+            </span>
+            CSkelton
+          </span>
+        </a>
+        <a href="javascript:void(0);" class="dd-page-menu__trigger">
+          <span>menu</span>
+        </a>
+      </div>
+      <header class="dd-page-header">
+        <h1 class="dd-page-title">
+          Grid
+        </h1>
+        <div class="dd-page-lead">
+          <div class="dd-page-lead__container">
+            &#x30B0;&#x30EA;&#x30C3;&#x30C9;&#x30D8;&#x30EB;&#x30D1;&#x30FC;&#x306F;&#x9818;&#x57DF;&#x306B;&#x4E00;&#x9023;&#x306E;&#x30EC;&#x30A4;&#x30A2;&#x30A6;&#x30C8;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+            <br> &#x3053;&#x308C;&#x3089;&#x306F;&#x67A0;&#x7D44;&#x307F;&#x3001;&#x30B5;&#x30A4;&#x30BA;&#x3001;&#x4E26;&#x3073;&#x9806;&#x3001;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x306E;&#x4F4D;&#x7F6E;&#x3092;&#x9069;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+          </div>
+        </div>
+      </header>
+      <div class="dd-page-content">
+        <section class="dd-container dd-p-t--lg">
+          <nav role="navigation" aria-label="Breadcrumbs">
+            <ol class="dd-breadcrumb">
+              <li>
+                <a href="/">
+                  <span class="dd-fa dd-fa-home"></span>
+                  Home</a>
+              </li>
+              <li>
+                Layouts </li>
+              <li>
+                Grid </li>
+            </ol>
+          </nav>
+        </section>
+        <!-- Automatic Sizing -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Automatic Sizing
+            </span>
+          </h2>
+          <div class="dd-grid">
+            <div class="dd-col">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                col
+              </div>
+            </div>
+            <div class="dd-col">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                col
+              </div>
+            </div>
+          </div>
+          <div class="dd-grid">
+            <div class="dd-col">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                &#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x304C;&#x5165;&#x308A;&#x307E;&#x3059;&#x3002;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x304C;&#x5165;&#x308A;&#x307E;&#x3059;&#x3002;
+              </div>
+            </div>
+            <div class="dd-col">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                col
+              </div>
+            </div>
+            <div class="dd-col">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                col
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Manual Sizing -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Manual Sizing
+            </span>
+          </h2>
+          <div class="dd-grid dd-wrap dd-grid--pull-padded">
+            <div class="dd-p-h--sm dd-col--12">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                12
+              </div>
+            </div>
+            <div class="dd-p-h--sm dd-wide-col--4 dd-narrow-col--12">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                Wide: 4, Narrow: 12
+              </div>
+            </div>
+            <div class="dd-p-h--sm dd-wide-col--8 dd-narrow-col--12">
+              <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                Wide: 8, Narrow: 12
+              </div>
+            </div>
+            <div class="dd-p-h--sm dd-col--12">
+              <div class="dd-grid dd-wrap dd-grid--pull-padded">
+                <div class="dd-p-h--sm dd-wide-col--6 dd-narrow-col--12">
+                  <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                    Wide: 6, Narrow: 12
+                  </div>
+                </div>
+                <div class="dd-p-h--sm dd-wide-col--3 dd-narrow-col--6">
+                  <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                    Wide: 3, Narrow: 6
+                  </div>
+                </div>
+                <div class="dd-p-h--sm dd-wide-col--3 dd-narrow-col--6">
+                  <div class="dd-box dd-box--sm dd-theme-border--shade dd-text-align--center dd-text--center">
+                    Wide: 3, Narrow: 6
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Horizontal Alignment Center -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Horizontal Alignment Center
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-center dd-box dd-theme--neutral">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Horizontal Alignment Space -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Horizontal Alignment Space
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-space dd-box dd-theme--neutral">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Horizontal Alignment Spread -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Horizontal Alignment Spread
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-spread dd-box dd-theme--neutral">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Horizontal Alignment End -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Horizontal Alignment End
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-end dd-box dd-theme--neutral">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Vertical Alignment Start -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Vertical Alignment Start
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--vertical-align-start dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Vertical Alignment Center -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Vertical Alignment Center
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--vertical-align-center dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Vertical Alignment End -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Vertical Alignment End
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--vertical-align-end dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Vertical Alignment Item -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Vertical Alignment Item
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-spread dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme dd-align--top">
+              Top Align
+            </div>
+            <div class="dd-box dd-box--sm dd-theme dd-align--middle">
+              Middle Align
+            </div>
+            <div class="dd-box dd-box--sm dd-theme dd-align--bottom">
+              Bottom Align
+            </div>
+          </div>
+        </section>
+        <!-- Vertical Stretch -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Vertical Stretch
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--vertical-stretch dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+          </div>
+        </section>
+        <!-- Alignment Item Center -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Alignment Item Center
+            </span>
+          </h2>
+          <div class="dd-grid dd-grid--align-center dd-grid--vertical-align-center dd-box dd-theme--neutral" style="height: 250px;">
+            <div class="dd-box dd-box--sm dd-theme">
+              Content determines the width unless otherwise set
+            </div>
+          </div>
+        </section>
+        <!-- Alignment Item Center -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Alignment Item Bump
+            </span>
+          </h2>
+          <div class="dd-grid dd-box dd-theme--neutral">
+            <div class="dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              2
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              3
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              4
+            </div>
+            <div class="dd-box dd-box--sm dd-theme dd-col--bump-left">
+              5
+            </div>
+            <div class="dd-box dd-box--sm dd-theme">
+              6
+            </div>
+          </div>
+        </section>
+        <!-- Order -->
+        <section class="dd-container">
+          <h2 class="dd-h-section">
+            <span class="dd-inner">
+              Order
+            </span>
+          </h2>
+          <div class="dd-grid dd-box dd-theme--neutral">
+            <div class="dd-order--1 dd-box dd-box--sm dd-theme">
+              1
+            </div>
+            <div class="dd-wide-order--2 dd-narrow-order--3 dd-box dd-box--sm dd-theme">
+              Wide: 2, Narrow: 3
+            </div>
+            <div class="dd-wide-order--3 dd-narrow-order--2 dd-box dd-box--sm dd-theme">
+              Wide: 3, Narrow: 2
+            </div>
+          </div>
+        </section>
+      </div>
+      <nav class="dd-page-menu">
+        <div class="dd-page-menu__inner">
+          <nav class="dd-page-navi">
+            <a href="/" class="dd-page-navi__item">
+              Top
+            </a>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Components
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/components/accordions/" class="dd-page-navi__child">
+                Accordions
+              </a>
+              <a href="/components/badges/" class="dd-page-navi__child">
+                Badges
+              </a>
+              <a href="/components/boxes/" class="dd-page-navi__child">
+                Boxes
+              </a>
+              <a href="/components/breadcrumbs/" class="dd-page-navi__child">
+                Breadcrumbs
+              </a>
+              <a href="/components/buttons/" class="dd-page-navi__child">
+                Buttons
+              </a>
+              <a href="/components/cards/" class="dd-page-navi__child">
+                Cards
+              </a>
+              <a href="/components/data-tables/" class="dd-page-navi__child">
+                Data Tables
+              </a>
+              <a href="/components/flags/" class="dd-page-navi__child">
+                Flags
+              </a>
+              <a href="/components/forms/" class="dd-page-navi__child">
+                Forms
+              </a>
+              <a href="/components/icons/" class="dd-page-navi__child">
+                Icons
+              </a>
+              <a href="/components/images/" class="dd-page-navi__child">
+                Images
+              </a>
+              <a href="/components/lists/" class="dd-page-navi__child">
+                Lists
+              </a>
+              <a href="/components/media-objects/" class="dd-page-navi__child">
+                Media Objects
+              </a>
+              <a href="/components/menus/" class="dd-page-navi__child">
+                Menus
+              </a>
+              <a href="/components/messages/" class="dd-page-navi__child">
+                Messages
+              </a>
+              <a href="/components/modal/" class="dd-page-navi__child">
+                Modal
+              </a>
+              <a href="/components/navigation/" class="dd-page-navi__child">
+                Navigation
+              </a>
+              <a href="/components/popovers/" class="dd-page-navi__child">
+                Popovers
+              </a>
+              <a href="/components/progress/" class="dd-page-navi__child">
+                Progress
+              </a>
+              <a href="/components/spinners/" class="dd-page-navi__child">
+                Spinners
+              </a>
+              <a href="/components/tabs/" class="dd-page-navi__child">
+                Tabs
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-is-active dd-has-child">
+              Layouts
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/layouts/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/layouts/borders/" class="dd-page-navi__child">
+                Borders
+              </a>
+              <a href="/layouts/floats/" class="dd-page-navi__child">
+                Floats
+              </a>
+              <a href="/layouts/grid/" class="dd-page-navi__child dd-is-active">
+                Grid
+              </a>
+              <a href="/layouts/position/" class="dd-page-navi__child">
+                Position
+              </a>
+              <a href="/layouts/scrollable/" class="dd-page-navi__child">
+                Scrollable
+              </a>
+              <a href="/layouts/sizing/" class="dd-page-navi__child">
+                Sizing
+              </a>
+              <a href="/layouts/spacing/" class="dd-page-navi__child">
+                Spacing
+              </a>
+              <a href="/layouts/themes/" class="dd-page-navi__child">
+                Themes
+              </a>
+              <a href="/layouts/visibility/" class="dd-page-navi__child">
+                Visibility
+              </a>
+            </div>
+            <a href="javascript:void(0);" class="dd-page-navi__item dd-has-child">
+              Typographies
+            </a>
+            <div class="dd-page-navi__children">
+              <a href="/typographies/alignment/" class="dd-page-navi__child">
+                Alignment
+              </a>
+              <a href="/typographies/basic/" class="dd-page-navi__child">
+                Basic
+              </a>
+              <a href="/typographies/heading/" class="dd-page-navi__child">
+                Heading
+              </a>
+              <a href="/typographies/truncation/" class="dd-page-navi__child">
+                Truncation
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+      <footer class="dd-page-footer dd-theme-inverse">
+        <div class="dd-page-footer__inner">
+          &#xA9; Copyright 2017 dadajam All rights reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

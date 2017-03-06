@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+//
+// Spacing
+//
+
+@function get-spacing($key, $unit: null) {
+  $value: map-get($spacings, $key);
+  @if $unit != null {
+    @return #{nounit($value)}#{$unit};
+  } @else {
+    @return $value;
+  }
+}

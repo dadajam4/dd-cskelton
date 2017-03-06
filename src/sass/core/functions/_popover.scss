@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+//
+// Popover
+//
+
+@mixin nubbin($position: bottom, $location: "after", $color: $color-brand-base, $size: $square-tooltip-nubbin) {
+
+  &:#{$location} {
+    @include square($size);
+    position: absolute;
+    transform: rotate(45deg);
+    content: '';
+    background-color: $color;
+    background-clip: border-box;
+
+    @if $position == top {
+      left: 50%;
+      top: (($size / 2) * -1);
+      margin-left: (($size / 2) * -1);
+    }
+
+    @elseif $position == bottom {
+      left: 50%;
+      bottom: (($size / 2) * -1);
+      margin-left: (($size / 2) * -1);
+    }
+
+    @elseif $position == left  {
+      top: 50%;
+      left: (($size / 2) * -1);
+      margin-top: (($size / 2) * -1);
+    }
+
+    @elseif $position == right  {
+      top: 50%;
+      right: (($size / 2) * -1);
+      margin-top: (($size / 2) * -1);
+    }
+  }
+}
+
+@mixin popover-nubbins($color: inherit, $shadow: true) {
+
+  .#{$tpl}nubbin--top {
+    @include nubbin(top, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(top, $color: $color);
+
+      &:after {
+        box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+  }
+
+  .#{$tpl}nubbin--top-left {
+    @include nubbin(top, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(top, $color: $color);
+
+      &:after {
+        box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      left: $spacing-lg;
+      top: (($square-tooltip-nubbin / 2) * -1);
+    }
+  }
+
+  .#{$tpl}nubbin--top-right {
+    @include nubbin(top, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(top, $color: $color);
+
+      &:after {
+        box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      left: auto;
+      right: $spacing-lg;
+      top: (($square-tooltip-nubbin / 2) * -1);
+      margin-right: (($square-tooltip-nubbin / 2) * -1);
+    }
+  }
+
+  .#{$tpl}nubbin--bottom {
+    @include nubbin(bottom, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(bottom, $color: $color);
+
+      &:after {
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+  }
+
+  .#{$tpl}nubbin--bottom-left {
+    @include nubbin(bottom, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(bottom, $color: $color);
+
+      &:after {
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      left: $spacing-lg;
+      top: 100%;
+      margin-top: (($square-tooltip-nubbin / 2) * -1);
+    }
+  }
+
+  .#{$tpl}nubbin--bottom-right {
+    @include nubbin(bottom, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(bottom, $color: $color);
+
+      &:after {
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      left: auto;
+      right: $spacing-lg;
+      top: 100%;
+      margin-top: (($square-tooltip-nubbin / 2) * -1);
+      margin-right: (($square-tooltip-nubbin / 2) * -1);
+    }
+  }
+
+  .#{$tpl}nubbin--left {
+    @include nubbin(left, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(left, $color: $color);
+
+      &:after {
+        box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+  }
+
+  .#{$tpl}nubbin--left-top {
+    @include nubbin(left, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(left, $color: $color);
+
+      &:after {
+        box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      top: $spacing-lg;
+    }
+  }
+
+  .#{$tpl}nubbin--left-bottom {
+    @include nubbin(left, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(left, $color: $color);
+
+      &:before {
+        margin-bottom: -1px;
+      }
+
+      &:after {
+        box-shadow: -1px 2px 3px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      top: auto;
+      bottom: $spacing-md;
+    }
+  }
+
+  .#{$tpl}nubbin--right {
+    @include nubbin(right, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(right, $color: $color);
+
+      &:after {
+        box-shadow: 1px -1px 2px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+  }
+
+  .#{$tpl}nubbin--right-top {
+    @include nubbin(right, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(right, $color: $color);
+
+      &:after {
+        box-shadow: 1px -1px 2px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      top: $spacing-lg;
+    }
+  }
+
+  .#{$tpl}nubbin--right-bottom {
+    @include nubbin(right, 'before', $color);
+
+    @if $shadow != null {
+      @include nubbin(right, $color: $color);
+
+      &:before {
+        margin-bottom: -1px;
+      }
+
+      &:after {
+        box-shadow: 2px -1px 3px 0 rgba(0, 0, 0, 0.16);
+        z-index: -1;
+      }
+    }
+
+    &:before,
+    &:after {
+      top: auto;
+      bottom: $spacing-md;
+    }
+  }
+}
+
+@mixin popover($color: $color-brand-base, $shadow: null) {
+  position: relative;
+  border-radius: $border-radius-md;
+  width: $size-md;
+  min-height: ($square-tooltip-nubbin * 2);
+  z-index: $z-index-dialog;
+  background-color: $color;
+  display: inline-block;
+
+  @if $shadow != null {
+    box-shadow: $shadow;
+  }
+}

@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+//
+// Breadcrumbs
+//
+
+.#{$tpl}breadcrumb {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: $line-height-lg;
+
+  & > * {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    margin-left: 0;
+    padding: 0 .5em;
+    display: inline-block;
+
+    &:before {
+      @extend .#{$fa-css-prefix};
+      content: $fa-var-angle-right;
+      // position: absolute;
+      position: relative;
+      left: -.5em;
+      vertical-align: inherit;
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  // sizing
+  &--sm {
+    @include font-size(sm);
+  }
+
+  // sizing
+  &--lg {
+    @include font-size(lg);
+  }
+}

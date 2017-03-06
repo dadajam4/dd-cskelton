@@ -1,0 +1,71 @@
+<% block 'title': %>Components | Badges<% end %>
+<% block 'site-lead': %>
+ボタン要素です。
+<% end %>
+<% extend @inc + '/layout/_base' %>
+
+<!-- Base -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Base</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <span class="<%- @tpl %>badge">Badge Label</span>
+</section>
+
+<!-- Color -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Color</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <span class="<%- @tpl %>badge<%- key.name %>"><%- key.label %></span>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <span class="<%- @tpl %>badge<%- key.name %> <%- @tpl %>badge--outline"><%- key.label %></span>
+    <% end %>
+    <% end %>
+  </div>
+</section>
+
+<!-- Clickable -->
+<section class="<%- @tpl %>section <%- @tpl %>container">
+  <h2 class="<%- @tpl %>h-section"><span class="<%- @tpl %>inner">Clickable</span></h2>
+  <div class="<%- @tpl %>small">
+    テキストが入ります。
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <a href="javascript:void(0);" class="<%- @tpl %>badge<%- key.name %>">a : <%- key.label %></a>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <input type="button" class="<%- @tpl %>badge<%- key.name %>" value="input : <%- key.label %>">
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <button type="button" class="<%- @tpl %>badge<%- key.name %>">button : <%- key.label %></button>
+    <% end %>
+  </div>
+
+  <div class="<%- @tpl %>m-v--md">
+    <% for key, index in @siteConfig.themeKeys('parts') : %>
+    <% if key.label != 'base' : %>
+    <button type="button" class="<%- @tpl %>badge<%- key.name %> <%- @tpl %>badge--outline">button : <%- key.label %></button>
+    <% end %>
+    <% end %>
+  </div>
+</section>
